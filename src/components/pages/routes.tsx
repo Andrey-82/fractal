@@ -2,6 +2,8 @@ import React from 'react';
 import {useRoutes} from 'hookrouter';
 import Gallery from './gallery';
 import HomePage from './homePage';
+import Painting from './painting';
+import Rules from './rules';
 import Page404 from './page404';
 /* 
  * Пути
@@ -10,6 +12,8 @@ import Page404 from './page404';
 const routes = {
     '/': () => <HomePage />,
     '/gallery': () => <Gallery />,
+    '/painting': () => <Painting />,
+    '/painting/rules': () => <Rules />,
 };
 
 const Routes: React.FC = () => {

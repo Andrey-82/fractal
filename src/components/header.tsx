@@ -1,16 +1,17 @@
 import React from 'react';
 import { A } from 'hookrouter';
+const { Navbar, Icon } = require('react-materialize');
 
 const Header: React.FC = () => (
-    <nav>
-        <div className="nav-wrapper purple darken-4">
-            <A href="/" className="brand-logo">Фракталы</A>
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li><A href="/">Главная</A></li>
-                <li><A href="/gallery">Галерея</A></li>
-                <li><A href="collapsible.html">404</A></li>
-            </ul>
-        </div>
-    </nav>
+<Navbar 
+    alignLinks="right"
+    brand={<A href="/" className="brand-logo">Фракталы</A>}
+    menuIcon={<Icon>menu</Icon>}
+    className="blue-grey darken-3"
+>
+    <A href="/">Главная</A>
+    <A href="/gallery">Галерея</A>
+    <A href="/painting">Холст</A>
+</Navbar>
     );
 export default Header;
