@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+/**painting*/
+    /**pictorial*/
+    .row .relative {
+        position: relative;
+        min-height: 75vh;
+    }
+
+    .pictorial {
+        position: absolute;
+        width: 94%;
+        min-height: 73vh;
+    }
+    
+    /**navigator*/
+    .input-field {
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .static>label {
+        position: static;
+    }
+
+    .top-label>label {
+        top: -7px;
+    }
+
+
+/**header*/
+a.brand-logo {
+    padding: 0 15px;
+}
+
+nav ul a {
+    font-size: 1.3rem;
+}
+
+/**ownfractal*/
+.center .collapsible-header {
+    display: inherit;
+}
