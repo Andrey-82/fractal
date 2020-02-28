@@ -63,7 +63,24 @@
     .top-label>label {
         top: -7px;
     }
+    
+    h5.range-field {
+        font-size: 1.2rem;
+        line-height: 180%;
+    }
 
+    /**ownfractal*/
+    .center .collapsible-header {
+        display: inherit;
+    }
+    
+    .ownFractal textarea.materialize-textarea {
+        width: 85%;
+    }
+    
+    .ownFractal i.material-icons.tiny {
+        cursor: pointer;
+    }
 
 /**header*/
 a.brand-logo {
@@ -72,9 +89,4 @@ a.brand-logo {
 
 nav ul a {
     font-size: 1.3rem;
-}
-
-/**ownfractal*/
-.center .collapsible-header {
-    display: inherit;
 }
