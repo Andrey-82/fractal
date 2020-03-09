@@ -1,5 +1,5 @@
-import { IFractal } from './types';
-
+import React from 'react';
+import { IFractal, IOptionFractal } from './types';
 import { defaultParams } from './consts';
 /** 
  * Класс фрактал
@@ -27,6 +27,19 @@ export class Fractal {
         params = {...params,...parseParams};
         return params;
     }
+    
+    /** Статический метод записи параметров в урл */
+    public static setParamsToUrl(params: IFractal) {
+        const json = JSON.stringify(params);
+        window.history.pushState("", "", '#' + json);
+    }
+    
+    /**
+     * Статический метод-render опций селекта
+     * @param options - массив объектов опций
+     */
+     public static renderOptions = (options: IOptionFractal[]) => 
+         options.map(option => <option value={option.value} key={option.name}> {option.name} </option>)
 }
 
 
