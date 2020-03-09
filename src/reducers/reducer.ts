@@ -1,5 +1,6 @@
 import { createStore } from 'redux';
 import { defaultParams } from '../utils/consts';
+import { Fractal } from '../utils/classes';
 import {
     CHANGE_NAME_FRACTAL,
     CHANGE_NORM_FRACTAL,
@@ -29,48 +30,39 @@ interface IAction {
     animated?: boolean,
 }
 
-const reducer = (state = defaultParams, action: IAction): IFractal => {
+const reducer = (state = Fractal.getParamsFromUrl(), action: IAction): IFractal => {
     let newState: IFractal;
     switch (action.type) {
         case CHANGE_NAME_FRACTAL:
-            newState = {...state, name: action.name};
-            return newState;
+            newState = {...state, name: action.name}; break;
         case CHANGE_NORM_FRACTAL:
-            newState = {...state, norm: action.norm};
-            return newState;
+            newState = {...state, norm: action.norm}; break;
         case CHANGE_COLOR_FRACTAL:
-            newState = {...state, colorStyle: action.colorStyle};
-            return newState;
+            newState = {...state, colorStyle: action.colorStyle}; break;
         case CHANGE_X_COORD_CENTER_FRACTAL:
-            newState = {...state, xCenter: action.xCenter};
-            return newState;
+            newState = {...state, xCenter: action.xCenter}; break;
         case CHANGE_Y_COORD_CENTER_FRACTAL:
-            newState = {...state, yCenter: action.yCenter};
-            return newState;
+            newState = {...state, yCenter: action.yCenter}; break;
         case TOGGLE_ANIMATION_FRACTAL:
-            newState = {...state, animated: action.animated};
-            return newState;
+            newState = {...state, animated: action.animated}; break;
         case CHANGE_MOTION_FRACTAL:
-            newState = {...state, motion: action.motion};
-            return newState;
+            newState = {...state, motion: action.motion}; break;
         case CHANGE_SPEED_MOTION_FRACTAL:
-            newState = {...state, speedMotion: action.speedMotion};
-            return newState;
+            newState = {...state, speedMotion: action.speedMotion}; break;
         case CHANGE_SPEED_NORM_FRACTAL:
-            newState = {...state, speedNorm: action.speedNorm};
-            return newState;
+            newState = {...state, speedNorm: action.speedNorm}; break;
         case CHANGE_SPEED_COLOR_FRACTAL:
-            newState = {...state, speedColorStyle: action.speedColorStyle};
-            return newState;
+            newState = {...state, speedColorStyle: action.speedColorStyle}; break;
         case APPLY_OWN_PARAAMS_FRACTAL:
             newState = {...state, name: action.name,
                 norm: action.norm,
                 colorStyle: action.colorStyle,
                 motion: action.motion
-            };
-            return newState;
+            }; break;
         default: return state;
     }
+    Fractal.setParamsToUrl(newState);
+    return newState;
 }
 
 export const store = createStore(reducer);
