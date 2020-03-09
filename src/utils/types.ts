@@ -30,3 +30,11 @@
      clickApplyButton?(name: string | undefined, norm: string | undefined, colorStyle: string | undefined, motion: string | undefined): void;
  };
  
+ /**
+  *  Тип объекта данных фрактала (в частности для рендера опций селектов)
+  */
+  export interface IOptionFractal {
+      name: string;
+      value: string;
+  }
+ 
