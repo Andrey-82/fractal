@@ -23,7 +23,7 @@ store.subscribe(update);
 const Painting: React.FC<any> = (props) => {
     return (
         <div className="row">
-            <Pictorial />
+            <Pictorial {...props} />
             <Navigator {...props} />
             <OwnFractal {...props} />
         </div>

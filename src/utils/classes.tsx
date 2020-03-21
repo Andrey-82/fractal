@@ -38,8 +38,6 @@ export class Fractal {
      * Статический метод-render опций селекта
      * @param options - массив объектов опций
      */
-     public static renderOptions = (options: IOptionFractal[]) => 
-         options.map(option => <option value={option.value} key={option.name}> {option.name} </option>)
+    public static renderOptions = (options: IOptionFractal[]) => 
+        options.map(option => <option value={option.value} key={option.name}> {option.name} </option>)
 }
-
-

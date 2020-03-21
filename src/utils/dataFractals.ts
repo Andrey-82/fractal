@@ -204,19 +204,19 @@ export const fractals = [
 export const motions = [
     {
         "name": "Loop",
-        "value": "float r=(tx-0.5*sin(speed*uTime))*(tx-0.5*sin(speed*uTime))+(ty-cos(speed*uTime))*(ty-cos(speed*uTime));if (r<0.25){tx=(0.4+0.6*(2.0*r))*(tx-0.5*sin(speed*uTime))+0.5*sin(speed*uTime);ty=(0.4+0.6*(2.0*r))*(ty-cos(speed*uTime))+cos(speed*uTime);}';"
+        "value": "float r=(tx-0.5*sin(speedMotion*uTime))*(tx-0.5*sin(speedMotion*uTime))+(ty-cos(speedMotion*uTime))*(ty-cos(speedMotion*uTime));if (r<0.25){tx=(0.4+0.6*(2.0*r))*(tx-0.5*sin(speedMotion*uTime))+0.5*sin(speedMotion*uTime);ty=(0.4+0.6*(2.0*r))*(ty-cos(speedMotion*uTime))+cos(speedMotion*uTime);}';"
     },
     {
         "name": "rot",
-        "value": "tmp = tx;tx = cos(speed*uTime)*tx - sin(speed*uTime)*ty;ty = sin(speed*uTime)*tmp + cos(speed*uTime)*ty;"
+        "value": "float tmp = tx;tx = cos(speedMotion*uTime)*tx - sin(speedMotion*uTime)*ty;ty = sin(speedMotion*uTime)*tmp + cos(speedMotion*uTime)*ty;"
     },
     {
         "name": "14N",
-        "value": "float tmpy=y;tmp=x;x=cos(speed*uTime)*(x)-sin(speed*uTime)*(y);y=sin(speed*uTime)*(tmp) + cos(speed*uTime)*(y);x=1.0/exp(uTime)*x;y=1.0/exp(uTime)*y;"
+        "value": "float tmpy=y; float tmp=x;x=cos(speedMotion*uTime)*(x)-sin(speedMotion*uTime)*(y);y=sin(speedMotion*uTime)*(tmp) + cos(speedMotion*uTime)*(y);x=1.0/exp(uTime)*x;y=1.0/exp(uTime)*y;"
     },
     {
         "name": "16",
-        "value": "tmp=tx;float c=cos(0.1*uTime)/(1.0+exp(-6.0*sin(0.1*uTime)));float p=c+sin(0.1*uTime), q=c+cos(0.1*uTime);tx=cos(speed*uTime)*(tx-p) - sin(speed*uTime)*(ty-q)+p;ty=sin(speed*uTime)*(tmp-p) + cos(speed*uTime)*(ty-q)+q;tx=1.0/pow(1.15,uTime)*(tx-p)+p;ty=1.0/pow(1.15,uTime)*(ty-q)+q;"
+        "value": "float tmp=tx;float c=cos(0.1*uTime)/(1.0+exp(-6.0*sin(0.1*uTime)));float p=c+sin(0.1*uTime), q=c+cos(0.1*uTime);tx=cos(speedMotion*uTime)*(tx-p) - sin(speedMotion*uTime)*(ty-q)+p;ty=sin(speedMotion*uTime)*(tmp-p) + cos(speedMotion*uTime)*(ty-q)+q;tx=1.0/pow(1.15,uTime)*(tx-p)+p;ty=1.0/pow(1.15,uTime)*(ty-q)+q;"
     }
 ];
 

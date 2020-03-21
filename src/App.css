@@ -50,6 +50,10 @@
         min-height: 73vh;
     }
     
+    .upper {
+        z-index: 10;
+    }
+    
     /**navigator*/
     .input-field {
         margin-top: 0.2rem;

@@ -7,7 +7,7 @@ export const defaultParams: IFractal = {
             name: "2",
             xCenter: 0,
             yCenter: 0,
-            scale: [3.0, 3.0, 0.0, 0.0],
+            scaleRange: [3.0, 3.0, 0.0, 0.0],
             scaleMode: 0,
             scaleMotion: 0,
             speedScaleMotion: 1.0,
@@ -18,4 +18,5 @@ export const defaultParams: IFractal = {
             colorStyle: 'gamma17',
             speedColorStyle: 1,
             animated: false,
+            startTime: 0,
         };
