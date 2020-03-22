@@ -11,6 +11,12 @@ export const CHANGE_NORM_FRACTAL = 'CHANGE_NORM_FRACTAL';
 /** Изменить раскраску фрактала.*/
 export const CHANGE_COLOR_FRACTAL = 'CHANGE_COLOR_FRACTAL';
 
+/** Изменить масштаб.*/
+export const CHANGE_SCALE_RANGE_FRACTAL = 'CHANGE_SCALE_RANGE_FRACTAL';
+
+/** Изменить отношение X/Y.*/
+export const CHANGE_SCALE_X_TO_Y_FRACTAL = 'CHANGE_SCALE_X_TO_Y_FRACTAL';
+
 /** Изменить анимацию фрактала.*/
 export const CHANGE_MOTION_FRACTAL = 'CHANGE_MOTION_FRACTAL';
 

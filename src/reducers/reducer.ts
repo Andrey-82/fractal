@@ -5,6 +5,8 @@ import {
     CHANGE_NAME_FRACTAL,
     CHANGE_NORM_FRACTAL,
     CHANGE_COLOR_FRACTAL,
+    CHANGE_SCALE_RANGE_FRACTAL,
+    CHANGE_SCALE_X_TO_Y_FRACTAL,
     CHANGE_MOTION_FRACTAL,
     CHANGE_X_COORD_CENTER_FRACTAL,
     CHANGE_Y_COORD_CENTER_FRACTAL,
@@ -20,6 +22,8 @@ interface IAction {
     type: string,
     name?: string,
     norm?: string,
+    scaleRange?: number,
+    scaleXtoY?: number,
     colorStyle?: string,
     motion?: string,
     speedMotion?: number,
@@ -39,6 +43,10 @@ const reducer = (state = Fractal.getParamsFromUrl(), action: IAction): IFractal 
             newState = {...state, norm: action.norm}; break;
         case CHANGE_COLOR_FRACTAL:
             newState = {...state, colorStyle: action.colorStyle}; break;
+        case CHANGE_SCALE_RANGE_FRACTAL:
+            newState = {...state, scaleRange: action.scaleRange}; break;
+        case CHANGE_SCALE_X_TO_Y_FRACTAL:
+            newState = {...state, scaleXtoY: action.scaleXtoY}; break;
         case CHANGE_X_COORD_CENTER_FRACTAL:
             newState = {...state, xCenter: action.xCenter}; break;
         case CHANGE_Y_COORD_CENTER_FRACTAL:
@@ -58,10 +66,9 @@ const reducer = (state = Fractal.getParamsFromUrl(), action: IAction): IFractal 
                 norm: action.norm,
                 colorStyle: action.colorStyle,
                 motion: action.motion
-            }; break;
+            };break;
         default: return state;
     }
-    Fractal.setParamsToUrl(newState);
     return newState;
 }
 

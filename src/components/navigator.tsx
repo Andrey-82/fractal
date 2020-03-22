@@ -9,6 +9,7 @@ const Navigator: React.FC<IFractal> = (props) => {
         name,
         norm,
         colorStyle,
+        scaleRange,
         motion,
         speedMotion,
         speedNorm,
@@ -19,6 +20,7 @@ const Navigator: React.FC<IFractal> = (props) => {
         changeName, 
         changeNorm, 
         changeColor,
+        changeScaleRange,
         changeMotion,
         changeSpeedMotion,
         changeSpeedNorm,
@@ -50,6 +52,10 @@ const Navigator: React.FC<IFractal> = (props) => {
                 <input type="number" step="0.01" onChange={changeYCenter} value={yCenter}/>
                 <label>Y центра</label>
             </div>
+            <div className="input-field col s12">
+                <input type="number" step="0.01" min="0.01" onChange={changeScaleRange} value={scaleRange}/>
+                <label>Масштаб</label>
+            </div>
             <div className="input-field col s12 static">
                 <Checkbox label="Анимация" value="move" checked={false} onChange={toggleAnimated}/>
             </div>
@@ -59,21 +65,21 @@ const Navigator: React.FC<IFractal> = (props) => {
             </Select>
             <div className="input-field col s9 top-label">
                 <Range onChange={changeSpeedMotion} max="10" min="-10" step="0.1" disabled={!animated} value={speedMotion}/>
-                <label>Скорость анимации</label>
+                <label>V<sub>motion</sub></label>
             </div>
             <div className="input-field col s3">
                 <h5 className="range-field center">{speedMotion}</h5>
             </div>
             <div className="input-field col s9 top-label">
                 <Range onChange={changeSpeedNorm} max="10" min="-10" step="0.1" disabled={!animated} value={speedNorm}/>
-                <label>Скорость для нормы</label>
+                <label>V<sub>norm</sub></label>
             </div>
             <div className="input-field col s3">
                 <h5 className="range-field center">{speedNorm}</h5>
             </div>
             <div className="input-field col s9 top-label">
                 <Range onChange={changeSpeedColorStyle} max="10" min="-10" step="0.1" disabled={!animated} value={speedColorStyle}/>
-                <label>Скорость для раскраски</label>
+                <label>V<sub>color</sub></label>
             </div>
             <div className="input-field col s3">
                 <h5 className="range-field center">{speedColorStyle}</h5>

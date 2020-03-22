@@ -177,7 +177,7 @@ export const fractals = [
     },
     {
         "name": "J3",
-        "value": "newX=x*x*x-3.*x*y*y+0.02);newY=3.*x*x*y-y*y*y+0.02"
+        "value": "newX=x*x*x-3.0*x*y*y+0.02;newY=3.0*x*x*y-y*y*y+0.02;"
     },
     {
         "name": "JA20",
@@ -203,6 +203,10 @@ export const fractals = [
 
 export const motions = [
     {
+        "name": "Без анимации",
+        "value": ";"
+    },
+    {
         "name": "Loop",
         "value": "float r=(tx-0.5*sin(speedMotion*uTime))*(tx-0.5*sin(speedMotion*uTime))+(ty-cos(speedMotion*uTime))*(ty-cos(speedMotion*uTime));if (r<0.25){tx=(0.4+0.6*(2.0*r))*(tx-0.5*sin(speedMotion*uTime))+0.5*sin(speedMotion*uTime);ty=(0.4+0.6*(2.0*r))*(ty-cos(speedMotion*uTime))+cos(speedMotion*uTime);}';"
     },
@@ -223,11 +227,11 @@ export const motions = [
 export const colorStyles = [
     {
         "name": "gamma",
-        "value": "r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;gl_FragColor=vec4(r,g,b,.0);break;}else {gl_FragColor=vec4(0.0,0.0, 0.0,1.0);};};}"
+        "value": "r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;"
     },
     {
         "name": "gammaLite",
-        "value": "r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));gl_FragColor=vec4(r,g,b,1.0);break;}else {gl_FragColor=vec4(0.0,0.0,0.0,1.0);};};}"
+        "value": "r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));"
     },
 ];
 

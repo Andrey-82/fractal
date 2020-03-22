@@ -38,23 +38,55 @@ const vertexShaderSource = "attribute vec3 aVertexPosition;\n\
  *  fractal - параметры фрактала
  */
 const fragmentShaderSource = (fractal: IFractal): string => {
+    const {
+        xCenter,
+        yCenter,
+        name,
+        norm,
+        scaleRange,
+        scaleXtoY,
+        motion,
+        speedNorm,
+        speedColorStyle,
+        speedMotion,
+    } = fractal;
+    const sRX = scaleRange ? scaleRange.toFixed(2) + '' : '1.0';
+    const sRY = scaleRange && scaleXtoY ? (scaleRange / scaleXtoY).toFixed(2) + '' : '1.0';
+    const sM = speedMotion ? speedMotion.toFixed(2) + '' : '1.0';
+    const sN = speedNorm ? speedNorm.toFixed(2) + '' : '1.0';
+    const sC = speedColorStyle ? speedColorStyle.toFixed(2) + '' : '1.0';
+    const xC = xCenter ? xCenter.toFixed(2) + '' : '0.0';
+    const yC = yCenter ? yCenter.toFixed(2) + '' : '0.0';
     const shaderSource = 'precision highp float; \n\
-    const highp float PI = 3.14159265359; \n\
-    uniform highp float uTime; uniform vec2 uResolution;\n\
-    float tmp, newX, newY;\n\
-    float speed='+fractal.speedMotion+';\n\
-    float speedNorm='+fractal.speedNorm+';\n\
-    float speedColorStyle='+fractal.speedColorStyle+';\n\
-    void main(){\n\
-    vec2 position = gl_FragCoord.xy / uResolution.xy;\n\
-    highp float x=0.0, newX=0.0;\n\
-    highp float y=0.0, newY=0.0;\n\
-    highp float z=0.0, newZ=0.0;\n\
-    highp float u = position.x;\n\
-    highp float v = position.y;float tx = (3.0 * 2.0*(u-0.5) + 2.0);\n\
-    float ty = (3.0 * 2.0*(v-0.5) + 2.0);'+fractal.motion+' for (int i = 0; i<256; i++){\n\
-    '+fractal.name+' x=newX; y=newY; if ('+fractal.norm+'){\n\
-    float r, g, b;'+ fractal.colorStyle; console.log(shaderSource);
+        const highp float PI = 3.14159265359; \n\
+        uniform highp float uTime; uniform vec2 uResolution;\n\
+        float tmp, newX, newY;\n\
+        float speed=2.0;\n\
+        float speedMotion='+sM+';\n\
+        float speedNorm='+sN+';\n\
+        float speedColorStyle='+sC+';\n\
+        void main(){\n\
+        vec2 position = gl_FragCoord.xy / uResolution.xy;\n\
+        highp float x=0.0, newX=0.0;\n\
+        highp float y=0.0, newY=0.0;\n\
+        highp float z=0.0, newZ=0.0;\n\
+        highp float u = position.x;\n\
+        highp float v = position.y;\n\
+        float tx = ('+sRX+' * 2.0*(u-0.5) + ('+xC+'));\n\
+        float ty = ('+sRY+' * 2.0*(v-0.5) + ('+yC+'));\n\
+        x=tx; y=ty;\n\
+        '+motion+'\n\
+        for (int i = 0; i<256; i++){\n\
+            '+name+' x=newX; y=newY;\n\
+            if ('+norm+'){\n\
+                float r, g, b;'+ fractal.colorStyle + '\n\
+                gl_FragColor=vec4(r,g,b,.0);break;\n\
+            } else {\n\
+                gl_FragColor=vec4(0.0,0.0, 0.0,1.0);\n\
+            };\n\
+        };\n\
+    }';
+    console.log('shader = ', shaderSource, scaleRange);
     return shaderSource;
 };
 
@@ -125,10 +157,10 @@ const  drawScene = (
         gl.uniform1f(timeLocation, time);
         gl.uniform2fv(resolutionLocation, resolution);
         gl.drawArrays(gl.TRIANGLES, 0, 12);
-        if (animated) {
-            let newTime = (Date.now() - startTime) / 1000;
-            requestAnimationFrame(drawScene(gl, animated, startTime, timeLocation, newTime, resolutionLocation, resolution));
-        };
+//        if (animated) {
+//            let newTime = (Date.now() - startTime) / 1000;
+//            requestAnimationFrame(drawScene(gl, animated, startTime, timeLocation, newTime, resolutionLocation, resolution));
+//        };
 };
 
 /**
@@ -137,8 +169,9 @@ const  drawScene = (
  * canvas - ссылка на канвас,
  * fractal - параметры фрактала
  */
-export const render = (canvas: any, fractal: IFractal): void => {
+export const render = (canvas: HTMLCanvasElement, fractal: IFractal): void => {
     const gl = canvas.getContext("webgl",{preserveDrawingBuffer:true});
+    if (!gl) return;
     const fragmentShader = compileShader(gl, fragmentShaderSource(fractal), gl.FRAGMENT_SHADER);
     const vertexShader = compileShader(gl, vertexShaderSource, gl.VERTEX_SHADER);
     const shaderProgram = createShaderProgram(gl, fragmentShader, vertexShader);

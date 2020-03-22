@@ -2,6 +2,8 @@ import { ChangeEvent } from 'react';
 import {
     CHANGE_NAME_FRACTAL,
     CHANGE_NORM_FRACTAL,
+    CHANGE_SCALE_RANGE_FRACTAL,
+    CHANGE_SCALE_X_TO_Y_FRACTAL,
     CHANGE_COLOR_FRACTAL,
     CHANGE_MOTION_FRACTAL,
     CHANGE_X_COORD_CENTER_FRACTAL,
@@ -23,6 +25,16 @@ import {
  export const changeNorm = (event: ChangeEvent<HTMLSelectElement>) => ({
      type: CHANGE_NORM_FRACTAL,
      norm: event.target.value,
+ })
+ 
+ export const changeScaleRange = (event: ChangeEvent<HTMLInputElement>) => ({
+     type: CHANGE_SCALE_RANGE_FRACTAL,
+     scaleRange: +event.target.value,
+ })
+ 
+ export const changeScaleXtoY = (XtoY: number) => ({
+     type: CHANGE_SCALE_X_TO_Y_FRACTAL,
+     scaleXtoY: XtoY,
  })
  
  export const changeColor = (event: ChangeEvent<HTMLSelectElement>) => ({

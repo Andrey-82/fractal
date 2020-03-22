@@ -7,7 +7,8 @@
      xCenter?: number;
      yCenter?: number;
      scale?: string;
-     scaleRange: [number, number, number, number];
+     scaleRange?: number;
+     scaleXtoY?: number;
      scaleMode: number;
      scaleMotion: number;
      speedScaleMotion: number;
@@ -22,6 +23,8 @@
      changeName?(): void;
      changeNorm?(): void;
      changeColor?(): void;
+     changeScaleRange?(): void;
+     changeScaleXtoY?(XtoY: number): void;
      changeMotion?(): void;
      changeSpeedMotion?(): void;
      changeSpeedNorm?(): void;

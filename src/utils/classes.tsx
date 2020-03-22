@@ -1,6 +1,7 @@
 import React from 'react';
 import { IFractal, IOptionFractal } from './types';
 import { defaultParams } from './consts';
+import { render } from './webgl';
 /** 
  * Класс фрактал
  */
@@ -13,9 +14,10 @@ export class Fractal {
         this.p = params;
     }
 
-    /** Метод рендера фрактала на канвас */
-    public draw() {
-        console.log(1234);
+    /** Статический метод рендера фрактала на канвас */
+    public static draw(canvas: HTMLCanvasElement, fractal: IFractal) {
+        Fractal.setParamsToUrl(fractal);
+        render(canvas, fractal);
     }
 
     /** Статический метод получения параметров из урла */
@@ -24,7 +26,7 @@ export class Fractal {
         let params: IFractal = defaultParams;
         let parseParams = {};
         try {parseParams = JSON.parse(jsonParams);} catch {};
-        params = {...params,...parseParams};
+        params = {...params,...parseParams};console.log(params);
         return params;
     }
     

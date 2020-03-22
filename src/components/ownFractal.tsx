@@ -26,16 +26,15 @@ const initState: IState = {
 const OwnFractal: React.FC<IFractal> = ({name, norm, colorStyle, motion, clickApplyButton}) => {
     
     const [params, setParams] = useState(initState);
-    
     const handleChangeParam = (param: string) => (e: any) => setParams({...params, [param]: e.target.value});
     const handleClearParam = (param: string) => () => setParams({...params, [param]: ''});
     
     const hadleClickApplyParams = () => {
-        let ownName: string | undefined = 'x=' + params.x.replace(/\s+/g,'') + ';' + 'y=' + params.y.replace(/\s+/g,'') + ';';
-        let ownNorm: string | undefined = 'norm=' + params.norm.replace(/\s+/g,'') + ';';
+        let ownName: string | undefined = 'newX=' + params.x.replace(/\s+/g,'') + ';' + 'newY=' + params.y.replace(/\s+/g,'') + ';';
+        let ownNorm: string | undefined = params.norm.replace(/\s+/g,'') + ';';
         let ownColorStyle: string | undefined = 'r=' + params.r.replace(/\s+/g,'') + ';'
             +'g=' + params.g.replace(/\s+/g,'') + ';' + 'b=' + params.b.replace(/\s+/g,'') + ';';
-        let ownMotion: string | undefined = 'motion=' + params.motion.replace(/\s+/g,'') + ';';
+        let ownMotion: string | undefined = params.motion.replace(/\s+/g,'') + ';';
         ownName.length < 7 && (ownName = name);
         ownNorm.length < 7 && (ownNorm = norm);
         ownColorStyle.length < 10 && (ownColorStyle = colorStyle);
