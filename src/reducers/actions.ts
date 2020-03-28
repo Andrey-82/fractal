@@ -12,6 +12,7 @@ import {
     CHANGE_SPEED_NORM_FRACTAL,
     CHANGE_SPEED_COLOR_FRACTAL,
     TOGGLE_ANIMATION_FRACTAL,
+    SET_START_TIME_FRACTAL,
     APPLY_OWN_PARAAMS_FRACTAL,
 } from './constsActions';
 /* 
@@ -75,6 +76,11 @@ import {
  export const toggleAnimated = (event: ChangeEvent<HTMLInputElement>) => ({
      type: TOGGLE_ANIMATION_FRACTAL,
      animated: event.target.checked,
+ })
+ 
+ export const setStartTime = (time: number) => ({
+     type: SET_START_TIME_FRACTAL,
+     startTime: time,
  })
  
  export const clickApplyButton = (

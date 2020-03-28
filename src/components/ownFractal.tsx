@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { IFractal } from '../utils/types';
+import { vertexShaderSource, fragmentShaderSource, compileShader, createShaderProgram } from '../utils/webgl';
 import { A } from 'hookrouter';
-const { Button, Icon } = require('react-materialize');
+const { Button } = require('react-materialize');
 
 interface IState {
     x: string,
@@ -13,6 +14,7 @@ interface IState {
     motion: string,
 }
 
+/** Пользовательские настройки */
 const initState: IState = {
     x: '',
     y: '',
@@ -23,22 +25,65 @@ const initState: IState = {
     motion: '',
 };
 
-const OwnFractal: React.FC<IFractal> = ({name, norm, colorStyle, motion, clickApplyButton}) => {
-    
+const OwnFractal: React.FC<IFractal> = (props) => {
+    const {name, norm, colorStyle, motion, clickApplyButton} = props;
     const [params, setParams] = useState(initState);
+    const [classes, setClasses] = useState('hide');
+    
+    /**
+     * Функция проверки компилируемости фрагментного шейдера
+     * fractal - объект параметров фрактала
+     */
+     const isCompileFragmentShader = (fractal: IFractal): boolean => {
+         const canvas = document.createElement('canvas');
+         const gl = canvas.getContext('webgl');
+         let isCompile: boolean = true;
+         if (gl) {
+             const fs = compileShader(gl, fragmentShaderSource(fractal), gl.FRAGMENT_SHADER);
+             const vs = compileShader(gl, vertexShaderSource, gl.VERTEX_SHADER);
+             isCompile = !!createShaderProgram(gl, fs, vs);
+         }
+         canvas.remove();
+         return isCompile;
+     };
+    
+    /**
+     * Обработчик изменения пользовательских настроек параметров фрактала
+     * param - тип параметра
+     * e - объект события
+     */
     const handleChangeParam = (param: string) => (e: any) => setParams({...params, [param]: e.target.value});
+    
+    /**
+     * Обработчик очищения пользовательских настроек параметров фрактала
+     * param - тип параметра
+     */
     const handleClearParam = (param: string) => () => setParams({...params, [param]: ''});
     
+    /** Обработчик установки пользовательских настроек параметров фрактала */
     const hadleClickApplyParams = () => {
-        let ownName: string | undefined = 'newX=' + params.x.replace(/\s+/g,'') + ';' + 'newY=' + params.y.replace(/\s+/g,'') + ';';
+        let ownName: string | undefined = 'newX=' + params.x.replace(/\s+/g,'') + '; newY=' + params.y.replace(/\s+/g,'') + ';';
         let ownNorm: string | undefined = params.norm.replace(/\s+/g,'') + ';';
         let ownColorStyle: string | undefined = 'r=' + params.r.replace(/\s+/g,'') + ';'
-            +'g=' + params.g.replace(/\s+/g,'') + ';' + 'b=' + params.b.replace(/\s+/g,'') + ';';
+            +'g=' + params.g.replace(/\s+/g,'') + '; b=' + params.b.replace(/\s+/g,'') + ';';
         let ownMotion: string | undefined = params.motion.replace(/\s+/g,'') + ';';
-        ownName.length < 7 && (ownName = name);
-        ownNorm.length < 7 && (ownNorm = norm);
-        ownColorStyle.length < 10 && (ownColorStyle = colorStyle);
-        ownMotion.length < 9 && (ownMotion = motion);console.log(name, norm, colorStyle, motion);
+        ownName.length < 14 && (ownName = name);
+        ownNorm.length < 2 && (ownNorm = norm);
+        ownColorStyle.length < 12 && (ownColorStyle = colorStyle);
+        ownMotion.length < 2 && (ownMotion = motion);
+        const fractal = {
+            ...props, 
+            name: ownName, 
+            norm: ownNorm, 
+            colorStyle: ownColorStyle, 
+            motion: ownMotion, 
+        };
+        if (!isCompileFragmentShader(fractal)) {
+            setClasses('red lighten-5 black-text');
+            setTimeout(() => setClasses('hide'), 2000);
+            return;
+        }
+        
         clickApplyButton && clickApplyButton(ownName, ownNorm, ownColorStyle, ownMotion);
     }
     
@@ -104,9 +149,16 @@ const OwnFractal: React.FC<IFractal> = ({name, norm, colorStyle, motion, clickAp
                     </div>
                 </div>
             </div>
-            <Button large node="a" style={{margin: '5px', float: 'right'}} waves="light" onClick={hadleClickApplyParams}>
-                Применить
-            </Button>
+            <div className="row">
+                <div className="col s8 m9 l10">
+                    <h5 className={"right " + classes}>
+                        Не валидный код фрагментного шейдера
+                    </h5>
+                </div>
+                <Button large node="a" style={{margin: '5px', float: 'right'}} waves="light" onClick={hadleClickApplyParams}>
+                    Применить
+                </Button>
+            </div>
         </>
     );
 }

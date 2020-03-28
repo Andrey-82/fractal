@@ -57,7 +57,7 @@ const Navigator: React.FC<IFractal> = (props) => {
                 <label>Масштаб</label>
             </div>
             <div className="input-field col s12 static">
-                <Checkbox label="Анимация" value="move" checked={false} onChange={toggleAnimated}/>
+                <Checkbox label="Анимация" value="move" checked={animated} onChange={toggleAnimated}/>
             </div>
             <Select onChange={changeMotion} s={12} disabled={!animated} defaultValue={motion}>
                 <option disabled value=""> Выберите тип анимации </option>

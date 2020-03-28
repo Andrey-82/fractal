@@ -1,5 +1,4 @@
 import { createStore } from 'redux';
-import { defaultParams } from '../utils/consts';
 import { Fractal } from '../utils/classes';
 import {
     CHANGE_NAME_FRACTAL,
@@ -14,6 +13,7 @@ import {
     CHANGE_SPEED_NORM_FRACTAL,
     CHANGE_SPEED_COLOR_FRACTAL,
     TOGGLE_ANIMATION_FRACTAL,
+    SET_START_TIME_FRACTAL,
     APPLY_OWN_PARAAMS_FRACTAL,
 } from './constsActions';
 import { IFractal } from '../utils/types';
@@ -32,6 +32,7 @@ interface IAction {
     xCenter?: number,
     yCenter?: number,
     animated?: boolean,
+    startTime?: number,
 }
 
 const reducer = (state = Fractal.getParamsFromUrl(), action: IAction): IFractal => {
@@ -53,6 +54,8 @@ const reducer = (state = Fractal.getParamsFromUrl(), action: IAction): IFractal 
             newState = {...state, yCenter: action.yCenter}; break;
         case TOGGLE_ANIMATION_FRACTAL:
             newState = {...state, animated: action.animated}; break;
+        case SET_START_TIME_FRACTAL:
+            newState = {...state, startTime: action.startTime}; break;
         case CHANGE_MOTION_FRACTAL:
             newState = {...state, motion: action.motion}; break;
         case CHANGE_SPEED_MOTION_FRACTAL:

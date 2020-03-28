@@ -10,14 +10,33 @@ export class Fractal {
     /** Объект параметров фрактала */
     public p: IFractal;
     
+    public static rId: number;
+    public static time: number;
+    public static isAnim: boolean = false;
+    
     constructor(params: IFractal) {
         this.p = params;
     }
 
     /** Статический метод рендера фрактала на канвас */
     public static draw(canvas: HTMLCanvasElement, fractal: IFractal) {
-        Fractal.setParamsToUrl(fractal);
         render(canvas, fractal);
+        if (fractal.animated && fractal.startTime){
+            Fractal.isAnim = true;
+            Fractal.time = fractal.startTime++;
+            Fractal.rId = requestAnimationFrame(() => Fractal.draw(canvas, fractal));
+        } else if (fractal.startTime) {
+            cancelAnimationFrame(Fractal.rId);
+            if (Fractal.isAnim){
+                fractal.setStartTime && fractal.setStartTime(Fractal.time);
+                Fractal.isAnim = false;
+                return;                
+            } else {
+                fractal.setStartTime && fractal.setStartTime(fractal.startTime);
+                Fractal.isAnim = false;
+                return;
+            }
+        }
     }
 
     /** Статический метод получения параметров из урла */
@@ -32,6 +51,7 @@ export class Fractal {
     
     /** Статический метод записи параметров в урл */
     public static setParamsToUrl(params: IFractal) {
+        cancelAnimationFrame(Fractal.rId);
         const json = JSON.stringify(params);
         window.history.pushState("", "", '#' + json);
     }

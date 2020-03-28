@@ -19,5 +19,5 @@ export const defaultParams: IFractal = {
             colorStyle: 'r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;',
             speedColorStyle: 1.0,
             animated: false,
-            startTime: 0.0,
+            startTime: 1.0,
         };

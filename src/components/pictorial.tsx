@@ -6,17 +6,13 @@ const Pictorial: React.FC<IFractal> = (props) => {
     const fractal = {...props};
     const canvasRef = React.useRef<HTMLCanvasElement>(null);
     const canvas2dRef = React.useRef<HTMLCanvasElement>(null);
-    let canvas: HTMLCanvasElement | null,
-        canvas2d: HTMLCanvasElement | null,
-        gl: any;
-    canvas = canvasRef.current;
-    canvas2d = canvas2dRef.current;
+    let canvas = canvasRef.current, canvas2d = canvas2dRef.current;
     /**
     * Обработчик изменения размеров канваса
     */
     const resize = () => {
         if (!canvas || !canvas2d) return;
-        const gl = canvas.getContext("webgl",{preserveDrawingBuffer:true});
+        const gl = canvas.getContext("webgl");
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
         gl && gl.viewport(0, 0, canvas.width, canvas.height);
@@ -35,6 +31,7 @@ const Pictorial: React.FC<IFractal> = (props) => {
         Fractal.draw(canvas, fractal);
     }, []);
     React.useEffect(() => {
+        Fractal.setParamsToUrl(fractal);
         if (!canvas) return;
         resize();
         Fractal.draw(canvas, fractal);
@@ -45,7 +42,7 @@ const Pictorial: React.FC<IFractal> = (props) => {
     }
     
     return (
-        <div className="col s12 m7 l9 relative z-depth-2 blue-grey darken-1">
+        <div className="col s12 m7 l9 relative z-depth-2 black">
             <canvas className="pictorial"
                 ref={canvasRef}
             ></canvas>

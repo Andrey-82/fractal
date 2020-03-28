@@ -19,7 +19,9 @@
      colorStyle?: string;
      speedColorStyle?: number;
      animated?: boolean;
-     startTime: number;
+     startTime?: number;
+     paramsToJson?: string;
+     setStartTime?(time: number): void;
      changeName?(): void;
      changeNorm?(): void;
      changeColor?(): void;

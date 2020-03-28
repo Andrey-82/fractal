@@ -38,5 +38,8 @@ export const CHANGE_SPEED_COLOR_FRACTAL = 'CHANGE_SPEED_COLOR_FRACTAL';
 /** Включить/выключить анимацию.*/
 export const TOGGLE_ANIMATION_FRACTAL = 'TOGGLE_ANIMATION_FRACTAL';
 
+/** Установить начальное значение времени.*/
+export const SET_START_TIME_FRACTAL = 'SET_START_TIME_FRACTAL';
+
 /** Применить свои параметры.*/
 export const APPLY_OWN_PARAAMS_FRACTAL = 'APPLY_OWN_PARAAMS_FRACTAL';

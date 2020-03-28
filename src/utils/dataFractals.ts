@@ -41,7 +41,7 @@ export const fractals = [
     },
     {
         "name": "Мандельброт sin^2(z)",
-        "value": "newX=float sfx=sin(x)*(exp(y)+exp(-y))/2.;float sfy=cos(x)*(exp(y)-exp(-y))/2.;newX=sfx*sfx-sfy*sfy+tx;newY=2.0*sfx*sfy+ty;"
+        "value": "newX=float sx=sin(x)*(exp(y)+exp(-y))/2.;float sy=cos(x)*(exp(y)-exp(-y))/2.;newX=sx*sx-sy*sy+tx;newY=2.0*sx*sy+ty;"
     },
     {
         "name": "Мандельброт tg(z)",
@@ -230,8 +230,120 @@ export const colorStyles = [
         "value": "r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;"
     },
     {
+        "name": "gamma2",
+        "value": "r = 1.0-abs(sin(mod(float(i),3.0)*127.0));g = 1.0-abs(sin(mod(float(i)/3.0,3.0)*127.0));b = 1.0-abs(sin(mod(float(i)/9.0,3.0)*127.0));"
+    },
+    {
+        "name": "gamma3",
+        "value": "r = 1.0-abs(atan(mod(float(i),3.0)*127.0)/PI);g = 1.0-abs(atan(mod(float(i)/3.0,3.0)*127.0)/PI);b = 1.0-abs(atan(mod(float(i)/9.0,3.0)*127.0)/PI*2.0);"
+    },
+    {
+        "name": "gamma4",
+        "value": "r = log(abs(sin(mod(float(i),3.0)*127.0)*1.7+1.0));g = log(abs(sin(mod(float(i)/3.0,3.0)*127.0)*1.7+1.0));b = log(abs(sin(mod(float(i)/9.0,3.0)*127.0)*1.7+1.0));"
+    },
+    {
+        "name": "gamma5",
+        "value": "r = (abs(sin(mod(float(i),3.0)*127.0*tx*ty)));g = (abs(sin(mod(float(i)/3.0,3.0)*127.0*tx*ty)));b = (abs(sin(mod(float(i)/9.0,3.0)*127.0*tx*ty)));"
+    },
+    {
+        "name": "gamma6",
+        "value": "r = abs(sin(pow(abs(mod(float(i*i),3.0)*127.0),abs(ty*tx))));g = abs(sin(pow(abs(mod(float(i*2*i)/3.0,3.0)*127.0),abs(ty*tx))));b = abs(sin(pow(abs(mod(float(i*3*i)/9.0,3.0)*127.0),abs(ty*tx))));"
+    },
+    {
+        "name": "gamma7",
+        "value": "r = abs(sin(float(i)*PI/255.0));g = abs(sin(float(i)*PI/255.0*2.0));b = abs(sin(float(i)*PI/255.0*3.0));"
+    },
+    {
+        "name": "gamma8",
+        "value": "r = abs(sin(float(i)*PI/255.0+tx+ty));g = abs(sin(float(i)*PI/255.0*2.0+tx+ty));b = abs(sin(float(i)*PI/255.0*3.0+tx+ty));"
+    },
+    {
+        "name": "gamma9",
+        "value": "r = abs(sin(float(i)*PI/255.0+tx*ty*float(i)));g = abs(sin(float(i)*PI/255.0*2.0+tx*ty*float(i)));b = abs(sin(float(i)*PI/255.0*3.0+tx*ty*float(i)));"
+    },
+    {
+        "name": "gamma10",
+        "value": "r = abs(((float(i))*127.0)/255.0*sin(tx+ty));g = abs(((float(i)/3.0)*127.0)/255.0*sin(tx));b = abs(((float(i)/9.0)*127.0)/255.0*sin(ty));"
+    },
+    {
+        "name": "gamma11",
+        "value": "r = abs(mod(float(i*i*i)*13.0*tx*ty,255.0)/255.0); g = abs(mod(float(i*i)*11.0*tx*ty,255.0)/255.0); b = abs(mod(float(i)*7.0*tx*ty,255.0)/255.0);"
+    },
+    {
+        "name": "gamma12",
+        "value": "r = 1.0-abs(log(float(i)*PI/255.0));g = 1.0-abs(log(float(i)*PI/255.0*2.0)); b = 1.0-abs(log(float(i)*PI/255.0*3.0));"
+    },
+    {
+        "name": "gamma12.5",
+        "value": "r = 1.0-abs(log(float(i)*12.0/255.0));g = 1.0-abs(log(float(i)*6.0/255.0)); b = 1.0-abs(log(float(i)*4.0/255.0));"
+    },
+    {
+        "name": "gamma12.6",
+        "value": "r = log(float(i)/4.0)/abs((exp(float(i*18)/255.0))); g = log(float(i)/8.0)/abs((exp(float(i*12)/255.0))); b = log(float(i)/12.0)/abs((exp(float(i*6)/255.0)));"
+    },
+    {
+        "name": "gamma12.7",
+        "value": "float j = float(i+1);r = log(j/8.0)/abs((j*2.0/300.0)*log(j*j*j+2.0)); g = log(j/6.5)/abs((j*3.0/300.0)*log(j*j*j+2.0)); b = log(j/9.5)/abs((j*2.0/300.0)*log(j*j*j+2.0));"
+    },
+    {
         "name": "gammaLite",
         "value": "r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));"
+    },
+    {
+        "name": "gammaLite_2",
+        "value": "r = 1.0-abs(log(float(i)*PI/255.0*tx));g = 1.0-abs(log(float(i)*PI/255.0*2.0*ty)); b = 1.0-abs(log(float(i)*PI/255.0*3.0*tx*ty));"
+    },
+    {
+        "name": "gammaLite_3",
+        "value": "r = 1.0-3.0/abs(log(float(i)/255.0*tx)); g = 1.0-3.0/abs(log(float(i)/255.0*ty)); b = 1.0-3.0/abs(log(float(i)/255.0*tx*ty));"
+    },
+    {
+        "name": "gamma14",
+        "value": "float r = 2.0*(tx-ty)*(tx-ty)+ty*ty+tx*tx; r = abs((float(i)/255.0))+mod(r+float(i)+r,sin(r)); g = abs((float(i)/255.0*2.0))+mod(float(i),sin(r));          b = abs((float(i)/255.0*3.0))+mod(r*float(i),sin(r));"
+    },
+    {
+        "name": "gamma15",
+        "value": "float r = mod(float(i),3.0)*85.0*sin(tx+ty)/255.0;float r1 = mod(float(i)/3.0,3.0)*85.0*sin(tx+ty)/255.0;float r2 = mod(float(i)/9.0,3.0)*85.0*sin(tx+ty)/255.0;r = abs(mod(float(i)*pow(abs(sin(tx+ty)),abs(sin(tx*ty*float(i)))),4.0)*64.0/255.0+r);g = abs(mod(float(i)*pow(abs(sin(tx+ty)),abs(sin(tx*ty*float(i))))/4.0,4.0)*64.0/255.0+r1);b = abs(mod(float(i)*pow(abs(sin(tx+ty)),abs(sin(tx*ty*float(i))))/16.0,4.0)*64.0/255.0+r2);"
+    },
+    {
+        "name": "gamma16",
+        "value": "if (float(i)<257.0) {r = 0.7*1.0/abs(log(abs(sin(float(5*i)/155.0))));g = 0.7*1.0/abs(log(abs(sin(float(2*i)/155.0))));b = 0.7*(1.0-1.0/abs(log(abs(sin(float(i*i)/155.0)))));} else{b = 1.0-fract(abs(log(float(i)/255.0)));r = 1.0-fract(abs(log(float(i)/255.0/3.0)));g = 1.0-fract(abs(log(float(i)/255.0/9.0)));};"
+    },
+    {
+        "name": "gamma17",
+        "value": "if (float(i)<50.0){r = 1.0-abs(log(float(i)/255.0+2.0));g = 1.0-abs(log(float(i)/255.0)+2.5);b = 1.0-abs(log(float(i)/255.0)+2.7);}else if (float(i)<200.0){r = abs(log(float(i)/255.0*1.3));g = abs(log(float(i)/255.0*2.0));b = abs(log(float(i)*3.0/255.0));}else {r = 1.0-abs(log(float(i)*1.3/255.0));g = 1.0-abs(log(float(i)*2.0/255.0));b = 1.0-abs(log(float(i)*2.7/255.0));};"
+    },
+    {
+        "name": "gamma18",
+        "value": "if (float(i)<50.0){r = abs(log(float(i)/255.0+2.0));g = abs(log(float(i)/255.0)+2.5);b = abs(log(float(i)/255.0)+2.7);}else if (float(i)<200.0){r = 1.0-abs(log(float(i)/255.0*1.3));g = 1.0-abs(log(float(i)/255.0*2.0));b = 1.0-abs(log(float(i)*3.0/255.0));}else {r = abs(log(float(i)*1.3/255.0));g = abs(log(float(i)*2.0/255.0));b = abs(log(float(i)*2.7/255.0));};"
+    },
+    {
+        "name": "gamma19",
+        "value": "if (float(i)<25.0){r = sin(abs(log(float(i*i)/255.0+2.0)));g = cos(abs(log(float(i*i)/255.0)+2.5));b = sin(abs(log(float(i*i)/255.0)+2.7));}else {r = 1.0-sin(abs(log(float(i)/255.0*1.3)));g = 1.0-sin(abs(log(float(i)/255.0*2.0)));b = 1.0-sin(abs(log(float(i)*3.0/255.0)));}"
+    },
+    {
+        "name": "gamma20",
+        "value": "float t = float(i); if (t<5.0){r = 0.6-sin(abs(log(abs(sin(t))*1.3)));g = 0.6-sin(abs(log(abs(sin(t))*2.0)));b = 0.6-sin(abs(log(abs(sin(t))*3.0)));}else {r = 1.0-sin(abs(log(t/255.0*1.3)));g = 1.0-sin(abs(log(t/255.0*2.0)));b = 1.0-sin(abs(log(t*3.0/255.0)));}"
+    },
+    {
+        "name": "gamma_3d",
+        "value": "float p = x*x+y*y+z*z; r = 1.0-abs(x)/p;g = 1.0-abs(y)/p;b = 1.0-abs(z)/p;"
+    },
+    {
+        "name": "gamma_3d_2",
+        "value": "float p = tx*tx+ty*ty+z*z; r = 1.0-abs(x)/p;g = 1.0-abs(y)/p;b = 1.0-abs(z)/p;"
+    },
+    {
+        "name": "gamma_3d_log",
+        "value": "float p = x*x+y*y+z*z; r = 1.0/abs(log(abs(x)/p));g = 1.0/abs(log(abs(y)/p));b = 1.0/abs(log(abs(z)/p));"
+    },
+    {
+        "name": "gamma_3d_log_2",
+        "value": "float p = x*x+y*y+z*z; r = 1.0/abs(log(abs(tx)/p));g = 1.0/abs(log(abs(ty)/p));b = 1.0/abs(log(abs(z)/p));"
+    },
+    {
+        "name": "gamma_rnd",
+        "value": "float rnd = 1.0 - float(i*i) / 10737.0; if(rnd < 0.5) {r = 1.0/1.50*rnd; g = 1.0/1.5;b = 1.0/1.5;} else if(rnd > 0.5 && rnd<0.75) {r = 1.0/2.0; g = 1.0/2.0*rnd;b = 1.0/2.0;}else if(rnd>0.75) {r = 1.0/4.0;g = 1.0/4.0; b = 1.0/4.0*rnd;}"
     },
 ];
 
