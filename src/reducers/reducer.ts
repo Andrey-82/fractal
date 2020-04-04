@@ -15,25 +15,10 @@ import {
     TOGGLE_ANIMATION_FRACTAL,
     SET_START_TIME_FRACTAL,
     APPLY_OWN_PARAAMS_FRACTAL,
+    PUSH_TO_HISTORY,
+    BACK_TO_HISTORY,
 } from './constsActions';
-import { IFractal } from '../utils/types';
-
-interface IAction {
-    type: string,
-    name?: string,
-    norm?: string,
-    scaleRange?: number,
-    scaleXtoY?: number,
-    colorStyle?: string,
-    motion?: string,
-    speedMotion?: number,
-    speedNorm?: number,
-    speedColorStyle?: number,
-    xCenter?: number,
-    yCenter?: number,
-    animated?: boolean,
-    startTime?: number,
-}
+import { IFractal, ICenterScale, IAction } from '../utils/types';
 
 const reducer = (state = Fractal.getParamsFromUrl(), action: IAction): IFractal => {
     let newState: IFractal;
@@ -70,6 +55,21 @@ const reducer = (state = Fractal.getParamsFromUrl(), action: IAction): IFractal 
                 colorStyle: action.colorStyle,
                 motion: action.motion
             };break;
+        case PUSH_TO_HISTORY:
+            newState = {...state};
+            action.step && newState.history.push(action.step);
+            break;
+        case BACK_TO_HISTORY:
+            newState = {...state};
+            const history = newState.history;
+            const length = history.length;
+            if (length > 1) {
+                history.splice(-1, 1);
+                newState.scaleRange = history[length - 2].scaleRange;
+                newState.xCenter = history[length - 2].xCenter;
+                newState.yCenter = history[length - 2].yCenter;
+            }
+            break;
         default: return state;
     }
     return newState;

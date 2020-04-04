@@ -43,3 +43,9 @@ export const SET_START_TIME_FRACTAL = 'SET_START_TIME_FRACTAL';
 
 /** Применить свои параметры.*/
 export const APPLY_OWN_PARAAMS_FRACTAL = 'APPLY_OWN_PARAAMS_FRACTAL';
+
+/** Добавить текущие параметры центра и масштаба канвас в историю.*/
+export const PUSH_TO_HISTORY = 'PUSH_TO_HISTORY';
+
+/** Удалить последний элемент из истории и вернуться к предыдущим параметрам канваса.*/
+export const BACK_TO_HISTORY = 'BACK_TO_HISTORY';

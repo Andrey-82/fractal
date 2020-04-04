@@ -172,8 +172,12 @@ export const fractals = [
         "value": "newX=(x*x-y*y)*(cos(x)*(exp(2.*y)+exp(-2.*y))/2.) +2.*x*y*sin(x)*(exp(2.*y)-exp(-2.*y))/2.+tx;newY= 2.*x*y*cos(x)*(exp(2.*y)+exp(-2.*y))/2.-(x*x-y*y)*sin(x)*(exp(2.*y)-exp(-2.*y))/2.+ty;"
     },
     {
-        "name": "J2",
-        "value": "newX=x*x-y*y+0.02;newY= 2.0*x*y+0.02;"
+        "name": "J2-move",
+        "value": "newX=x*x-y*y+cos(0.1*uTime)/3.0+2.0*cos(0.1*uTime);newY= 2.0*x*y+sin(0.1*uTime)/3.0+0.2;"
+    },
+    {
+        "name": "Jxy2-move",
+        "value": "newX=-4.0*x*y-y+uTime/300.0;newY=2.0*x*x-2.0*y*y+x+uTime/300.0;"
     },
     {
         "name": "J3",
@@ -208,7 +212,7 @@ export const motions = [
     },
     {
         "name": "Loop",
-        "value": "float r=(tx-0.5*sin(speedMotion*uTime))*(tx-0.5*sin(speedMotion*uTime))+(ty-cos(speedMotion*uTime))*(ty-cos(speedMotion*uTime));if (r<0.25){tx=(0.4+0.6*(2.0*r))*(tx-0.5*sin(speedMotion*uTime))+0.5*sin(speedMotion*uTime);ty=(0.4+0.6*(2.0*r))*(ty-cos(speedMotion*uTime))+cos(speedMotion*uTime);}';"
+        "value": "float r=(tx-0.5*sin(speedMotion*uTime))*(tx-0.5*sin(speedMotion*uTime))+(ty-cos(speedMotion*uTime))*(ty-cos(speedMotion*uTime));if (r<0.25){tx=(0.4+0.6*(2.0*r))*(tx-0.5*sin(speedMotion*uTime))+0.5*sin(speedMotion*uTime);ty=(0.4+0.6*(2.0*r))*(ty-cos(speedMotion*uTime))+cos(speedMotion*uTime);};"
     },
     {
         "name": "rot",

@@ -88,7 +88,7 @@ const OwnFractal: React.FC<IFractal> = (props) => {
     }
     
     return (
-        <>
+        <div className="col s12">
             <div className="row ownFractal">
                 <div className="col s12">
                     <h6 className="center">Задать свои параметры( <A href="/painting/rules">подробнее...</A> )</h6>
@@ -159,7 +159,7 @@ const OwnFractal: React.FC<IFractal> = (props) => {
                     Применить
                 </Button>
             </div>
-        </>
+        </div>
     );
 }
 

@@ -14,6 +14,8 @@ import {
     TOGGLE_ANIMATION_FRACTAL,
     SET_START_TIME_FRACTAL,
     APPLY_OWN_PARAAMS_FRACTAL,
+    PUSH_TO_HISTORY,
+    BACK_TO_HISTORY,
 } from './constsActions';
 /* 
  * Экшен креаторы
@@ -28,9 +30,9 @@ import {
      norm: event.target.value,
  })
  
- export const changeScaleRange = (event: ChangeEvent<HTMLInputElement>) => ({
+ export const changeScaleRange = (s: number) => ({
      type: CHANGE_SCALE_RANGE_FRACTAL,
-     scaleRange: +event.target.value,
+     scaleRange: s,
  })
  
  export const changeScaleXtoY = (XtoY: number) => ({
@@ -48,14 +50,14 @@ import {
      motion: event.target.value,
  })
  
- export const changeXCenter = (event: ChangeEvent<HTMLInputElement>) => ({
+ export const changeXCenter = (x: number) => ({
      type: CHANGE_X_COORD_CENTER_FRACTAL,
-     xCenter: +event.target.value,
+     xCenter: x,
  })
  
- export const changeYCenter = (event: ChangeEvent<HTMLSelectElement>) => ({
+ export const changeYCenter = (y: number) => ({
      type: CHANGE_Y_COORD_CENTER_FRACTAL,
-     yCenter: +event.target.value,
+     yCenter: y,
  })
  
  export const changeSpeedMotion = (event: ChangeEvent<HTMLInputElement>) => ({
@@ -95,3 +97,14 @@ import {
      colorStyle,
      motion,
  })
+ 
+ export const pushToHistory = (xCenter: number, yCenter: number, scaleRange: number) => ({
+     type: PUSH_TO_HISTORY,
+     step: {
+         xCenter,
+         yCenter,
+         scaleRange,
+     },
+ })
+ 
+ export const backToHistory = () => ({type: BACK_TO_HISTORY})

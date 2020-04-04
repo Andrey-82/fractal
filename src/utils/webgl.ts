@@ -49,13 +49,13 @@ export const fragmentShaderSource = (fractal: IFractal): string => {
         speedColorStyle,
         speedMotion,
     } = fractal;
-    const sRX = scaleRange ? scaleRange.toFixed(2) + '' : '1.0';
-    const sRY = scaleRange && scaleXtoY ? (scaleRange / scaleXtoY).toFixed(2) + '' : '1.0';
-    const sM = speedMotion ? speedMotion.toFixed(2) + '' : '1.0';
-    const sN = speedNorm ? speedNorm.toFixed(2) + '' : '1.0';
-    const sC = speedColorStyle ? speedColorStyle.toFixed(2) + '' : '1.0';
-    const xC = xCenter ? xCenter.toFixed(2) + '' : '0.0';
-    const yC = yCenter ? yCenter.toFixed(2) + '' : '0.0';
+    const sRX = scaleRange ? scaleRange.toFixed(3) : '1.0';
+    const sRY = scaleRange && scaleXtoY ? (scaleRange / scaleXtoY).toFixed(3) : '1.0';
+    const sM = speedMotion ? speedMotion.toFixed(3) : '1.0';
+    const sN = speedNorm ? speedNorm.toFixed(3) : '1.0';
+    const sC = speedColorStyle ? speedColorStyle.toFixed(3) : '1.0';
+    const xC = xCenter ? xCenter.toFixed(3) : '0.0';
+    const yC = yCenter && scaleXtoY? (yCenter / scaleXtoY).toFixed(3) : '0.0';
     const shaderSource = "precision highp float; \n"+
         "const highp float PI = 3.14159265359; \n"+
         "uniform highp float uTime; uniform vec2 uResolution;\n"+
@@ -71,8 +71,8 @@ export const fragmentShaderSource = (fractal: IFractal): string => {
         "highp float z=0.0, newZ=0.0;\n"+
         "highp float u = position.x;\n"+
         "highp float v = position.y;\n"+
-        "float tx = ("+sRX+" * 2.0*(u-0.5) + ("+xC+"));\n"+
-        "float ty = ("+sRY+" * 2.0*(v-0.5) + ("+yC+"));\n"+
+        "float tx = ("+sRX+" * (u-0.5) + ("+xC+"));\n"+
+        "float ty = ("+sRY+" * (v-0.5) + ("+yC+"));\n"+
         "x=tx; y=ty;\n"+
         ""+motion+"\n"+
         "for (int i = 0; i<256; i++){\n"+

@@ -31,7 +31,7 @@ const Navigator: React.FC<IFractal> = (props) => {
     } = props;
     
     return (
-        <div className="col m5 l3">
+        <div className="col m5 l3 wrap-nav">
             <Select onChange={changeName} defaultValue={name} s={12}>
                 <option disabled value=""> Выберите фрактал </option>
                 {Fractal.renderOptions(fractals)}
@@ -45,15 +45,15 @@ const Navigator: React.FC<IFractal> = (props) => {
                 {Fractal.renderOptions(colorStyles)}
             </Select>
             <div className="input-field col s6">
-                <input type="number" step="0.01" onChange={changeXCenter} value={xCenter}/>
+                <input type="number" step="0.001" onChange={(e) => {changeXCenter && changeXCenter(+e.target.value)}} value={xCenter}/>
                 <label>X центра</label>
             </div>
             <div className="input-field col s6">
-                <input type="number" step="0.01" onChange={changeYCenter} value={yCenter}/>
+                <input type="number" step="0.001" onChange={(e) => {changeYCenter && changeYCenter(+e.target.value)}} value={yCenter}/>
                 <label>Y центра</label>
             </div>
             <div className="input-field col s12">
-                <input type="number" step="0.01" min="0.01" onChange={changeScaleRange} value={scaleRange}/>
+                <input type="number" step="0.001" min="0.001" onChange={(e) => {changeScaleRange && changeScaleRange((+e.target.value))}} value={scaleRange}/>
                 <label>Масштаб</label>
             </div>
             <div className="input-field col s12 static">

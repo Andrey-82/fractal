@@ -7,7 +7,7 @@ export const defaultParams: IFractal = {
             name: "newX=x*x-y*y+tx;newY=2.0*x*y+ty;",
             xCenter: -0.5,
             yCenter: 0.0,
-            scaleRange: 1.5,
+            scaleRange: 6,
             scaleXtoY: 1.0,
             scaleMode: 0.0,
             scaleMotion: 0.0,
@@ -20,4 +20,9 @@ export const defaultParams: IFractal = {
             speedColorStyle: 1.0,
             animated: false,
             startTime: 1.0,
+            history: [{
+                xCenter: -0.5,
+                yCenter: 0.0,
+                scaleRange: 6,
+            }]
         };
