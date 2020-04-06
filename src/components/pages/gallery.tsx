@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Gallery: React.FC = () => {
+const Contacts: React.FC = () => {
     return (
         <div>
-            <h1>Gallery</h1>
+            <h1>Раздел в разработке</h1>
         </div>
     );
 }
 
-export default Gallery;
+export default Contacts;

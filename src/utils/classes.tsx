@@ -68,9 +68,6 @@ export class Fractal {
  * Класс для работы с канвасом
  */
  export abstract class Canvas {
-     
-    public static instCanvas: HTMLCanvasElement | null = null; 
-    public static context: any = null; 
      /**
       * Статический метод изменений размеров канваса
       */
@@ -89,21 +86,19 @@ export class Fractal {
      * Статичекий метод выделения прямоугольной области и установки параметров
      */
     public static zoomSelectedArea = (canvas: HTMLCanvasElement, context2d: any, e: any, isPressed: boolean, x0: number, y0: number) => {
-        if (!Canvas.instCanvas) Canvas.instCanvas = canvas;
-        if (!Canvas.context) Canvas.context = context2d;
         let T = [0, 0] , H = 1;
         if (isPressed) {
-            Canvas.instCanvas.width = Canvas.instCanvas.width;
-            const x = e.pageX - Canvas.instCanvas.offsetLeft;
-            const y = e.pageY - Canvas.instCanvas.getBoundingClientRect().top - window.pageYOffset;
-            Canvas.context.strokeStyle = 'green';
-            Canvas.context.strokeRect(x0, y0, x - x0, y - y0);
+            canvas.width = canvas.width;
+            const x = e.pageX - canvas.offsetLeft;
+            const y = e.pageY - canvas.getBoundingClientRect().top - window.pageYOffset;
+            context2d && (context2d.strokeStyle = '#E90');
+            context2d.strokeRect(x0, y0, x - x0, y - y0);
             if (Math.abs(x - x0) > 10 && Math.abs(y - y0) > 10) {
                 T = [
-                    (x + x0 - Canvas.instCanvas.width) / 2 / Canvas.instCanvas.width, 
-                    (-y - y0 + Canvas.instCanvas.height) / 2 / Canvas.instCanvas.height
+                    (x + x0 - canvas.width) / 2 / canvas.width, 
+                    (-y - y0 + canvas.height) / 2 / canvas.height
                 ];
-                H = (x -y + y0 - x0) > 0 ? Math.abs(x - x0) / Canvas.instCanvas.width : Math.abs(y - y0) / Canvas.instCanvas.height;
+                H = (x -y + y0 - x0) > 0 ? Math.abs(x - x0) / canvas.width : Math.abs(y - y0) / canvas.height;
                 H = +H.toFixed(3);
                 T[0] = +T[0].toFixed(3);
                 T[1] = +T[1].toFixed(3);

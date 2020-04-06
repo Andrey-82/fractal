@@ -12,6 +12,7 @@ const Header: React.FC = () => (
     <A href="/">Главная</A>
     <A href="/gallery">Галерея</A>
     <A href="/painting">Холст</A>
+    <A href="/contacts">Контакты</A>
 </Navbar>
     );
 export default Header;

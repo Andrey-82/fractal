@@ -33,8 +33,7 @@ const Pictorial: React.FC<IFractal> = (props) => {
     
     /** Обработчик нажатия мыши на канвасе */
     const handleMouseDown = (e: any) => {
-        if (!canvas2d) return;
-        if (e.button === 0) {
+        if (canvas2d && e.button === 0) {
             const x = e.pageX - canvas2d.offsetLeft;
             const y = e.pageY - canvas2d.getBoundingClientRect().top - window.pageYOffset;
             setCoord({x, y});
@@ -45,6 +44,7 @@ const Pictorial: React.FC<IFractal> = (props) => {
     /** Обработчик движения курсора над канвасом */
     const handleMouseMove = (e: any) => {
         if (canvas2d) {
+            if (!context2d) context2d = canvas2d.getContext('2d');
             const newTransform: any = Canvas.zoomSelectedArea(canvas2d, context2d, e, isPressed, coord.x, coord.y);
             newTransform && setTransform(newTransform);
         }

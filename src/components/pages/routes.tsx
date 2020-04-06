@@ -1,6 +1,7 @@
 import React from 'react';
 import {useRoutes} from 'hookrouter';
 import Gallery from './gallery';
+import Contacts from './contacts';
 import HomePage from './homePage';
 import Painting from './painting';
 import Rules from './rules';
@@ -13,6 +14,7 @@ const routes = {
     '/': () => <HomePage />,
     '/gallery': () => <Gallery />,
     '/painting': () => <Painting />,
+    '/contacts': () => <Contacts />,
     '/painting/rules': () => <Rules />,
 };
 

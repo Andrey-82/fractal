@@ -349,6 +349,23 @@ export const colorStyles = [
         "name": "gamma_rnd",
         "value": "float rnd = 1.0 - float(i*i) / 10737.0; if(rnd < 0.5) {r = 1.0/1.50*rnd; g = 1.0/1.5;b = 1.0/1.5;} else if(rnd > 0.5 && rnd<0.75) {r = 1.0/2.0; g = 1.0/2.0*rnd;b = 1.0/2.0;}else if(rnd>0.75) {r = 1.0/4.0;g = 1.0/4.0; b = 1.0/4.0*rnd;}"
     },
+    {
+        "name": "gradBlueMoveRingWave",
+        "value": "float tr = abs(20.0*fract((0.04*uTime*float(0.2*uTime)/(0.2*uTime+1.0))-10.0-(tx*tx+ty*ty)));\
+                    if (tr < 0.6) {r = (float(i))/15.0*(1.0-1.7*tr); g = (float(i))/30.0*(1.0-1.7*tr); b = (float(i))/10.0*(1.0-1.7*tr);}\
+                    else if (float(i) > 180.0){r = 0.95; g = 0.82; b = 0.3;}\
+                    else {r = (float(i))/110.0; g = (float(i))/110.0; b = (float(i))/30.0;}"
+    },
+    {
+        "name": "gradBlueMoveRingWave2",
+        "value": "float tr = abs(30.0*fract((0.02*speedColorStyle*uTime*uTime)/(0.1*uTime+1.0))-15.0-((tx+0.5)*(tx+0.5)+(ty+0.5)*(ty+0.5)));\
+                     float s = abs(30.0*fract((0.02*speedColorStyle*uTime*uTime)/(0.1*uTime+1.0))-15.0-((tx-0.7)*(tx-0.7)+(ty-0.7)*(ty-0.7)));\
+                    if (s < 0.9 && tr > 0.9 ) {r = (float(i))/10.0*(1.0-s); g = (float(i))/20.0*(1.0-s); b = (float(i))/50.0*(1.0-s);}\
+                    else if (tr < 0.9 && s > 0.9) {r = (float(i))/15.0*(1.0-tr); g = (float(i))/30.0*(1.0-tr); b = (float(i))/10.0*(1.0-tr);}\
+                    else if (tr < 0.9 && s < 0.9) {r = (float(i))/((15.0*(1.0-tr)+10.0*(1.0-s))/(2.3-tr-s)); g = (float(i))/((30.0*(1.0-tr)+20.0*(1.0-s))/(2.3-tr-s)); b = (float(i))/((10.0*(1.0-tr)+50.0*(1.0-s))/(2.3-tr-s));}\
+                    else if (float(i) > 180.0){r = sin(tx)*0.95; g = cos(tx)*0.82; b = sin(tx*ty*2.0)*0.3;}\
+                    else {r = (cos(tx)*float(i))/110.0; g = (sin(tx)*float(i))/110.0; b = (sin(tx*2.0)*float(i))/30.0;}"
+    },
 ];
 
 export const norms = [
@@ -359,5 +376,33 @@ export const norms = [
     {
         "name": "QEvklid",
         "value": "(x*x*y*y)>100.0"
+    },
+    {
+        "name": "EvklidM",
+        "value": "(x*x-3.0)*abs(x*x/y/y)>100.0"
+    },
+    {
+        "name": "EvklidNoise",
+        "value": "sin(2.0*log(x*y))*(x*x+y*y)>100.0"
+    },
+    {
+        "name": "EvklidMove",
+        "value": "(x*x+y*y)-fract(tx*ty+sin(0.5*speedNorm*(uTime)))*abs(x*x*y*y)*sin(tx*ty)>100.0"
+    },
+    {
+        "name": "absX",
+        "value": "abs(x)>100.0"
+    },
+    {
+        "name": "fract",
+        "value": "(x * x * fract(tx) * fract(tx) * cos(x) * y * y * fract(ty) * fract(ty) * cos(y)) >100.0"
+    },
+    {
+        "name": "kub",
+        "value": "(tx*tx*tx/x+ty*ty*ty/y)> 100.0"
+    },
+    {
+        "name": "kub2",
+        "value": "(tx*tx*tx/x+ty*ty*ty/y)> 100.0"
     },
 ]
