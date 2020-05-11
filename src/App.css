@@ -67,5 +67,11 @@ a.brand-logo {
 }
 
 nav ul a {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    min-width: 125px;
+    text-align: center;
+}
+
+nav ul a i.right {
+    margin: 0;
 }

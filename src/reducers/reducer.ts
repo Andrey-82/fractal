@@ -1,10 +1,14 @@
 import { createStore } from 'redux';
 import { Fractal } from '../utils/classes';
+import { IFractal, ICenterScale, IAction } from '../utils/types';
+import {defaultParams, defaultParamsIFS} from '../utils/consts';
 import {
+    CHANGE_TYPE_FRACTAL,
     CHANGE_NAME_FRACTAL,
     CHANGE_NORM_FRACTAL,
     CHANGE_COLOR_FRACTAL,
     CHANGE_SCALE_RANGE_FRACTAL,
+    CHANGE_DEPTH_ITERATION_FRACTAL,
     CHANGE_SCALE_X_TO_Y_FRACTAL,
     CHANGE_MOTION_FRACTAL,
     CHANGE_X_COORD_CENTER_FRACTAL,
@@ -18,11 +22,18 @@ import {
     PUSH_TO_HISTORY,
     BACK_TO_HISTORY,
 } from './constsActions';
-import { IFractal, ICenterScale, IAction } from '../utils/types';
 
 const reducer = (state = Fractal.getParamsFromUrl(), action: IAction): IFractal => {
     let newState: IFractal;
     switch (action.type) {
+        case CHANGE_TYPE_FRACTAL:
+            let newDefaultParams = defaultParams;
+            switch (action.typeFractal) {
+                case 'complex': newDefaultParams = defaultParams; break;
+                case 'ifs': newDefaultParams = defaultParamsIFS; break;
+                default: break;
+            }
+            newState = {...state, ...newDefaultParams}; break;
         case CHANGE_NAME_FRACTAL:
             newState = {...state, name: action.name}; break;
         case CHANGE_NORM_FRACTAL:
@@ -31,6 +42,8 @@ const reducer = (state = Fractal.getParamsFromUrl(), action: IAction): IFractal 
             newState = {...state, colorStyle: action.colorStyle}; break;
         case CHANGE_SCALE_RANGE_FRACTAL:
             newState = {...state, scaleRange: action.scaleRange}; break;
+        case CHANGE_DEPTH_ITERATION_FRACTAL:
+            newState = {...state, depthIter: action.depthIter}; break;
         case CHANGE_SCALE_X_TO_Y_FRACTAL:
             newState = {...state, scaleXtoY: action.scaleXtoY}; break;
         case CHANGE_X_COORD_CENTER_FRACTAL:

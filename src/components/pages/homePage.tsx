@@ -1,4 +1,5 @@
 import React from 'react';
+import { A } from 'hookrouter';
 const { Card, CardTitle, Icon } = require('react-materialize');
 
 const HomePage: React.FC = () => {

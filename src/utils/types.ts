@@ -11,28 +11,32 @@
  * Тип объекта фрактала
  */
  export interface IFractal {
-     name?: string;
-     xCenter?: number;
-     yCenter?: number;
-     scale?: string;
-     scaleRange?: number;
-     scaleXtoY?: number;
+     typeFractal?: string; // тип фрактала
+     name?: string; // формула(ы) функций действий
+     xCenter?: number; // х-координата центра области на холсте
+     yCenter?: number; // у-координата центра области на холсте
+     scale?: string; 
+     scaleRange?: number; // масштаб - пределы области на холсте от - scaleRange до + scaleRange по обеим осям
+     depthIter?: number; // количество итераций вычислений
+     scaleXtoY?: number; // отношение размеров холста
      scaleMode: number;
-     scaleMotion: number;
-     speedScaleMotion: number;
-     norm?: string;
-     speedNorm?: number;
-     motion?: string,
-     speedMotion?: number;
-     colorStyle?: string;
-     speedColorStyle?: number;
-     animated?: boolean;
-     startTime?: number;
-     history: ICenterScale[];
+     scaleMotion: number; //формулы изменения масштаба (для анимации)
+     speedScaleMotion: number;// параметр регулирующий скорость изменений масштаба
+     norm?: string; // условие для проверки принадлежит ли точка фракталу
+     speedNorm?: number; // скорость изменения условия (для анимации при динамическом условии)
+     motion?: string, // формулы анимации
+     speedMotion?: number; // параметр скорости изменения анимации
+     colorStyle?: string; // формулы - способ раскраски фрактала
+     speedColorStyle?: number; // параметр скорости изменения раскраски фрактала (при динамической расскраске)
+     animated?: boolean; // флаг включения анимации
+     startTime?: number; // временная точка начала анимации
+     history: ICenterScale[]; // массив последовательных приближений фрактала, при выделении левой кнопкой мыши области на холсте
+     changeType?(): void;
      changeName?(): void;
      changeNorm?(): void;
      changeColor?(): void;
      changeScaleRange?(s: number): void;
+     changeDepthIter?(depth: number): void;
      changeScaleXtoY?(XtoY: number): void;
      changeMotion?(): void;
      changeSpeedMotion?(): void;
@@ -52,9 +56,11 @@
   */
   export interface IAction {
     type: string,
+    typeFractal?: string,
     name?: string,
     norm?: string,
     scaleRange?: number,
+    depthIter?: number,
     scaleXtoY?: number,
     colorStyle?: string,
     motion?: string,
@@ -72,6 +78,7 @@
   *  Тип объекта данных фрактала (в частности для рендера опций селектов)
   */
   export interface IOptionFractal {
+      type?: string;
       name: string;
       value: string;
   }

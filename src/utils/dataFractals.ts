@@ -1,207 +1,278 @@
 export const fractals = [
     {
+        "type": "complex",
         "name": "Мандельброт z2",
         "value": "newX=x*x-y*y+tx;newY=2.0*x*y+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт z3",
         "value": "newX=x*x*x-3.*x*y*y+tx;newY=3.*x*x*y-y*y*y+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт z4",
         "value": "newX=pow(x, 4.)-6.*x*x*y*y+pow(y,4.)+tx;newY=4.*pow(x,3.)*y-4.*x*y*y*y+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт z5",
         "value": "newX=pow(x,5.)-10.*x*x*x*y*y+5.*x*pow(y,4.)+tx;newY=5.*pow(x,4.)*y-10.*x*x*y*y*y+pow(y,5.)+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт z6",
         "value": "newX=pow(x,6.)-15.*pow(x,4.)*y*y+15.*x*x*pow(y,4.)-pow(y,6.)+tx;newY=6.*pow(x,5.)*y-20.*pow(x,3.)*y*y*y+6.*pow(y,5.)*x+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт z7",
         "value": "newX=pow(x,7.)-21.*pow(x,5.)*y*y+35.*pow(x,3.)*pow(y,4.)-7.*x*pow(y,6.)+tx;newY=7.*pow(x,6.)*y-35.*pow(x,4.)*pow(y,3.)+21.*pow(x,2.)*pow(y,5.)-pow(y,7.)+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт z2 cos(tx) sin(tx)",
         "value": "newX=x*x-y*y+cos(tx);newY=2.*x*y+sin(ty);"
     },
     {
+        "type": "complex",
         "name": "Мандельброт xycos(tx)",
         "value": "newX=2.*y*x*cos(2.*x)+tx;newY=2.*x*y*sin(2.*y)+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт cos(z)",
         "value": "newX=cos(x)*(exp(y)+exp(-y))/2.+tx;newY=-sin(x)*(exp(y)-exp(-y))/2.+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт sin(z)",
         "value": "newX=sin(x)*(exp(y)+exp(-y))/2.+tx;newY=cos(x)*(exp(y)-exp(-y))/2.+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт sin^2(z)",
-        "value": "newX=float sx=sin(x)*(exp(y)+exp(-y))/2.;float sy=cos(x)*(exp(y)-exp(-y))/2.;newX=sx*sx-sy*sy+tx;newY=2.0*sx*sy+ty;"
+        "value": "float sx, sy; sx=sin(x)*(exp(y)+exp(-y))/2.;sy=cos(x)*(exp(y)-exp(-y))/2.;newX=sx*sx-sy*sy+tx;newY=2.0*sx*sy+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт tg(z)",
         "value": "float c=cos(x);float s=sin(x);float e=exp(2.0*y);float r=exp(-2.0*y);newX = x*x-y*y+sin(2.0*x)/2.0/(c*c+(e+r-2.0)/4.0)+tx;newY=2.0*x*y+(e-r)/4.0/(c*c+(e+r-2.0)/4.0)+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт exp(z)",
         "value": "newX=exp(x)*cos(y)+tx;newY=exp(x)*sin(y)+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт exp(z) в движении",
         "value": "newX=0.5*log(x*x+y*y+0.0000001)+sin(0.25*uTime);newY=atan(y/(x+0.000001))+cos(PI/6.0*0.5*uTime);"
     },
     {
+        "type": "complex",
         "name": "Мандельброт z2/cos(z)",
         "value": "newX=x*x-y*y+x/cos(x*x+y*y)+tx;newY=2.*x*y-y/cos(x*x+y*y)+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт 1/z",
         "value": "newX=x/(x*x+y*y+0.000001)+tx;newY=-y/(x*x+y*y+0.000001)+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт heart",
         "value": "newX=x*x-y*y+x/cos(x*x+y*y)+tx;newY=2.*x*y-y/log(x*x+y*y)+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт xyPI",
         "value": "newX=x*y*cos(y*PI)+tx;newY=y*x*sin(x*PI)+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт --!z2",
         "value": "newX=x*x-y*y+tx;newY=-2.*x*y+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A2",
         "value": "newX=x*x-y*y+cos(tx);newY=sin(y-x)*cos(x-y)+cos(ty);"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A3",
         "value": "newX=y+cos(tx)*(tx)*(tx);newY=x+cos(ty)*(ty)*(ty);"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A4",
         "value": "newX=cos(x)*x*x+cos(tx)*(tx)*(tx);newY=cos(y)*y*y+cos(ty)*(ty)*(ty);"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A5",
         "value": "newX=exp(x*y)+cos(tx)*(tx)*(tx);newY=exp(y*x)+cos(ty)*(ty)*(ty);"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A6",
         "value": "newX=exp(x*y)*cos(y*tx)+cos(tx)*(tx)*(tx);newY=exp(y*x)*cos(x*ty)+cos(ty)*(ty)*(ty);"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A7",
         "value": "newX=x*x-y*y+x/log(x*x+y*y)+tx;newY=2.*x*y-y/log(x*x+y*y)+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A8",
         "value": "newX=x*x-y*y+x/log(x*x+y*y)+cos(tx);newY=2.*x*y-y/log(x*x+y*y)+cos(ty);"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A12",
         "value": "newX=x*(cos(x)*(exp(y)+exp(-y))/2.)+y*(sin(x)*(exp(y)-exp(-y))/2.)+x;newY=y*(cos(x)*(exp(y)+exp(-y))/2.)-x*(sin(x)*(exp(y)-exp(-y))/2.)+ ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A13",
         "value": "newX=x+cos(x)*(exp(y)+exp(-y))/2.+tx;newY=y-(sin(x)*(exp(y)-exp(-y))/2.)+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A14",
         "value": "newX=x*x-y*y+cos(x)*(exp(y)+exp(-y))/2.+tx;newY=2.*x*y-(sin(x)*(exp(y)-exp(-y))/2.)+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A15",
         "value": "newX=(x*x-y*y)*cos(x)*(exp(y)+exp(-y))/2.+2.*x*y*(sin(x)*(exp(y)-exp(-y))/2.)+tx;newY= 2.*x*y*(cos(x)*(exp(y)+exp(-y))/2.)-(x*x-y*y)*sin(x)*(exp(y)-exp(-y))/2.+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A16",
         "value": "newX=(-x*x+y*y)*cos(x)*(exp(y)+exp(-y))/2.+2.*x*y*(sin(x)*(exp(y)-exp(-y))/2.)+tx;newY= 2.*x*y*(cos(x)*(exp(y)+exp(-y))/2.)-(-x*x+y*y)*sin(x)*(exp(y)-exp(-y))/2.+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A17",
         "value": "newX=2./3.*x+(x*x-y*y)/(3.*(x*x+y*y)*(x*x+y*y))+log(tx);newY= 2./3.*y-(2.*x*y)/(3.*(x*x+y*y)*(x*x+y*y))+ty;"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A18",
         "value": "newX=2./3.*x+(x*x-y*y)/(3.*(x*x+y*y)*(x*x+y*y));newY= 2./3.*y-(2.*x*y)/(3.*(x*x+y*y)*(x*x+y*y));"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A19",
         "value": "newX=3./4.*x+3./4.*(x*x*x*x-6.*x*x*y*y+y*y*y*y)/(pow((x*x+y*y),3.));newY= 3./4.*y+3./4.*(4.*x*y*y*y-4.*x*x*x*y)/(pow((x*x+y*y),3.));"
     },
     {
+        "type": "complex",
         "name": "Мандельброт A20",
         "value": "newX=x+sin(2.*x)/2./(sin(x)*sin(x)*(exp(y)+exp(-y))/2.*(exp(y)+exp(-y))/2.+cos(x)*cos(x)*(exp(y)-exp(-y))/2.*(exp(y)-exp(-y))/2.)+tx;newY= y-(exp(2.*y)-exp(-2.*y))/2./2./(sin(x)*sin(x)*(exp(y)+exp(-y))/2.*(exp(y)+exp(-y))/2.+cos(x)*cos(x)*(exp(y)-exp(-y))/2.*(exp(y)-exp(-y))/2.)+ty;"
     },
     {
+        "type": "complex",
         "name": "JA20",
         "value": "newX=x+sin(2.*x)/2./(sin(x)*sin(x)*(exp(y)+exp(-y))/2.*(exp(y)+exp(-y))/2.+cos(x)*cos(x)*(exp(y)-exp(-y))/2.*(exp(y)-exp(-y))/2.)+sin(0.25*uTime)*1.0-0.20;newY= y-(exp(2.*y)-exp(-2.*y))/2./2./(sin(x)*sin(x)*(exp(y)+exp(-y))/2.*(exp(y)+exp(-y))/2.+cos(x)*cos(x)*(exp(y)-exp(-y))/2.*(exp(y)-exp(-y))/2.)+cos(PI/6.0*0.5*uTime)*1.0+0.20;"
     },
     {
+        "type": "complex",
         "name": "M--z",
         "value": "newX=x*2.+cos(tx);newY=2.*y+sin(ty);"
     },
     {
+        "type": "complex",
         "name": "M--z2--move",
         "value": "newX=x*x-y*y+tx*(sin(uTime));newY= 2.*x*y+ty*(cos(uTime));"
     },
     {
+        "type": "complex",
         "name": "M--z2--cos--move",
         "value": "newX=x*x-y*y-x*(sin(uTime+ty));newY= 2.*x*y-y*(cos(uTime+tx));"
     },
     {
+        "type": "complex",
         "name": "M--z2--t*cos--move",
         "value": "newX=x*x-y*y-x*(sin(uTime+tx));newY= 2.*x*y-ty*(cos(uTime+ty));"
     },
     {
+        "type": "complex",
         "name": "M--z2--t*cos--wave-move",
         "value": "newX=x*x-y*y+tx+(sin(1.0*uTime+tx));newY= 2.*x*y+ty+(cos(1.0*uTime+tx));"
     },
     {
+        "type": "complex",
         "name": "M--z2--cos",
         "value": "newX=x*x-y*y+(cos(tx));newY=2.*x*y+(sin(ty));"
     },
     {
+        "type": "complex",
         "name": "M--1",
         "value": "newX=(x*x-y*y)*(cos(x)*(exp(2.*y)+exp(-2.*y))/2.) +2.*x*y*sin(x)*(exp(2.*y)-exp(-2.*y))/2.+tx;newY= 2.*x*y*cos(x)*(exp(2.*y)+exp(-2.*y))/2.-(x*x-y*y)*sin(x)*(exp(2.*y)-exp(-2.*y))/2.+ty;"
     },
     {
+        "type": "complex",
         "name": "J2-move",
         "value": "newX=x*x-y*y+cos(0.1*uTime)/3.0+2.0*cos(0.1*uTime);newY= 2.0*x*y+sin(0.1*uTime)/3.0+0.2;"
     },
     {
+        "type": "complex",
         "name": "Jxy2-move",
         "value": "newX=-4.0*x*y-y+uTime/300.0;newY=2.0*x*x-2.0*y*y+x+uTime/300.0;"
     },
     {
+        "type": "complex",
         "name": "J3",
         "value": "newX=x*x*x-3.0*x*y*y+0.02;newY=3.0*x*x*y-y*y*y+0.02;"
     },
     {
+        "type": "complex",
         "name": "JA20",
         "value": "newX=4./5.*x-(x*x*x*x-6.0*x*x*y*y+y*y*y*y)/(5.* pow((x*x+y*y), 4.0))-0.02;newY= 4./5.*y+(4.0*x*x*x*y-4.0*x*y*y*y)/(5.* pow((x*x+y*y), 4.0))-0.02;"
     },
     {
+        "type": "complex",
         "name": "JcosZ",
         "value": "newX=cos(x)*(exp(y)+exp(-y))/2.-0.02;newY=-sin(x)*(exp(y)-exp(-y))/2.-0.02;"
     },
     {
+        "type": "complex",
         "name": "JtgZ--move",
         "value": "float c=cos(x);float s=sin(x);float e=exp(2.0*y);float r=exp(-2.0*y);newX=x*x-y*y+sin(2.0*x)/2.0/(c*c+(e+r-2.0)/4.0)+sin(0.25*uTime);newY=2.0*x*y+(e-r)/4.0/(c*c+(e+r-2.0)/4.0)+cos(PI/6.0*0.5*uTime);"
     },
     {
+        "type": "complex",
         "name": "z2+z",
         "value": "newX=x*x-y*y-x+tx;newY=2.0*x*y+y+ty;"
     },
     {
+        "type": "complex",
         "name": "z/(cosZ+i*sinZ)",
         "value": "newX=exp(y)*(x*cos(x)+y*sin(x))+tx;newY=exp(y)*(y*cos(x)-x*sin(x))+ty;"
+    },
+    {
+        "type": "complex",
+        "name": "star-move",
+        "value": "newX=tx*tx-ty*ty+x+cos(uTime)*tx*ty*x*y;newY=2.0*tx*ty+y+sin(uTime)*ty*tx;"
+    },
+    {
+        "type": "ifs",
+        "name": "Салфетка Серпинского",
+        "value": "if(areaCond(2.0*x, 2.0*y)){newX=2.0*x; newY=2.0*y; x=newX; y=newY; continue;}if(areaCond(2.0*x-1.0, 2.0*y)){newX=2.0*x-1.0; newY=2.0*y; x=newX; y=newY; continue;}if(areaCond(2.0*x, 2.0*y-1.0)){newX=2.0*x; newY=2.0*y-1.0; x=newX; y=newY; continue;}"
+    },
+    {
+        "type": "ifs",
+        "name": "Ковер Серпинского",
+        "value": "if(areaCond(3.*x,3.*y)){newX=3.*x;newY=3.*y;x=newX;y=newY;continue;}\nif(areaCond(3.*x-2.,3.*y-2.)){newX=3.*x-2.;newY=3.*y-2.;x=newX;y=newY;continue;}\nif(areaCond(3.*x-2.,3.*y)){newX=3.*x-2.;newY=3.*y;x=newX;y=newY;continue;}\nif(areaCond(3.*x,3.*y-2.)){newX=3.*x;newY=3.*y-2.;x=newX;y=newY;continue;}\nif(areaCond(3.*x-1.,3.*y)){newX=3.*x-1.;newY=3.*y;x=newX;y=newY;continue;}\nif(areaCond(3.*x,3.*y-1.)){newX=3.*x;newY=3.*y-1.;x=newX;y=newY;continue;}\nif(areaCond(3.*x-2.,3.*y-1.)){newX=3.*x-2.;newY=3.*y-1.;x=newX;y=newY;continue;}\nif(areaCond(3.*x-1.,3.*y-2.)){newX=3.*x-1.;newY=3.*y-2.;x=newX;y=newY;continue;}\n"
+    },
+    {
+        "type": "ifs",
+        "name": "Жулиа",
+        "value": "if(areaCond(x*x-y*y-sin(uTime)*1.25,2.*x*y+cos(uTime)*1.55)){newX=x*x-y*y-sin(uTime)*1.25;newY=2.*x*y+cos(uTime)*1.55;x=newX;y=newY;continue;}if(areaCond(0.9*x*x+0.9*y*y-sin(uTime)*6.33,-1.2*x*y-cos(uTime)*6.24)){newX=0.9*x*x+0.9*y*y-sin(uTime)*6.33;newY=-1.2*x*y-cos(uTime)*6.24;x=newX;y=newY;continue;}\n"
     },
 ];
 
@@ -370,39 +441,317 @@ export const colorStyles = [
 
 export const norms = [
     {
+        "type": "complex",
         "name": "Evklid",
         "value": "(x*x+y*y)>100.0"
     },
     {
+        "type": "complex",
         "name": "QEvklid",
         "value": "(x*x*y*y)>100.0"
     },
     {
+        "type": "complex",
         "name": "EvklidM",
         "value": "(x*x-3.0)*abs(x*x/y/y)>100.0"
     },
     {
+        "type": "complex",
         "name": "EvklidNoise",
         "value": "sin(2.0*log(x*y))*(x*x+y*y)>100.0"
     },
     {
+        "type": "complex",
         "name": "EvklidMove",
         "value": "(x*x+y*y)-fract(tx*ty+sin(0.5*speedNorm*(uTime)))*abs(x*x*y*y)*sin(tx*ty)>100.0"
     },
     {
+        "type": "complex",
         "name": "absX",
         "value": "abs(x)>100.0"
     },
     {
+        "type": "complex",
         "name": "fract",
         "value": "(x * x * fract(tx) * fract(tx) * cos(x) * y * y * fract(ty) * fract(ty) * cos(y)) >100.0"
     },
     {
+        "type": "complex",
         "name": "kub",
         "value": "(tx*tx*tx/x+ty*ty*ty/y)> 100.0"
     },
     {
+        "type": "complex",
         "name": "kub2",
         "value": "(tx*tx*tx/x+ty*ty*ty/y)> 100.0"
     },
+    {
+        "type": "ifs",
+        "name": "triangl",
+        "value": "x>0.&&y>0.&&x+y<1.0"
+    },
+    {
+        "type": "ifs",
+        "name": "kvadra",
+        "value": "x>0.&&y>0.&&x<1.0&&y<1.0"
+    },
+    {
+        "type": "ifs",
+        "name": "krug < 1",
+        "value": "x*x+y*y<1.0"
+    },
+    {
+        "type": "ifs",
+        "name": "krug < 10",
+        "value": "x*x+y*y<10.0"
+    },
+    {
+        "type": "ifs",
+        "name": "krug < 100",
+        "value": "x*x+y*y<100.0"
+    },
 ]
+
+export const cards = [
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00010-min.png',
+        link:'painting/complex#{%22name%22:%22newX=exp(3.0*x)*cos(3.0*y+1.0)+tx;%20newY=exp(3.0*x)*sin(3.0*y+1.0)+ty;%22,%22xCenter%22:0.03,%22yCenter%22:1.732,%22scaleRange%22:0.001,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(tx*tx*tx/x+ty*ty*ty/y)%3E%20100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:25288,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0.118,%22yCenter%22:1.974,%22scaleRange%22:1.836},{%22xCenter%22:0.026,%22yCenter%22:1.733,%22scaleRange%22:0.296},{%22xCenter%22:0.03,%22yCenter%22:1.713,%22scaleRange%22:0.056},{%22xCenter%22:0.03,%22yCenter%22:1.73,%22scaleRange%22:0.004},{%22xCenter%22:0.03,%22yCenter%22:1.732,%22scaleRange%22:0.001}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00011-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*cos(3.0*y+1.0)+tx;%20newY=exp(3.0*x)*sin(3.0*y+1.0)+ty;%22,%22xCenter%22:-0.551,%22yCenter%22:-0.498,%22scaleRange%22:0.114,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(tx*tx*tx/x+ty*ty*ty/y)%3E%20100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:25288,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-0.554,%22yCenter%22:-0.516,%22scaleRange%22:0.612},{%22xCenter%22:-0.551,%22yCenter%22:-0.498,%22scaleRange%22:0.114}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00031-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=x/(x*x+y*y)+tx;%20newY=-y/(x*x+y*y)+ty;%22,%22xCenter%22:0.019,%22yCenter%22:1.755,%22scaleRange%22:0.296,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(tx*tx*tx/x+ty*ty*ty/y)%3E%20100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:77171,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-13.34,%22yCenter%22:-3.42,%22scaleRange%22:12.3},{%22xCenter%22:-11.47,%22yCenter%22:-3.039,%22scaleRange%22:2.546},{%22xCenter%22:-4.69,%22yCenter%22:3.201,%22scaleRange%22:42.72},{%22xCenter%22:4.452,%22yCenter%22:4.184,%22scaleRange%22:6.536},{%22xCenter%22:-1.548,%22yCenter%22:1.184,%22scaleRange%22:87},{%22xCenter%22:0.018,%22yCenter%22:1.793,%22scaleRange%22:11.397},{%22xCenter%22:0.086,%22yCenter%22:1.747,%22scaleRange%22:3.909},{%22xCenter%22:0.004,%22yCenter%22:1.52,%22scaleRange%22:0.923},{%22xCenter%22:0.019,%22yCenter%22:1.755,%22scaleRange%22:0.296}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00033-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=x*x-y*y+tx;newY=2.0*x*y+ty;%22,%22xCenter%22:0.259,%22yCenter%22:0.951,%22scaleRange%22:0.113,%22scaleXtoY%22:1.9516994633273703,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(tx*tx*tx/x+ty*ty*ty/y)%3E%20100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%20abs(sin(float(i)*PI/255.0+tx+ty));g%20=%20abs(sin(float(i)*PI/255.0*2.0+tx+ty));b%20=%20abs(sin(float(i)*PI/255.0*3.0+tx+ty));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:1,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0.28,%22yCenter%22:0.96,%22scaleRange%22:0.33},{%22xCenter%22:0.259,%22yCenter%22:0.951,%22scaleRange%22:0.113}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00029-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=x+sin(2.*x)/2./(sin(x)*sin(x)*(exp(y)+exp(-y))/2.*(exp(y)+exp(-y))/2.+cos(x)*cos(x)*(exp(y)-exp(-y))/2.*(exp(y)-exp(-y))/2.)+tx;newY=%20y-(exp(2.*y)-exp(-2.*y))/2./2./(sin(x)*sin(x)*(exp(y)+exp(-y))/2.*(exp(y)+exp(-y))/2.+cos(x)*cos(x)*(exp(y)-exp(-y))/2.*(exp(y)-exp(-y))/2.)+ty;%22,%22xCenter%22:0.12,%22yCenter%22:0.04,%22scaleRange%22:4.52,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x+y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%201.0-abs(log(float(i)*PI/255.0));g%20=%201.0-abs(log(float(i)*PI/255.0*2.0));%20b%20=%201.0-abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:72531,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-13.34,%22yCenter%22:-3.42,%22scaleRange%22:12.3},{%22xCenter%22:-11.47,%22yCenter%22:-3.039,%22scaleRange%22:2.546},{%22xCenter%22:-4.69,%22yCenter%22:3.201,%22scaleRange%22:42.72},{%22xCenter%22:4.452,%22yCenter%22:4.184,%22scaleRange%22:6.536},{%22xCenter%22:4.158,%22yCenter%22:2.674,%22scaleRange%22:1.196},{%22xCenter%22:4.329,%22yCenter%22:2.945,%22scaleRange%22:0.142},{%22xCenter%22:4.334,%22yCenter%22:2.921,%22scaleRange%22:0.026},{%22xCenter%22:4.333,%22yCenter%22:2.921,%22scaleRange%22:0.005},{%22xCenter%22:9.433,%22yCenter%22:-0.859,%22scaleRange%22:7.68},{%22xCenter%22:0.12,%22yCenter%22:0.04,%22scaleRange%22:4.52}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00032-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=x*x-y*y+tx;newY=2.0*x*y+ty;%22,%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:4,%22scaleXtoY%22:1.9516994633273703,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22abs(x)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%201.0-abs(log(float(i)*PI/255.0));g%20=%201.0-abs(log(float(i)*PI/255.0*2.0));%20b%20=%201.0-abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:1,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-1.292,%22yCenter%22:-0.06,%22scaleRange%22:1.698}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00042-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=2.*x*y+tx;%20newY=(x*x-y*y)+ty;%22,%22xCenter%22:0,%22yCenter%22:0.5,%22scaleRange%22:6,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x-3.0)*abs(x*x/y/y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%201.0-abs(log(float(i)*PI/255.0));g%20=%201.0-abs(log(float(i)*PI/255.0*2.0));%20b%20=%201.0-abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:78526,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0,%22yCenter%22:0.06,%22scaleRange%22:5.94},{%22xCenter%22:0.9,%22yCenter%22:-0.24,%22scaleRange%22:18.9},{%22xCenter%22:1.051,%22yCenter%22:-1.128,%22scaleRange%22:10.168},{%22xCenter%22:-20000,%22yCenter%22:-10000,%22scaleRange%22:2650000},{%22xCenter%22:9150,%22yCenter%22:5900,%22scaleRange%22:683700},{%22xCenter%22:945.6,%22yCenter%22:-937,%22scaleRange%22:191436},{%22xCenter%22:-1160.196,%22yCenter%22:977.36,%22scaleRange%22:82891.788},{%22xCenter%22:-165.495,%22yCenter%22:65.55,%22scaleRange%22:50066.64},{%22xCenter%22:-365.762,%22yCenter%22:666.35,%22scaleRange%22:9262.328},{%22xCenter%22:-69.368,%22yCenter%22:129.135,%22scaleRange%22:2936.158},{%22xCenter%22:-7.709,%22yCenter%22:-8.864,%22scaleRange%22:331.786},{%22xCenter%22:-2.732,%22yCenter%22:-2.228,%22scaleRange%22:115.462},{%22xCenter%22:-0.577,%22yCenter%22:1.501,%22scaleRange%22:18.589},{%22xCenter%22:0.371,%22yCenter%22:0.348,%22scaleRange%22:8.7},{%22xCenter%22:-0.3,%22yCenter%22:1.3,%22scaleRange%22:25.5},{%22xCenter%22:-0.121,%22yCenter%22:0.204,%22scaleRange%22:4.973},{%22xCenter%22:0.179,%22yCenter%22:0.404,%22scaleRange%22:16.2},{%22xCenter%22:0.017,%22yCenter%22:-0.017,%22scaleRange%22:1.976},{%22xCenter%22:0.117,%22yCenter%22:0.583,%22scaleRange%22:10.9},{%22xCenter%22:-0.283,%22yCenter%22:-0.517,%22scaleRange%22:9},{%22xCenter%22:0.041,%22yCenter%22:0.518,%22scaleRange%22:4.419}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00039-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=(x*x-y*y)/(tx*tx+ty*ty)+tx;%20newY=2.0*x*y/(tx*tx+ty*ty)+ty;%22,%22xCenter%22:0,%22yCenter%22:0,%22scaleRange%22:10,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22abs(x)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%201.0-abs(log(float(i)*12.0/255.0));g%20=%201.0-abs(log(float(i)*6.0/255.0));%20b%20=%201.0-abs(log(float(i)*4.0/255.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:66844,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00002-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=x/(tx*tx+ty*ty)+tx*tx;%20newY=y/(tx*tx+ty*ty)+ty*ty;%22,%22xCenter%22:0.214,%22yCenter%22:-0.2,%22scaleRange%22:5.22,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%201.0-abs(log(float(i)*12.0/255.0));g%20=%201.0-abs(log(float(i)*6.0/255.0));%20b%20=%201.0-abs(log(float(i)*4.0/255.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:5439,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:4.3,%22yCenter%22:-3,%22scaleRange%22:88.8},{%22xCenter%22:0.393,%22yCenter%22:-0.247,%22scaleRange%22:17.316},{%22xCenter%22:-0.386,%22yCenter%22:-0.68,%22scaleRange%22:3.377},{%22xCenter%22:0.214,%22yCenter%22:-0.2,%22scaleRange%22:5.22}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00040-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=tan(x*x-y*y)/(tx*tx+ty*ty)+cos(uTime);%20newY=tan(2.0*x*y)/(tx*tx+ty*ty)+sin(uTime);%22,%22xCenter%22:0,%22yCenter%22:0,%22scaleRange%22:10,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22abs(x)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:74516,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0,%22yCenter%22:0.06,%22scaleRange%22:5.94},{%22xCenter%22:0.9,%22yCenter%22:-0.24,%22scaleRange%22:18.9},{%22xCenter%22:1.051,%22yCenter%22:-1.128,%22scaleRange%22:10.168},{%22xCenter%22:-20000,%22yCenter%22:-10000,%22scaleRange%22:2650000},{%22xCenter%22:9150,%22yCenter%22:5900,%22scaleRange%22:683700},{%22xCenter%22:945.6,%22yCenter%22:-937,%22scaleRange%22:191436},{%22xCenter%22:-1160.196,%22yCenter%22:977.36,%22scaleRange%22:82891.788},{%22xCenter%22:-165.495,%22yCenter%22:65.55,%22scaleRange%22:50066.64},{%22xCenter%22:-365.762,%22yCenter%22:666.35,%22scaleRange%22:9262.328},{%22xCenter%22:-69.368,%22yCenter%22:129.135,%22scaleRange%22:2936.158},{%22xCenter%22:-7.709,%22yCenter%22:-8.864,%22scaleRange%22:331.786},{%22xCenter%22:-2.732,%22yCenter%22:-2.228,%22scaleRange%22:115.462},{%22xCenter%22:-0.577,%22yCenter%22:1.501,%22scaleRange%22:18.589},{%22xCenter%22:0.371,%22yCenter%22:0.348,%22scaleRange%22:8.7}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00041-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=tan(x*x-y*y)/(tx*tx+ty*ty)+cos(uTime);%20newY=(2.*x*y)/(tx*tx+ty*ty)+sin(uTime);%22,%22xCenter%22:0.017,%22yCenter%22:-0.017,%22scaleRange%22:10,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22abs(x)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:77685,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0,%22yCenter%22:0.06,%22scaleRange%22:5.94},{%22xCenter%22:0.9,%22yCenter%22:-0.24,%22scaleRange%22:18.9},{%22xCenter%22:1.051,%22yCenter%22:-1.128,%22scaleRange%22:10.168},{%22xCenter%22:-20000,%22yCenter%22:-10000,%22scaleRange%22:2650000},{%22xCenter%22:9150,%22yCenter%22:5900,%22scaleRange%22:683700},{%22xCenter%22:945.6,%22yCenter%22:-937,%22scaleRange%22:191436},{%22xCenter%22:-1160.196,%22yCenter%22:977.36,%22scaleRange%22:82891.788},{%22xCenter%22:-165.495,%22yCenter%22:65.55,%22scaleRange%22:50066.64},{%22xCenter%22:-365.762,%22yCenter%22:666.35,%22scaleRange%22:9262.328},{%22xCenter%22:-69.368,%22yCenter%22:129.135,%22scaleRange%22:2936.158},{%22xCenter%22:-7.709,%22yCenter%22:-8.864,%22scaleRange%22:331.786},{%22xCenter%22:-2.732,%22yCenter%22:-2.228,%22scaleRange%22:115.462},{%22xCenter%22:-0.577,%22yCenter%22:1.501,%22scaleRange%22:18.589},{%22xCenter%22:0.371,%22yCenter%22:0.348,%22scaleRange%22:8.7},{%22xCenter%22:-0.3,%22yCenter%22:1.3,%22scaleRange%22:25.5},{%22xCenter%22:-0.121,%22yCenter%22:0.204,%22scaleRange%22:4.973},{%22xCenter%22:0.179,%22yCenter%22:0.404,%22scaleRange%22:16.2},{%22xCenter%22:0.017,%22yCenter%22:-0.017,%22scaleRange%22:1.976}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00000-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=tan(x*y)+tx;%20newY=x*y+ty;%22,%22xCenter%22:0.111,%22yCenter%22:-2.916,%22scaleRange%22:1,%22scaleXtoY%22:1.9516994633273703,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:5439,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-0.8,%22yCenter%22:-9.36,%22scaleRange%22:11.28},{%22xCenter%22:-1.341,%22yCenter%22:-8.04,%22scaleRange%22:1.015},{%22xCenter%22:-1.33,%22yCenter%22:-8.076,%22scaleRange%22:0.329},{%22xCenter%22:-1.205,%22yCenter%22:-7.995,%22scaleRange%22:0.053},{%22xCenter%22:-1.204,%22yCenter%22:-7.992,%22scaleRange%22:0.014},{%22xCenter%22:-0.604,%22yCenter%22:0.508,%22scaleRange%22:29},{%22xCenter%22:0.527,%22yCenter%22:-3.9,%22scaleRange%22:2.349},{%22xCenter%22:0.111,%22yCenter%22:-2.916,%22scaleRange%22:0.155}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00037-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=1.0/atan(x*x-y*y);tmp=newX;;%20newY=1.0/atan(2.0*x*y);newX=tmp*tmp-newY*newY;newY=newY*2.0*tmp;;%22,%22xCenter%22:89.801,%22yCenter%22:988.056,%22scaleRange%22:66657.276,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x%20*%20x%20*%20fract(tx)%20*%20fract(tx)%20*%20cos(x)%20*%20y%20*%20y%20*%20fract(ty)%20*%20fract(ty)%20*%20cos(y))%20%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:66704,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-600000.5,%22yCenter%22:-3000000,%22scaleRange%22:112800000},{%22xCenter%22:-261600.5,%22yCenter%22:-1195200,%22scaleRange%22:20078400},{%22xCenter%22:-743482.1,%22yCenter%22:-231436.8,%22scaleRange%22:4457404.8},{%22xCenter%22:-377974.906,%22yCenter%22:-213607.181,%22scaleRange%22:1595750.918},{%22xCenter%22:-15739.448,%22yCenter%22:-17329.818,%22scaleRange%22:269681.905},{%22xCenter%22:-906.943,%22yCenter%22:738.87,%22scaleRange%22:124593.04},{%22xCenter%22:89.801,%22yCenter%22:988.056,%22scaleRange%22:66657.276}]} ',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00028-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=abs(sin(1.0-x)*(exp(y)+exp(-y))/2.0)+cos(0.2*uTime);%20newY=abs(cos(1.0-x)*(exp(y)-exp(-y))/2.0)+sin(0.2*uTime);%22,%22xCenter%22:9.025,%22yCenter%22:0.303,%22scaleRange%22:14,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22float%20p%20=%20tx*tx+ty*ty+z*z;%20r%20=%201.0-abs(x)/p;g%20=%201.0-abs(y)/p;b%20=%201.0-abs(z)/p;%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:72217,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-13.34,%22yCenter%22:-3.42,%22scaleRange%22:12.3},{%22xCenter%22:-11.47,%22yCenter%22:-3.039,%22scaleRange%22:2.546},{%22xCenter%22:-4.69,%22yCenter%22:3.201,%22scaleRange%22:42.72},{%22xCenter%22:4.452,%22yCenter%22:4.184,%22scaleRange%22:6.536},{%22xCenter%22:4.158,%22yCenter%22:2.674,%22scaleRange%22:1.196},{%22xCenter%22:4.329,%22yCenter%22:2.945,%22scaleRange%22:0.142},{%22xCenter%22:4.334,%22yCenter%22:2.921,%22scaleRange%22:0.026},{%22xCenter%22:4.333,%22yCenter%22:2.921,%22scaleRange%22:0.005},{%22xCenter%22:9.433,%22yCenter%22:-0.859,%22scaleRange%22:7.68},{%22xCenter%22:0.473,%22yCenter%22:0.981,%22scaleRange%22:14},{%22xCenter%22:0.865,%22yCenter%22:3.543,%22scaleRange%22:4.746},{%22xCenter%22:9.025,%22yCenter%22:0.303,%22scaleRange%22:14}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00025-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=sin(1.0-x)*(exp(y)+exp(-y))/2.0+tx;%20newY=cos(1.0-x)*(exp(y)-exp(-y))/2.0+ty;%22,%22xCenter%22:-13.277,%22yCenter%22:5.252,%22scaleRange%22:7.561,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x+y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22float%20p%20=%20x*x+y*y+z*z;%20r%20=%201.0/abs(log(abs(tx)/p));g%20=%201.0/abs(log(abs(ty)/p));b%20=%201.0/abs(log(abs(z)/p));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:60500,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-13.34,%22yCenter%22:-3.42,%22scaleRange%22:12.3},{%22xCenter%22:-11.47,%22yCenter%22:-3.039,%22scaleRange%22:2.546},{%22xCenter%22:-4.69,%22yCenter%22:3.201,%22scaleRange%22:42.72},{%22xCenter%22:-13.277,%22yCenter%22:5.252,%22scaleRange%22:7.561}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00004-min.png',
+        link: 'http://localhost:3000/painting/complex#{%22name%22:%22newX=sin(x)*x-y*y+cos(0.3*uTime);%20newY=2.0*x*y+cos(0.3*uTime);%22,%22xCenter%22:0.532,%22yCenter%22:0.263,%22scaleRange%22:8.405,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%201.0-abs(log(float(i)*PI/255.0));g%20=%201.0-abs(log(float(i)*PI/255.0*2.0));%20b%20=%201.0-abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:16779,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0.7,%22yCenter%22:4.8,%22scaleRange%22:87.6},{%22xCenter%22:2.364,%22yCenter%22:-1.332,%22scaleRange%22:21.55},{%22xCenter%22:2.364,%22yCenter%22:-1.332,%22scaleRange%22:21.55},{%22xCenter%22:0.532,%22yCenter%22:0.263,%22scaleRange%22:8.405}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00005-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=3.0*x*x-3.0*y*y+3.0*x*x*y-y*y*y+sin(0.1*uTime)/(sin(0.1*uTime)+3.0);%20newY=6.0*x*y-x*x*x+3.0*x*y*y+sin(0.1*uTime)/(cos(0.1*uTime)+3.0);%22,%22xCenter%22:0.184,%22yCenter%22:-0.186,%22scaleRange%22:2.016,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:14807,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0.13,%22yCenter%22:-0.186,%22scaleRange%22:1.164},{%22xCenter%22:0.184,%22yCenter%22:-0.186,%22scaleRange%22:2.016}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00013-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*cos(3.0*y+1.0);%20newY=exp(3.0*x)*sin(3.0*y+1.0)+sin(0.1*uTime);%22,%22xCenter%22:-0.136,%22yCenter%22:4.815,%22scaleRange%22:4.269,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%201.0-abs(log(float(i)*PI/255.0));g%20=%201.0-abs(log(float(i)*PI/255.0*2.0));%20b%20=%201.0-abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:28000,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:1.25,%22yCenter%22:-2.45,%22scaleRange%22:37.45},{%22xCenter%22:-0.136,%22yCenter%22:4.815,%22scaleRange%22:4.269}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00016-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*abs(cos(3.0*y+1.0))+tx;%20newY=exp(3.0*x)*abs(sin(3.0*y+1.0))+ty;%22,%22xCenter%22:-0.549,%22yCenter%22:-0.5,%22scaleRange%22:0.052,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(tx*tx*tx/x+ty*ty*ty/y)%3E%20100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:56529,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-0.488,%22yCenter%22:-0.468,%22scaleRange%22:0.702},{%22xCenter%22:-0.552,%22yCenter%22:-0.488,%22scaleRange%22:0.114},{%22xCenter%22:-0.549,%22yCenter%22:-0.5,%22scaleRange%22:0.052}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00017-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*abs(cos(3.0*y+1.0))+tx;%20newY=exp(3.0*x)*abs(sin(3.0*y+1.0))+ty;%22,%22xCenter%22:-0.549,%22yCenter%22:-0.507,%22scaleRange%22:0.011,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(tx*tx*tx/x+ty*ty*ty/y)%3E%20100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:56529,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-0.488,%22yCenter%22:-0.468,%22scaleRange%22:0.702},{%22xCenter%22:-0.549,%22yCenter%22:-0.502,%22scaleRange%22:0.12},{%22xCenter%22:-0.55,%22yCenter%22:-0.505,%22scaleRange%22:0.024},{%22xCenter%22:-0.549,%22yCenter%22:-0.507,%22scaleRange%22:0.011}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00014-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*cos(3.0*y+1.0)+cos(0.1*uTime);%20newY=exp(3.0*x)*sin(3.0*y+1.0);%22,%22xCenter%22:-0.286,%22yCenter%22:0.828,%22scaleRange%22:0.992,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:49679,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:1.25,%22yCenter%22:-2.45,%22scaleRange%22:37.45},{%22xCenter%22:19.638,%22yCenter%22:-8.592,%22scaleRange%22:10.673},{%22xCenter%22:-0.662,%22yCenter%22:1.508,%22scaleRange%22:8},{%22xCenter%22:-0.286,%22yCenter%22:0.828,%22scaleRange%22:0.992}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00035-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=sin(x)*(exp(y)+exp(-y))/2.+tx;newY=cos(x)*(exp(y)-exp(-y))/2.+ty;%22,%22xCenter%22:8.889,%22yCenter%22:1.165,%22scaleRange%22:0.004,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(tx*tx*tx/x+ty*ty*ty/y)%3E%20100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%20abs(sin(float(i)*PI/255.0));g%20=%20abs(sin(float(i)*PI/255.0*2.0));b%20=%20abs(sin(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:25288,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-0.554,%22yCenter%22:-0.516,%22scaleRange%22:0.612},{%22xCenter%22:-0.551,%22yCenter%22:-0.498,%22scaleRange%22:0.114},{%22xCenter%22:-0.549,%22yCenter%22:-0.464,%22scaleRange%22:0.012},{%22xCenter%22:-0.549,%22yCenter%22:-0.464,%22scaleRange%22:0.002},{%22xCenter%22:0.411,%22yCenter%22:-0.284,%22scaleRange%22:20.76},{%22xCenter%22:8.736,%22yCenter%22:2.809,%22scaleRange%22:4.692},{%22xCenter%22:9.083,%22yCenter%22:1.345,%22scaleRange%22:0.976},{%22xCenter%22:8.889,%22yCenter%22:1.147,%22scaleRange%22:0.173},{%22xCenter%22:8.89,%22yCenter%22:1.165,%22scaleRange%22:0.012},{%22xCenter%22:8.889,%22yCenter%22:1.165,%22scaleRange%22:0.004}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00036-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=sin(x)*(exp(y)+exp(-y))/2.+tx;newY=cos(x)*(exp(y)-exp(-y))/2.+ty;%22,%22xCenter%22:8.597,%22yCenter%22:1.602,%22scaleRange%22:0.02,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(tx*tx*tx/x+ty*ty*ty/y)%3E%20100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:1,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:5.68,%22yCenter%22:0.36,%22scaleRange%22:11.64},{%22xCenter%22:9.323,%22yCenter%22:0.325,%22scaleRange%22:5.471},{%22xCenter%22:8.716,%22yCenter%22:1.43,%22scaleRange%22:1.165},{%22xCenter%22:8.612,%22yCenter%22:1.583,%22scaleRange%22:0.325},{%22xCenter%22:8.592,%22yCenter%22:1.621,%22scaleRange%22:0.105},{%22xCenter%22:8.597,%22yCenter%22:1.602,%22scaleRange%22:0.02}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00020-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*abs(cos(3.0*y+1.0))*cos(0.2*uTime)+tx;%20newY=exp(3.0*x)*abs(sin(3.0*y+1.0))*sin(0.2*uTime)+ty;%22,%22xCenter%22:0.859,%22yCenter%22:-1.632,%22scaleRange%22:1.339,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%20log(abs(sin(mod(float(i),3.0)*127.0)*1.7+1.0));g%20=%20log(abs(sin(mod(float(i)/3.0,3.0)*127.0)*1.7+1.0));b%20=%20log(abs(sin(mod(float(i)/9.0,3.0)*127.0)*1.7+1.0));%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:58286,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:1.24,%22yCenter%22:1.2,%22scaleRange%22:38.1},{%22xCenter%22:0.211,%22yCenter%22:-2.343,%22scaleRange%22:6.972},{%22xCenter%22:0.859,%22yCenter%22:-1.632,%22scaleRange%22:1.339}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00018-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*abs(cos(3.0*y+1.0))+tx;%20newY=exp(3.0*x)*abs(sin(3.0*y+1.0))+ty;%22,%22xCenter%22:-0.446,%22yCenter%22:-2.278,%22scaleRange%22:0.005,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:56529,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:1.24,%22yCenter%22:1.2,%22scaleRange%22:38.1},{%22xCenter%22:0.211,%22yCenter%22:-2.343,%22scaleRange%22:6.972},{%22xCenter%22:-0.186,%22yCenter%22:-2.064,%22scaleRange%22:0.948},{%22xCenter%22:-0.422,%22yCenter%22:-2.311,%22scaleRange%22:0.175},{%22xCenter%22:-0.447,%22yCenter%22:-2.281,%22scaleRange%22:0.039},{%22xCenter%22:-0.449,%22yCenter%22:-2.277,%22scaleRange%22:0.016},{%22xCenter%22:-0.446,%22yCenter%22:-2.278,%22scaleRange%22:0.005}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00021-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*abs(cos(3.0*y+1.0))*cos(0.2*uTime)+tx;%20newY=exp(3.0*x)*abs(sin(3.0*y+1.0))*sin(0.2*uTime)+ty;%22,%22xCenter%22:0.694,%22yCenter%22:22.5,%22scaleRange%22:1.526,%22scaleXtoY%22:1.588550983899821,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:63256,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:1.48,%22yCenter%22:22.98,%22scaleRange%22:6.54},{%22xCenter%22:0.78,%22yCenter%22:23.477,%22scaleRange%22:2.001},{%22xCenter%22:0.8,%22yCenter%22:23.591,%22scaleRange%22:0.346},{%22xCenter%22:0.69,%22yCenter%22:23.661,%22scaleRange%22:1.59},{%22xCenter%22:0.19,%22yCenter%22:24.061,%22scaleRange%22:5.3},{%22xCenter%22:0.694,%22yCenter%22:23.584,%22scaleRange%22:1.526}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00026-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=sin(1.0-x)*(exp(y)+exp(-y))/2.0+cos(0.2*uTime);%20newY=cos(1.0-x)*(exp(y)-exp(-y))/2.0+sin(0.2*uTime);%22,%22xCenter%22:9.433,%22yCenter%22:-0.859,%22scaleRange%22:8,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x+y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:63656,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-13.34,%22yCenter%22:-3.42,%22scaleRange%22:12.3},{%22xCenter%22:-11.47,%22yCenter%22:-3.039,%22scaleRange%22:2.546},{%22xCenter%22:-4.69,%22yCenter%22:3.201,%22scaleRange%22:42.72},{%22xCenter%22:4.452,%22yCenter%22:4.184,%22scaleRange%22:6.536},{%22xCenter%22:4.158,%22yCenter%22:2.674,%22scaleRange%22:1.196},{%22xCenter%22:4.329,%22yCenter%22:2.945,%22scaleRange%22:0.142},{%22xCenter%22:4.334,%22yCenter%22:2.921,%22scaleRange%22:0.026},{%22xCenter%22:4.333,%22yCenter%22:2.921,%22scaleRange%22:0.005},{%22xCenter%22:9.433,%22yCenter%22:-0.859,%22scaleRange%22:7.68}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00027-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=sin(1.0-x)*(exp(y)+exp(-y))/2.0+cos(0.2*uTime);%20newY=cos(1.0-x)*(exp(y)-exp(-y))/2.0+sin(0.2*uTime);%22,%22xCenter%22:1.463,%22yCenter%22:3.51,%22scaleRange%22:0.769,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(tx*tx*tx/x+ty*ty*ty/y)%3E%20100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22float%20p%20=%20x*x+y*y+z*z;%20r%20=%201.0/abs(log(abs(x)/p));g%20=%201.0/abs(log(abs(y)/p));b%20=%201.0/abs(log(abs(z)/p));%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:65543,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-13.34,%22yCenter%22:-3.42,%22scaleRange%22:12.3},{%22xCenter%22:-11.47,%22yCenter%22:-3.039,%22scaleRange%22:2.546},{%22xCenter%22:-4.69,%22yCenter%22:3.201,%22scaleRange%22:42.72},{%22xCenter%22:4.452,%22yCenter%22:4.184,%22scaleRange%22:6.536},{%22xCenter%22:4.158,%22yCenter%22:2.674,%22scaleRange%22:1.196},{%22xCenter%22:4.329,%22yCenter%22:2.945,%22scaleRange%22:0.142},{%22xCenter%22:4.334,%22yCenter%22:2.921,%22scaleRange%22:0.026},{%22xCenter%22:4.333,%22yCenter%22:2.921,%22scaleRange%22:0.005},{%22xCenter%22:9.433,%22yCenter%22:-0.859,%22scaleRange%22:7.68},{%22xCenter%22:0.473,%22yCenter%22:0.981,%22scaleRange%22:14},{%22xCenter%22:0.865,%22yCenter%22:3.543,%22scaleRange%22:4.746},{%22xCenter%22:1.463,%22yCenter%22:3.51,%22scaleRange%22:0.769}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00024-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=sin(1.0-x)*(exp(y)+exp(-y))/2.0;%20newY=cos(1.0-x)*(exp(y)-exp(-y))/2.0;%22,%22xCenter%22:-11.47,%22yCenter%22:-3.039,%22scaleRange%22:2.546,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x-3.0)*abs(x*x/y/y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22float%20p%20=%20tx*tx+ty*ty+z*z;%20r%20=%201.0-abs(x)/p;g%20=%201.0-abs(y)/p;b%20=%201.0-abs(z)/p;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:60500,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-13.34,%22yCenter%22:-3.42,%22scaleRange%22:12.3},{%22xCenter%22:-11.47,%22yCenter%22:-3.039,%22scaleRange%22:2.546}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00023-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=sin(1.0-x)*(exp(y)+exp(-y))/2.0;%20newY=cos(1.0-x)*(exp(y)-exp(-y))/2.0;%22,%22xCenter%22:4.24,%22yCenter%22:-5.5,%22scaleRange%22:9.3,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x-3.0)*abs(x*x/y/y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%20log(abs(sin(mod(float(i),3.0)*127.0)*1.7+1.0));g%20=%20log(abs(sin(mod(float(i)/3.0,3.0)*127.0)*1.7+1.0));b%20=%20log(abs(sin(mod(float(i)/9.0,3.0)*127.0)*1.7+1.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:60500,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:4.24,%22yCenter%22:-6.54,%22scaleRange%22:9.3}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00030-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=x+sin(2.*x)/2./(sin(x)*sin(x)*(exp(y)+exp(-y))/2.*(exp(y)+exp(-y))/2.+cos(x)*cos(x)*(exp(y)-exp(-y))/2.*(exp(y)-exp(-y))/2.)+tx;newY=%20y-(exp(2.*y)-exp(-2.*y))/2./2./(sin(x)*sin(x)*(exp(y)+exp(-y))/2.*(exp(y)+exp(-y))/2.+cos(x)*cos(x)*(exp(y)-exp(-y))/2.*(exp(y)-exp(-y))/2.)+ty;%22,%22xCenter%22:-1.04,%22yCenter%22:0.449,%22scaleRange%22:0.003,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%201.0-abs(log(float(i)*PI/255.0));g%20=%201.0-abs(log(float(i)*PI/255.0*2.0));%20b%20=%201.0-abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:72531,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-13.34,%22yCenter%22:-3.42,%22scaleRange%22:12.3},{%22xCenter%22:-11.47,%22yCenter%22:-3.039,%22scaleRange%22:2.546},{%22xCenter%22:-4.69,%22yCenter%22:3.201,%22scaleRange%22:42.72},{%22xCenter%22:4.452,%22yCenter%22:4.184,%22scaleRange%22:6.536},{%22xCenter%22:4.158,%22yCenter%22:2.674,%22scaleRange%22:1.196},{%22xCenter%22:4.329,%22yCenter%22:2.945,%22scaleRange%22:0.142},{%22xCenter%22:4.334,%22yCenter%22:2.921,%22scaleRange%22:0.026},{%22xCenter%22:4.333,%22yCenter%22:2.921,%22scaleRange%22:0.005},{%22xCenter%22:-0.047,%22yCenter%22:0.101,%22scaleRange%22:7.98},{%22xCenter%22:-0.965,%22yCenter%22:0.62,%22scaleRange%22:1.764},{%22xCenter%22:-1.007,%22yCenter%22:0.414,%22scaleRange%22:0.127},{%22xCenter%22:-1.041,%22yCenter%22:0.447,%22scaleRange%22:0.013},{%22xCenter%22:-1.04,%22yCenter%22:0.449,%22scaleRange%22:0.003}]} ',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00003-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=3.0*x+2.0*x*y+cos(uTime);%20newY=3.0*y-x*x+y*y+sin(uTime);%22,%22xCenter%22:-0.5,%22yCenter%22:-3,%22scaleRange%22:6,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%201.0-abs(log(float(i)*12.0/255.0));g%20=%201.0-abs(log(float(i)*6.0/255.0));%20b%20=%201.0-abs(log(float(i)*4.0/255.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:9760,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00006-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*cos(3.0*y+1.0);%20newY=exp(3.0*x)*sin(3.0*y+1.0);%22,%22xCenter%22:1.766,%22yCenter%22:89.76,%22scaleRange%22:0.589,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x%20*%20x%20*%20fract(tx)%20*%20fract(tx)%20*%20cos(x)%20*%20y%20*%20y%20*%20fract(ty)%20*%20fract(ty)%20*%20cos(y))%20%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:25288,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0.13,%22yCenter%22:-0.186,%22scaleRange%22:1.164},{%22xCenter%22:0.184,%22yCenter%22:-0.186,%22scaleRange%22:2.016},{%22xCenter%22:7.2,%22yCenter%22:79.2,%22scaleRange%22:78.6},{%22xCenter%22:7.2,%22yCenter%22:79.2,%22scaleRange%22:78.6},{%22xCenter%22:5.628,%22yCenter%22:87.925,%22scaleRange%22:14.384},{%22xCenter%22:1.14,%22yCenter%22:90.14,%22scaleRange%22:3.351},{%22xCenter%22:1.599,%22yCenter%22:89.647,%22scaleRange%22:1.24},{%22xCenter%22:1.766,%22yCenter%22:89.76,%22scaleRange%22:0.589}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00007-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*cos(3.0*y+1.0);%20newY=exp(3.0*x)*sin(3.0*y+1.0);%22,%22xCenter%22:-0.257,%22yCenter%22:89.943,%22scaleRange%22:0.032,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x%20*%20x%20*%20fract(tx)%20*%20fract(tx)%20*%20cos(x)%20*%20y%20*%20y%20*%20fract(ty)%20*%20fract(ty)%20*%20cos(y))%20%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:25288,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0.13,%22yCenter%22:-0.186,%22scaleRange%22:1.164},{%22xCenter%22:0.184,%22yCenter%22:-0.186,%22scaleRange%22:2.016},{%22xCenter%22:7.2,%22yCenter%22:79.2,%22scaleRange%22:78.6},{%22xCenter%22:7.2,%22yCenter%22:79.2,%22scaleRange%22:78.6},{%22xCenter%22:5.628,%22yCenter%22:87.925,%22scaleRange%22:14.384},{%22xCenter%22:-0.269,%22yCenter%22:89.968,%22scaleRange%22:0.806},{%22xCenter%22:-0.256,%22yCenter%22:89.957,%22scaleRange%22:0.217},{%22xCenter%22:-0.257,%22yCenter%22:89.943,%22scaleRange%22:0.032}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00008-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*cos(3.0*y+1.0);%20newY=exp(3.0*x)*sin(3.0*y+1.0);%22,%22xCenter%22:0.189,%22yCenter%22:2.215,%22scaleRange%22:0.075,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(tx*tx*tx/x+ty*ty*ty/y)%3E%20100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:25288,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0.04,%22yCenter%22:0.528,%22scaleRange%22:0.804},{%22xCenter%22:-5.96,%22yCenter%22:-5.472,%22scaleRange%22:654},{%22xCenter%22:1.888,%22yCenter%22:-7.434,%22scaleRange%22:84.366},{%22xCenter%22:-0.559,%22yCenter%22:-0.432,%22scaleRange%22:9.871},{%22xCenter%22:0.171,%22yCenter%22:2.46,%22scaleRange%22:1.974},{%22xCenter%22:0.135,%22yCenter%22:2.16,%22scaleRange%22:0.243},{%22xCenter%22:0.189,%22yCenter%22:2.215,%22scaleRange%22:0.075}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00009-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*cos(3.0*y+1.0);%20newY=exp(3.0*x)*sin(3.0*y+1.0);%22,%22xCenter%22:-0.251,%22yCenter%22:0.717,%22scaleRange%22:0.207,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(tx*tx*tx/x+ty*ty*ty/y)%3E%20100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:25288,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0.04,%22yCenter%22:0.528,%22scaleRange%22:0.804},{%22xCenter%22:-5.96,%22yCenter%22:-5.472,%22scaleRange%22:654},{%22xCenter%22:1.888,%22yCenter%22:-7.434,%22scaleRange%22:84.366},{%22xCenter%22:-0.39,%22yCenter%22:0.159,%22scaleRange%22:12.992},{%22xCenter%22:-0.247,%22yCenter%22:0.848,%22scaleRange%22:0.883},{%22xCenter%22:-0.251,%22yCenter%22:0.717,%22scaleRange%22:0.207}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00012-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*cos(3.0*y+1.0)+tx+cos(uTime);%20newY=exp(3.0*x)*sin(3.0*y+1.0)+ty+sin(uTime);%22,%22xCenter%22:0.875,%22yCenter%22:1.033,%22scaleRange%22:7,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22float%20p%20=%20x*x+y*y+z*z;%20r%20=%201.0/abs(log(abs(x)/p));g%20=%201.0/abs(log(abs(y)/p));b%20=%201.0/abs(log(abs(z)/p));%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:28000,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:1.25,%22yCenter%22:-2.45,%22scaleRange%22:37.45},{%22xCenter%22:0.875,%22yCenter%22:1.033,%22scaleRange%22:7.752}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00015-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*abs(cos(3.0*y+1.0));%20newY=exp(3.0*x)*abs(sin(3.0*y+1.0));%22,%22xCenter%22:0.334,%22yCenter%22:2.31,%22scaleRange%22:0.738,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%20abs(sin(pow(abs(mod(float(i*i),3.0)*127.0),abs(ty*tx))));g%20=%20abs(sin(pow(abs(mod(float(i*2*i)/3.0,3.0)*127.0),abs(ty*tx))));b%20=%20abs(sin(pow(abs(mod(float(i*3*i)/9.0,3.0)*127.0),abs(ty*tx))));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:56529,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0.334,%22yCenter%22:2.31,%22scaleRange%22:0.738}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00022-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=cos(x)*(exp(y)+exp(-y))/2.-0.02;newY=-sin(x)*(exp(y)-exp(-y))/2.-0.02;%22,%22xCenter%22:15.168,%22yCenter%22:-2.893,%22scaleRange%22:0.022,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22float%20p%20=%20x*x+y*y+z*z;%20r%20=%201.0/abs(log(abs(x)/p));g%20=%201.0/abs(log(abs(y)/p));b%20=%201.0/abs(log(abs(z)/p));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:60500,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:11.5,%22yCenter%22:-0.78,%22scaleRange%22:18.12},{%22xCenter%22:14.29,%22yCenter%22:-3.081,%22scaleRange%22:2.428},{%22xCenter%22:15.101,%22yCenter%22:-3.008,%22scaleRange%22:0.833},{%22xCenter%22:15.143,%22yCenter%22:-2.93,%22scaleRange%22:0.215},{%22xCenter%22:15.17,%22yCenter%22:-2.892,%22scaleRange%22:0.064},{%22xCenter%22:15.168,%22yCenter%22:-2.893,%22scaleRange%22:0.022}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00038-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=log(abs(x))/(x*x+y*y)+tx;%20newY=log(abs(y))/(x*x+y*y)+ty;%22,%22xCenter%22:0.014,%22yCenter%22:0.509,%22scaleRange%22:4.04,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x%20*%20x%20*%20fract(tx)%20*%20fract(tx)%20*%20cos(x)%20*%20y%20*%20y%20*%20fract(ty)%20*%20fract(ty)%20*%20cos(y))%20%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:66844,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-0.5,%22yCenter%22:-1.2,%22scaleRange%22:50.4},{%22xCenter%22:-0.097,%22yCenter%22:-0.343,%22scaleRange%22:9.425},{%22xCenter%22:0.054,%22yCenter%22:-0.371,%22scaleRange%22:3.779},{%22xCenter%22:0.014,%22yCenter%22:0.509,%22scaleRange%22:4.04}]}',
+    },
+    {
+        name: '',
+        src: 'img/fractals/fractal_screenshot_00001-min.png',
+        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=x/(x*x+y*y)+tx*tx*tx*tx;%20newY=y/(x*x+y*y)+ty*ty*ty*ty;%22,%22xCenter%22:-0.386,%22yCenter%22:-0.68,%22scaleRange%22:3.377,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:5439,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:4.3,%22yCenter%22:-3,%22scaleRange%22:88.8},{%22xCenter%22:0.393,%22yCenter%22:-0.247,%22scaleRange%22:17.316},{%22xCenter%22:-0.386,%22yCenter%22:-0.68,%22scaleRange%22:3.377}]}',
+    },
+//    {
+//        name: '',
+//        src: 'img/fractals/fractal_screenshot_00019-min.png',
+//        link:'http://localhost:3000/painting/complex#{%22name%22:%22newX=exp(3.0*x)*abs(cos(3.0*y+1.0))+tx;%20newY=exp(3.0*x)*abs(sin(3.0*y+1.0))+ty;%22,%22xCenter%22:-0.446,%22yCenter%22:-2.278,%22scaleRange%22:0.005,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%20log(abs(sin(mod(float(i),3.0)*127.0)*1.7+1.0));g%20=%20log(abs(sin(mod(float(i)/3.0,3.0)*127.0)*1.7+1.0));b%20=%20log(abs(sin(mod(float(i)/9.0,3.0)*127.0)*1.7+1.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:56529,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:1.24,%22yCenter%22:1.2,%22scaleRange%22:38.1},{%22xCenter%22:0.211,%22yCenter%22:-2.343,%22scaleRange%22:6.972},{%22xCenter%22:-0.186,%22yCenter%22:-2.064,%22scaleRange%22:0.948},{%22xCenter%22:-0.422,%22yCenter%22:-2.311,%22scaleRange%22:0.175},{%22xCenter%22:-0.447,%22yCenter%22:-2.281,%22scaleRange%22:0.039},{%22xCenter%22:-0.449,%22yCenter%22:-2.277,%22scaleRange%22:0.016},{%22xCenter%22:-0.446,%22yCenter%22:-2.278,%22scaleRange%22:0.005}]}',
+//    },
+]
+
+/*
+ *41 http://localhost:3000/painting/complex#{%22name%22:%22newX=tan(x*x-y*y)/(tx*tx+ty*ty)+cos(uTime);%20newY=(2.*x*y)/(tx*tx+ty*ty)+sin(uTime);%22,%22xCenter%22:0.017,%22yCenter%22:-0.017,%22scaleRange%22:10,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22abs(x)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:77685,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0,%22yCenter%22:0.06,%22scaleRange%22:5.94},{%22xCenter%22:0.9,%22yCenter%22:-0.24,%22scaleRange%22:18.9},{%22xCenter%22:1.051,%22yCenter%22:-1.128,%22scaleRange%22:10.168},{%22xCenter%22:-20000,%22yCenter%22:-10000,%22scaleRange%22:2650000},{%22xCenter%22:9150,%22yCenter%22:5900,%22scaleRange%22:683700},{%22xCenter%22:945.6,%22yCenter%22:-937,%22scaleRange%22:191436},{%22xCenter%22:-1160.196,%22yCenter%22:977.36,%22scaleRange%22:82891.788},{%22xCenter%22:-165.495,%22yCenter%22:65.55,%22scaleRange%22:50066.64},{%22xCenter%22:-365.762,%22yCenter%22:666.35,%22scaleRange%22:9262.328},{%22xCenter%22:-69.368,%22yCenter%22:129.135,%22scaleRange%22:2936.158},{%22xCenter%22:-7.709,%22yCenter%22:-8.864,%22scaleRange%22:331.786},{%22xCenter%22:-2.732,%22yCenter%22:-2.228,%22scaleRange%22:115.462},{%22xCenter%22:-0.577,%22yCenter%22:1.501,%22scaleRange%22:18.589},{%22xCenter%22:0.371,%22yCenter%22:0.348,%22scaleRange%22:8.7},{%22xCenter%22:-0.3,%22yCenter%22:1.3,%22scaleRange%22:25.5},{%22xCenter%22:-0.121,%22yCenter%22:0.204,%22scaleRange%22:4.973},{%22xCenter%22:0.179,%22yCenter%22:0.404,%22scaleRange%22:16.2},{%22xCenter%22:0.017,%22yCenter%22:-0.017,%22scaleRange%22:1.976}]} 
+ * 
+ * 43 http://localhost:3000/painting/complex#{%22name%22:%22newX=x+sin(2.*x)/2./(sin(x)*sin(x)*(exp(y)+exp(-y))/2.*(exp(y)+exp(-y))/2.+cos(x)*cos(x)*(exp(y)-exp(-y))/2.*(exp(y)-exp(-y))/2.)+tx;newY=%20y-(exp(2.*y)-exp(-2.*y))/2./2./(sin(x)*sin(x)*(exp(y)+exp(-y))/2.*(exp(y)+exp(-y))/2.+cos(x)*cos(x)*(exp(y)-exp(-y))/2.*(exp(y)-exp(-y))/2.)+ty;%22,%22xCenter%22:0.008,%22yCenter%22:0.017,%22scaleRange%22:4,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22abs(prevX-x)%3C0.001&&abs(prevY-y)%3C0.001%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%201.0-abs(log(float(i)*PI/255.0));g%20=%201.0-abs(log(float(i)*PI/255.0*2.0));%20b%20=%201.0-abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:72531,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-13.34,%22yCenter%22:-3.42,%22scaleRange%22:12.3},{%22xCenter%22:-11.47,%22yCenter%22:-3.039,%22scaleRange%22:2.546},{%22xCenter%22:-4.69,%22yCenter%22:3.201,%22scaleRange%22:42.72},{%22xCenter%22:4.452,%22yCenter%22:4.184,%22scaleRange%22:6.536},{%22xCenter%22:4.158,%22yCenter%22:2.674,%22scaleRange%22:1.196},{%22xCenter%22:4.329,%22yCenter%22:2.945,%22scaleRange%22:0.142},{%22xCenter%22:4.334,%22yCenter%22:2.921,%22scaleRange%22:0.026},{%22xCenter%22:4.333,%22yCenter%22:2.921,%22scaleRange%22:0.005},{%22xCenter%22:9.433,%22yCenter%22:-0.859,%22scaleRange%22:7.68},{%22xCenter%22:0.008,%22yCenter%22:0.017,%22scaleRange%22:3.072}]}
+ * 
+ * 44 http://localhost:3000/painting/complex#{%22name%22:%22newX=x*x-y*y+tx;newY=2.0*x*y+ty;%22,%22xCenter%22:0.38,%22yCenter%22:0.442,%22scaleRange%22:0.003,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22abs(prevX-x)%3C0.001%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:103701,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0,%22yCenter%22:0.06,%22scaleRange%22:5.94},{%22xCenter%22:0.9,%22yCenter%22:-0.24,%22scaleRange%22:18.9},{%22xCenter%22:1.051,%22yCenter%22:-1.128,%22scaleRange%22:10.168},{%22xCenter%22:-20000,%22yCenter%22:-10000,%22scaleRange%22:2650000},{%22xCenter%22:9150,%22yCenter%22:5900,%22scaleRange%22:683700},{%22xCenter%22:945.6,%22yCenter%22:-937,%22scaleRange%22:191436},{%22xCenter%22:-1160.196,%22yCenter%22:977.36,%22scaleRange%22:82891.788},{%22xCenter%22:-165.495,%22yCenter%22:65.55,%22scaleRange%22:50066.64},{%22xCenter%22:-365.762,%22yCenter%22:666.35,%22scaleRange%22:9262.328},{%22xCenter%22:-69.368,%22yCenter%22:129.135,%22scaleRange%22:2936.158},{%22xCenter%22:-7.709,%22yCenter%22:-8.864,%22scaleRange%22:331.786},{%22xCenter%22:-2.732,%22yCenter%22:-2.228,%22scaleRange%22:115.462},{%22xCenter%22:-0.577,%22yCenter%22:1.501,%22scaleRange%22:18.589},{%22xCenter%22:0.371,%22yCenter%22:0.348,%22scaleRange%22:8.7},{%22xCenter%22:-0.3,%22yCenter%22:1.3,%22scaleRange%22:25.5},{%22xCenter%22:-0.121,%22yCenter%22:0.204,%22scaleRange%22:4.973},{%22xCenter%22:0.179,%22yCenter%22:0.404,%22scaleRange%22:16.2},{%22xCenter%22:-0.339,%22yCenter%22:0.177,%22scaleRange%22:7.873},{%22xCenter%22:-0.142,%22yCenter%22:0.193,%22scaleRange%22:2.204},{%22xCenter%22:0.438,%22yCenter%22:0.358,%22scaleRange%22:0.267},{%22xCenter%22:0.392,%22yCenter%22:0.436,%22scaleRange%22:0.038},{%22xCenter%22:0.38,%22yCenter%22:0.442,%22scaleRange%22:0.01},{%22xCenter%22:0.38,%22yCenter%22:0.442,%22scaleRange%22:0.006},{%22xCenter%22:0.38,%22yCenter%22:0.442,%22scaleRange%22:0.003}]}
+ * 
+ * 45 http://localhost:3000/painting/complex#{%22name%22:%22newX=x*x-y*y+tx;newY=2.0*x*y+ty;%22,%22xCenter%22:-0.049,%22yCenter%22:1.25,%22scaleRange%22:0.005,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22abs(prevY-y)%3C0.001%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%20abs(sin(float(i)*PI/255.0));g%20=%20abs(sin(float(i)*PI/255.0*2.0));b%20=%20abs(sin(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:103701,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0,%22yCenter%22:0.06,%22scaleRange%22:5.94},{%22xCenter%22:0.9,%22yCenter%22:-0.24,%22scaleRange%22:18.9},{%22xCenter%22:1.051,%22yCenter%22:-1.128,%22scaleRange%22:10.168},{%22xCenter%22:-20000,%22yCenter%22:-10000,%22scaleRange%22:2650000},{%22xCenter%22:9150,%22yCenter%22:5900,%22scaleRange%22:683700},{%22xCenter%22:945.6,%22yCenter%22:-937,%22scaleRange%22:191436},{%22xCenter%22:-1160.196,%22yCenter%22:977.36,%22scaleRange%22:82891.788},{%22xCenter%22:-165.495,%22yCenter%22:65.55,%22scaleRange%22:50066.64},{%22xCenter%22:-365.762,%22yCenter%22:666.35,%22scaleRange%22:9262.328},{%22xCenter%22:-69.368,%22yCenter%22:129.135,%22scaleRange%22:2936.158},{%22xCenter%22:-7.709,%22yCenter%22:-8.864,%22scaleRange%22:331.786},{%22xCenter%22:-2.732,%22yCenter%22:-2.228,%22scaleRange%22:115.462},{%22xCenter%22:-0.577,%22yCenter%22:1.501,%22scaleRange%22:18.589},{%22xCenter%22:0.371,%22yCenter%22:0.348,%22scaleRange%22:8.7},{%22xCenter%22:-0.3,%22yCenter%22:1.3,%22scaleRange%22:25.5},{%22xCenter%22:-0.121,%22yCenter%22:0.204,%22scaleRange%22:4.973},{%22xCenter%22:0.179,%22yCenter%22:0.404,%22scaleRange%22:16.2},{%22xCenter%22:0.001,%22yCenter%22:1.408,%22scaleRange%22:1.328},{%22xCenter%22:-0.067,%22yCenter%22:1.281,%22scaleRange%22:0.502},{%22xCenter%22:-0.03,%22yCenter%22:1.271,%22scaleRange%22:0.057},{%22xCenter%22:-0.049,%22yCenter%22:1.25,%22scaleRange%22:0.009},{%22xCenter%22:-0.049,%22yCenter%22:1.249,%22scaleRange%22:0.005}]}
+ * 
+ * 46 http://localhost:3000/painting/complex#{%22name%22:%22newX=x*x-y*y+tx;newY=2.0*x*y+ty;%22,%22xCenter%22:0.307,%22yCenter%22:-0.048,%22scaleRange%22:0.01,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22x*prevX+y*prevY%3E100.%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=prevX/x;g=prevY/y;%20b=float(i)/x/y;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:103701,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0.388,%22yCenter%22:-0.222,%22scaleRange%22:0.63},{%22xCenter%22:0.314,%22yCenter%22:-0.044,%22scaleRange%22:0.046},{%22xCenter%22:0.307,%22yCenter%22:-0.048,%22scaleRange%22:0.01}]}
+ * 
+ * 47 http://localhost:3000/painting/complex#{%22name%22:%22newX=x*x-y*y+tx;newY=2.0*x*y+ty;%22,%22xCenter%22:-0.379,%22yCenter%22:0.007,%22scaleRange%22:8.86,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x+y*y)*tan(float(i))%3E10.%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(prevX/x);g=abs(prevY/y);%20b=abs(prevX/y);%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:106341,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-0.62,%22yCenter%22:0.12,%22scaleRange%22:16.08},{%22xCenter%22:-0.379,%22yCenter%22:0.007,%22scaleRange%22:8.86}]}
+ * 
+ * 48 http://localhost:3000/painting/complex#{%22name%22:%22newX=x;%20newY=y;if(mod(float(i),2.0)==0.0){newX=(x*x-y*y+sin(uTime))/(x*x+y*y);newY=(2.0*x*y+sin(uTime))/(x*x+y*y);}else{newY=(x*x-y*y+sin(uTime))/(x*x+y*y);newX=(2.0*x*y+sin(uTime))/(x*x+y*y);};%22,%22xCenter%22:-0.8,%22yCenter%22:1.5,%22scaleRange%22:12,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(tx*tx*tx/x+ty*ty*ty/y)%3E%20100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=abs(log(float(i)*PI/255.0));g=abs(log(float(i)*PI/255.0*2.0));b=abs(log(float(i)*PI/255.0*3.0));%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:10101,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:-0.8,%22yCenter%22:1.5,%22scaleRange%22:12.72}]}
+ * 
+ * 49 http://localhost:3000/painting/complex#{%22name%22:%22newX=1.0/tan(x*x-y*y)*(x*x+y*y)+cos(uTime);%20newY=1./tan(2.0*x*y)*(x*x+y*y)+sin(uTime);%22,%22xCenter%22:0.34,%22yCenter%22:-0.06,%22scaleRange%22:10.5,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%201.0-abs(sin(mod(float(i),3.0)*127.0));g%20=%201.0-abs(sin(mod(float(i)/3.0,3.0)*127.0));b%20=%201.0-abs(sin(mod(float(i)/9.0,3.0)*127.0));%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:67469,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0.34,%22yCenter%22:-0.06,%22scaleRange%22:10.5}]}
+ * 
+ * 50 http://localhost:3000/painting/complex#{%22name%22:%22newX=1.0/tan(x*x-y*y)*(x*x+y*y)+cos(uTime);%20newY=1./tan(2.0*x*y)*(x*x+y*y)+sin(uTime);%22,%22xCenter%22:1.663,%22yCenter%22:2.922,%22scaleRange%22:1.596,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22(x*x*y*y)%3E100.0%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r%20=%20abs(mod(float(i*i*i)*13.0*tx*ty,255.0)/255.0);%20g%20=%20abs(mod(float(i*i)*11.0*tx*ty,255.0)/255.0);%20b%20=%20abs(mod(float(i)*7.0*tx*ty,255.0)/255.0);%22,%22speedColorStyle%22:1,%22animated%22:true,%22startTime%22:67469,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6},{%22xCenter%22:0.34,%22yCenter%22:-0.06,%22scaleRange%22:10.5},{%22xCenter%22:1.663,%22yCenter%22:2.922,%22scaleRange%22:1.596}]}
+ * 
+ *также можно строить графики функций и областей
+ *параметр нориа нужно сделать таким abs(ty - f(tx)) > 0.1 для области так ty < f(tx)
+ * 
+ * 51 http://localhost:3000/painting/complex#{%22name%22:%22newX=prevX;%20newY=prevY;%22,%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:60,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22abs(ty-abs(abs(abs(abs(tx-1.)-5.)-10.)*sin(2.*tx)))%3E.1%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:74049,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6}]}
+ *
+ * 52 http://localhost:3000/painting/complex#{%22name%22:%22newX=prevX;%20newY=prevY;%22,%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:60,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22abs(ty-sin(tx))%3E0.1%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:74049,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6}]}
+ *  
+ *  (abs(ty)<2. || ty*ty+tx*tx<50. || (abs(ty)>1.*tx && abs(ty)<2.*tx) || (abs(ty)>-1.*tx && abs(ty)<-2.*tx))
+ *  53 http://localhost:3000/painting/complex#{%22name%22:%22newX=prevX;%20newY=prevY;%22,%22xCenter%22:-0.5,%22yCenter%22:4,%22scaleRange%22:60,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22abs(ty)%3C2.||ty*ty+tx*tx%3C50.||(abs(ty)%3E1.*tx&&abs(ty)%3C2.*tx)||(abs(ty)%3E-1.*tx&&abs(ty)%3C-2.*tx)%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=r;g=g;%20b=b;if(abs(ty)%3C2.||ty*ty+tx*tx%3C50.){r=250.;}if((abs(ty)%3E1.*tx&&abs(ty)%3C2.*tx)||(abs(ty)%3E-1.*tx&&abs(ty)%3C-2.*tx)){r=250.;g=250.;};%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:74049,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6}]} 
+ * 
+ */

@@ -45,7 +45,7 @@ export class Fractal {
         let params: IFractal = defaultParams;
         let parseParams = {};
         try {parseParams = JSON.parse(jsonParams);} catch {};
-        params = {...params,...parseParams};console.log(params);
+        params = {...params,...parseParams};
         return params;
     }
     
@@ -60,8 +60,10 @@ export class Fractal {
      * Статический метод-render опций селекта
      * @param options - массив объектов опций
      */
-    public static renderOptions = (options: IOptionFractal[]) => 
-        options.map(option => <option value={option.value} key={option.name}> {option.name} </option>)
+    public static renderOptions = (options: IOptionFractal[], typeFractal: string = '') => {
+        if(!typeFractal) return options.map(option => <option value={option.value} key={option.name}> {option.name} </option>);
+        if(typeFractal) return options.filter(option => option.type === typeFractal).map(option => <option value={option.value} key={option.name}> {option.name} </option>);
+    }
 }
 
 /**

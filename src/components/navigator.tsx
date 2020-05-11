@@ -5,11 +5,13 @@ import { Fractal } from '../utils/classes'
 const { Select, Checkbox, Range } = require('react-materialize');
 
 const Navigator: React.FC<IFractal> = (props) => {
-    const { 
+    const {
+        typeFractal,
         name,
         norm,
         colorStyle,
         scaleRange,
+        depthIter,
         motion,
         speedMotion,
         speedNorm,
@@ -21,6 +23,7 @@ const Navigator: React.FC<IFractal> = (props) => {
         changeNorm, 
         changeColor,
         changeScaleRange,
+        changeDepthIter,
         changeMotion,
         changeSpeedMotion,
         changeSpeedNorm,
@@ -29,16 +32,15 @@ const Navigator: React.FC<IFractal> = (props) => {
         changeYCenter,
         toggleAnimated, 
     } = props;
-    
     return (
         <div className="col m5 l3 wrap-nav">
             <Select onChange={changeName} defaultValue={name} s={12}>
                 <option disabled value=""> Выберите фрактал </option>
-                {Fractal.renderOptions(fractals)}
+                {Fractal.renderOptions(fractals, typeFractal)}
             </Select>
             <Select onChange={changeNorm} defaultValue={norm} s={12}>
                 <option disabled value=""> Выберите норму </option>
-                {Fractal.renderOptions(norms)}
+                {Fractal.renderOptions(norms, typeFractal)}
             </Select>
             <Select onChange={changeColor} defaultValue={colorStyle} s={12}>
                 <option disabled value=""> Выберите раскраску </option>
@@ -52,9 +54,13 @@ const Navigator: React.FC<IFractal> = (props) => {
                 <input type="number" step="0.001" onChange={(e) => {changeYCenter && changeYCenter(+e.target.value)}} value={yCenter}/>
                 <label>Y центра</label>
             </div>
-            <div className="input-field col s12">
+            <div className="input-field col s6">
                 <input type="number" step="0.001" min="0.001" onChange={(e) => {changeScaleRange && changeScaleRange((+e.target.value))}} value={scaleRange}/>
                 <label>Масштаб</label>
+            </div>
+            <div className="input-field col s6">
+                <input type="number" min="0" onChange={(e) => {changeDepthIter && changeDepthIter(+e.target.value)}} value={depthIter}/>
+                <label>Количество итераций</label>
             </div>
             <div className="input-field col s12 static">
                 <Checkbox label="Анимация" value="move" checked={animated} onChange={toggleAnimated}/>

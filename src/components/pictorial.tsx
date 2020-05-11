@@ -30,6 +30,10 @@ const Pictorial: React.FC<IFractal> = (props) => {
         if (!canvas) return;
         Fractal.draw(canvas, fractal);
     }, [fractal]);
+    React.useEffect(() => {
+        if (!canvas || !canvas2d) return;
+        Canvas.resize(canvas, canvas2d, fractal, gl);
+    }, [props.typeFractal]);
     
     /** Обработчик нажатия мыши на канвасе */
     const handleMouseDown = (e: any) => {

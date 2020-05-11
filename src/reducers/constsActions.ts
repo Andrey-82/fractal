@@ -2,6 +2,9 @@
  * Константы в экшенах
  */
  
+/** Изменить тип фрактала.*/
+export const CHANGE_TYPE_FRACTAL = 'CHANGE_TYPE_FRACTAL';
+
 /** Изменить имя фрактала.*/
 export const CHANGE_NAME_FRACTAL = 'CHANGE_NAME_FRACTAL';
 
@@ -13,6 +16,9 @@ export const CHANGE_COLOR_FRACTAL = 'CHANGE_COLOR_FRACTAL';
 
 /** Изменить масштаб.*/
 export const CHANGE_SCALE_RANGE_FRACTAL = 'CHANGE_SCALE_RANGE_FRACTAL';
+
+/** Изменить количество итераций.*/
+export const CHANGE_DEPTH_ITERATION_FRACTAL = 'CHANGE_DEPTH_ITERATION_FRACTAL';
 
 /** Изменить отношение X/Y.*/
 export const CHANGE_SCALE_X_TO_Y_FRACTAL = 'CHANGE_SCALE_X_TO_Y_FRACTAL';
