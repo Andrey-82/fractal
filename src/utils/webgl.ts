@@ -119,15 +119,6 @@ export const fragmentShaderSourceIFS = (fractal: IFractal): string => {
         "uniform highp float uTime; uniform vec2 uResolution;\n"+
         "vec2 P;float tmp, newX, x, y, newY, prevX, prevY, tx, ty;\n"+
         `bool areaCond(float x, float y){return (${norm});}\n`+
-//        "bool areaCond(vec2 p){return (p.x*p.x+p.y*p.y<100.0);}"+
-//        "vec2 f1(vec2 p){return vec2((cos(uTime*0.5)*0.864*(p.x-1.882)-(p.y-0.111)*0.281)/0.772, (0.824*(p.y-0.111)+(p.x-1.882)*0.212)/0.772);}"+
-//        "vec2 f2(vec2 p){return vec2((-0.378*(p.x+0.785)-(p.y+8.096)*0.521)/0.208, (cos(uTime*0.3)*0.088*(p.x+8.096)+(p.y+0.785)*0.464)/0.208);}"+
-//        "void f1(float x, float y){newX = 1.53*x+2.37*y; newY = 1.37*y-2.0*x;}"+
-//        "void f2(float x, float y){newX = 2.53*x+2.37*y-1.0, 2.37*y-1.53*x-1.0;}"+
-//        "vec2 f3(vec2 p){return vec2(2.0*p.x-1.0, 2.0*p.y);}"+
-//        "vec2 f1(vec2 p){return vec2(2.0*p.x, 2.0*p.y);}"+
-//        "vec2 f2(vec2 p){return vec2(2.0*p.x, 2.0*p.y-1.0);}"+
-//        "vec2 f3(vec2 p){return vec2(2.0*p.x-1.0, 2.0*p.y);}"+
         `float speedMotion=${sM};\n`+
         `float speedNorm=${sN};\n`+
         `float speedColorStyle=${sC};\n`+
@@ -137,18 +128,81 @@ export const fragmentShaderSourceIFS = (fractal: IFractal): string => {
         "highp float v = position.y;\n"+
          `tx = (${sRX} * (u-0.5) + ${xC});\n`+
         `ty = (${sRY} * (v-0.5) + ${yC});\nx=tx; y=ty;\n`+
-//        `${motion}`+
         `for (int i = 0; i<=${depthIter}; i++){\n`+
         `if(i == ${depthIter} && areaCond(x, y)){gl_FragColor=vec4(cos(x), sin(y),1.0,.0);}\n`+
         "else {"+name+"gl_FragColor=vec4(0.0,0.0, 0.0,1.0);break;"+
-//            "if(areaCond(1.53*x+2.37*y, 1.37*y-2.0*x)){newX=1.53*x+2.37*y; newY=1.37*y-2.0*x; x=newX; y=newY; continue;}"+
-//            "if(areaCond(2.53*x+2.37*y-1.0, 2.37*y-1.53*x-1.0)){newX=2.53*x+2.37*y-1.0; newY=2.37*y-1.53*x-1.0; x=newX; y=newY; continue;}"+
-//            "newX=1.53*x+2.37*y; newY=1.37*y-2.0*x, x=newX; y=newY;gl_FragColor=vec4(0.0,1.0, 0.0,1.0);"+
         "}\n"+
-//        "else {if(areaCond(f1(P))){P=f1(P); continue;}; if(areaCond(f2(P))){P=f2(P); continue;}; if(areaCond(f3(P))){P=f3(P); continue;}else{P=f1(P);gl_FragColor=vec4(0.0,0.0, 0.0,1.0);}}"+
         "};"+
     "}";
 //    console.log('shader = ', shaderSource, scaleRange);
+    return shaderSource;
+};
+/**
+ *  Функция для составления фрагментного шейдера
+ *  params:
+ *  fractal - параметры фрактала
+ */
+export const fragmentShaderSourceIFS3d = (fractal: IFractal): string => {
+    const {
+        xCenter,
+        yCenter,
+        name,
+        norm,
+        scaleRange,
+        depthIter,
+        scaleXtoY,
+        motion,
+        speedNorm,
+        speedColorStyle,
+        speedMotion,
+    } = fractal;
+    const sRX = scaleRange ? scaleRange.toFixed(3) : '1.0';
+    const sRY = scaleRange && scaleXtoY ? (scaleRange / scaleXtoY).toFixed(3) : '1.0';
+    const sM = speedMotion ? speedMotion.toFixed(3) : '1.0';
+    const sN = speedNorm ? speedNorm.toFixed(3) : '1.0';
+    const sC = speedColorStyle ? speedColorStyle.toFixed(3) : '1.0';
+    const xC = xCenter ? xCenter.toFixed(3) : '0.0';
+    const yC = yCenter && scaleXtoY? (yCenter / scaleXtoY).toFixed(3) : '0.0';
+    const shaderSource = `precision highp float;
+        const highp float PI = 3.14159265359;
+        uniform highp float uTime; uniform vec2 uResolution;
+        vec4 P, newP;float tmp, x, y, z, newX, newY, newZ,
+        prevX, prevY, prevZ, tx, ty, tz;
+        mat4 transform;
+        bool flag = false;
+        bool areaCond(float x, float y, float z){return (${norm});}
+        float speedMotion=${sM};
+        float speedNorm=${sN};
+        float speedColorStyle=${sC};
+        void main(){
+        vec2 position = gl_FragCoord.xy / uResolution.xy;
+        highp float u = position.x;
+        highp float v = position.y;
+        tx = (${sRX} * (u-0.5) + ${xC});
+        ty = (${sRY} * (v-0.5) + ${yC});x=tx; y=ty;
+        for (int i = 0; i <= 300; i++){
+            if(flag == true){
+                gl_FragColor=vec4(1.0-float(i)*0.0025, 1.0-float(i)*0.0025, 1.,.0);
+                flag = false;
+                break;
+            }
+            else{
+                transform = mat4(
+                    sin(uTime), 0.0, cos(uTime), 0.0,
+                    0.0, 1.0, 0.0, 0.0,
+                    cos(uTime), 0.0, -sin(uTime), 0.0,
+                    0.0, 0.0, 0.0, 1.0
+                );
+                P = vec4(tx, ty, float(i)*0.01, 1.0);
+                newP = transform * P;
+                x = newP.x - 2.0*cos(uTime);
+                y = newP.y;
+                z = newP.z + 2.0*sin(uTime);
+            }
+            for (int j = 0; j <= ${depthIter}; j++){if(j == ${depthIter} && areaCond(x, y, z)){flag = true;}
+            else {${name}gl_FragColor=vec4(0.0,0.0, 0.0,1.0);break;}
+        }};
+    }`;
     return shaderSource;
 };
 
@@ -233,6 +287,7 @@ export const render = (canvas: HTMLCanvasElement, fractal: IFractal): void => {
     switch (fractal.typeFractal){
         case 'complex': fragmentShaderSourse = fragmentShaderSourceComplex(fractal); break;
         case 'ifs': fragmentShaderSourse = fragmentShaderSourceIFS(fractal); break;
+        case 'ifs3d': fragmentShaderSourse = fragmentShaderSourceIFS3d(fractal); break;
         default: fragmentShaderSourse = fragmentShaderSourceComplex(fractal); break;
     }
     const gl = canvas.getContext("webgl");

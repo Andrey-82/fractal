@@ -274,6 +274,82 @@ export const fractals = [
         "name": "Жулиа",
         "value": "if(areaCond(x*x-y*y-sin(uTime)*1.25,2.*x*y+cos(uTime)*1.55)){newX=x*x-y*y-sin(uTime)*1.25;newY=2.*x*y+cos(uTime)*1.55;x=newX;y=newY;continue;}if(areaCond(0.9*x*x+0.9*y*y-sin(uTime)*6.33,-1.2*x*y-cos(uTime)*6.24)){newX=0.9*x*x+0.9*y*y-sin(uTime)*6.33;newY=-1.2*x*y-cos(uTime)*6.24;x=newX;y=newY;continue;}\n"
     },
+    {
+        "type": "ifs",
+        "name": "Кривая Коха",
+        "value": "if(areaCond(3.*x,3.*y)){newX=3.*x;newY=3.*y;x=newX;y=newY;continue;}if(areaCond(3.*x-1200.,3.*y)){newX=3.*x-1200.;newY=3.*y;x=newX;y=newY;continue;}if(areaCond(1.5*x+2.61*y-300.,1.5*y-2.61*x+522.)){newX=1.5*x+2.61*y-300.;newY=1.5*y-2.61*x+522.;x=newX;y=newY;continue;}if(areaCond(cos(PI/3.)*3.*x-sin(PI/3.)*3.*y,sin(PI/3.)*3.*x+cos(PI/3.)*3.*y-1040.)){newX=cos(PI/3.)*3.*x-sin(PI/3.)*3.*y;newY=sin(PI/3.)*3.*x+cos(PI/3.)*3.*y-1040.;x=newX;y=newY;continue;}\n"
+    },
+    {
+        "type": "ifs3d",
+        "name": "Тетраэдр Серпинского",
+        "value": "if(areaCond(2.0*x, 2.0*y, 2.0*z)){newX=2.0*x; newY=2.0*y; newZ=2.0*z; x=newX; y=newY; z=newZ; continue;}\n\
+if(areaCond(2.0*x-1.0, 2.0*y, 2.*z)){newX=2.0*x-1.0; newY=2.0*y; x=newX; y=newY; newZ=2.0*z; z=newZ; continue;}\n\
+if(areaCond(2.0*x, 2.0*y, 2.*z-1.)){newX=2.0*x; newY=2.0*y; x=newX; y=newY; newZ=2.0*z-1.; z=newZ; continue;}\n\
+if(areaCond(2.0*x, 2.0*y-1.0, 2.*z)){newX=2.0*x; newY=2.0*y-1.0; x=newX; y=newY; newZ=2.0*z; z=newZ; continue;}\n\
+"
+    },
+    {
+        "type": "ifs3d",
+        "name": "Губка Менгера",
+        "value": `if(areaCond(3.0*x, 3.0*y, 3.0*z)){newX=3.0*x; newY=3.0*y; newZ=3.0*z; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-1.0, 3.0*y, 3.0*z)){newX=3.0*x-1.0; newY=3.0*y; newZ=3.0*z; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-2.0, 3.0*y, 3.0*z)){newX=3.0*x-2.0; newY=3.0*y; newZ=3.0*z; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x, 3.0*y-1.0, 3.0*z)){newX=3.0*x; newY=3.0*y-1.0; newZ=3.0*z; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x, 3.0*y-2.0, 3.0*z)){newX=3.0*x; newY=3.0*y-2.0; newZ=3.0*z; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x, 3.0*y, 3.0*z-1.0)){newX=3.0*x; newY=3.0*y; newZ=3.0*z-1.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x, 3.0*y, 3.0*z-2.0)){newX=3.0*x; newY=3.0*y; newZ=3.0*z-2.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-2.0, 3.0*y-1.0, 3.0*z)){newX=3.0*x-2.0; newY=3.0*y-1.0; newZ=3.0*z; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-2.0, 3.0*y-2.0, 3.0*z)){newX=3.0*x-2.0; newY=3.0*y-2.0; newZ=3.0*z; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-1.0, 3.0*y-2.0, 3.0*z)){newX=3.0*x-1.0; newY=3.0*y-2.0; newZ=3.0*z; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x, 3.0*y-2.0, 3.0*z-1.0)){newX=3.0*x; newY=3.0*y-2.0; newZ=3.0*z-1.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x, 3.0*y-2.0, 3.0*z-2.0)){newX=3.0*x; newY=3.0*y-2.0; newZ=3.0*z-2.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x, 3.0*y-1.0, 3.0*z-2.0)){newX=3.0*x; newY=3.0*y-1.0; newZ=3.0*z-2.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-1.0, 3.0*y, 3.0*z-2.0)){newX=3.0*x-1.0; newY=3.0*y; newZ=3.0*z-2.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-1.0, 3.0*y-2.0, 3.0*z-2.0)){newX=3.0*x-1.0; newY=3.0*y-2.0; newZ=3.0*z-2.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-2.0, 3.0*y-2.0, 3.0*z-2.0)){newX=3.0*x-2.0; newY=3.0*y-2.0; newZ=3.0*z-2.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-2.0, 3.0*y-2.0, 3.0*z-1.0)){newX=3.0*x-2.0; newY=3.0*y-2.0; newZ=3.0*z-1.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-2.0, 3.0*y-1.0, 3.0*z-2.0)){newX=3.0*x-2.0; newY=3.0*y-1.0; newZ=3.0*z-2.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-2.0, 3.0*y, 3.0*z-1.0)){newX=3.0*x-2.0; newY=3.0*y; newZ=3.0*z-1.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-2.0, 3.0*y, 3.0*z-2.0)){newX=3.0*x-2.0; newY=3.0*y; newZ=3.0*z-2.0; x=newX; y=newY; z=newZ; continue;}`
+    },
+    {
+        "type": "ifs3d",
+        "name": "Полугубка Менгера",
+        "value": `if(areaCond(3.0*x-1.0, 3.0*y-1.0, 3.0*z)){newX=3.0*x-1.0; newY=3.0*y-1.0; newZ=3.0*z; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-1.0, 3.0*y-1.0, 3.0*z-2.0)){newX=3.0*x-1.0; newY=3.0*y-1.0; newZ=3.0*z-2.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x, 3.0*y-1.0, 3.0*z-1.0)){newX=3.0*x; newY=3.0*y-1.0; newZ=3.0*z-1.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-2.0, 3.0*y-1.0, 3.0*z-1.0)){newX=3.0*x-2.0; newY=3.0*y-1.0; newZ=3.0*z-1.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-1.0, 3.0*y-2.0, 3.0*z-1.0)){newX=3.0*x-1.0; newY=3.0*y-2.0; newZ=3.0*z-1.0; x=newX; y=newY; z=newZ; continue;}
+                    if(areaCond(3.0*x-1.0, 3.0*y, 3.0*z-1.0)){newX=3.0*x-1.0; newY=3.0*y; newZ=3.0*z-1.0; x=newX; y=newY; z=newZ; continue;}`
+    },
+    {
+        "type": "ifs3d",
+        "name": "Фр",
+        "value": `if(areaCond(z*z+y*y, z*z+x*x, x*x+y*y)){newX=z*z+y*y; newY=z*z+x*x; newZ=x*x+y*y; x=newX; y=newY; z=newZ; continue;}
+        if(areaCond(2.0*y*z, 2.0*z*x, 2.0*y*x)){newX=2.0*y*z; newY=2.0*x*z; newZ=2.0*x*y; x=newX; y=newY; z=newZ; continue;}`
+    },
+    {
+        "type": "ifs3d",
+        "name": "Фр2",
+        "value": "if(areaCond(2.0*x, 2.0*y, 2.0*z)){newX=2.0*x; newY=2.0*y; newZ=2.0*z; x=newX; y=newY; z=newZ; continue;}\n\
+if(areaCond(2.0*x-cos(uTime), 2.0*y, 2.*z)){newX=2.0*x-cos(uTime); newY=2.0*y; x=newX; y=newY; newZ=2.0*z; z=newZ; continue;}\n\
+if(areaCond(2.0*x, 2.0*y, 2.*z-cos(uTime))){newX=2.0*x; newY=2.0*y; x=newX; y=newY; newZ=2.0*z-cos(uTime); z=newZ; continue;}\n\
+if(areaCond(2.0*x, 2.0*y-cos(uTime), 2.*z)){newX=2.0*x; newY=2.0*y-cos(uTime); x=newX; y=newY; newZ=2.0*z; z=newZ; continue;}\n\
+"
+    },
+    {
+        "type": "ifs3d",
+        "name": "Фр3",
+        "value": `if(areaCond(x*x, y*y, z*z)){newX=x*x; newY=y*y; newZ=z*z; x=newX; y=newY; z=newZ; continue;}
+        if(areaCond(2.0*y*z, 2.0*x*z, 2.0*x*y)){newX=2.0*y*z; newY=2.0*x*z; newZ=2.0*x*y; x=newX; y=newY; z=newZ; continue;}`
+    },
+    {
+        "type": "ifs3d",
+        "name": "Жулиа 3d",
+        "value": `
+            if(areaCond(x*x-y*y-z*z+cos(uTime), 2.0*x*y+sin(0.1*uTime), 2.0*x*z+sin(0.1*uTime)))
+                {newX=x*x-y*y-z*z+cos(uTime); newY=2.0*x*y+sin(0.1*uTime); newZ=2.0*x*z+sin(0.1*uTime); x=newX; y=newY; z=newZ; continue;}`
+    },
 ];
 
 export const motions = [
@@ -509,6 +585,21 @@ export const norms = [
         "type": "ifs",
         "name": "krug < 100",
         "value": "x*x+y*y<100.0"
+    },
+    {
+        "type": "ifs3d",
+        "name": "тетраэдр",
+        "value": "x>0.&&y>0.&&z>0.&&x+y+z<1.0"
+    },
+    {
+        "type": "ifs3d",
+        "name": "куб",
+        "value": "x>0.&&y>0.&&z>0.&&x<1.&&y<1.&&z<1."
+    },
+    {
+        "type": "ifs3d",
+        "name": "шар",
+        "value": "x*x+y*y+z*z<2.0"
     },
 ]
 
@@ -753,5 +844,14 @@ export const cards = [
  *  
  *  (abs(ty)<2. || ty*ty+tx*tx<50. || (abs(ty)>1.*tx && abs(ty)<2.*tx) || (abs(ty)>-1.*tx && abs(ty)<-2.*tx))
  *  53 http://localhost:3000/painting/complex#{%22name%22:%22newX=prevX;%20newY=prevY;%22,%22xCenter%22:-0.5,%22yCenter%22:4,%22scaleRange%22:60,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22abs(ty)%3C2.||ty*ty+tx*tx%3C50.||(abs(ty)%3E1.*tx&&abs(ty)%3C2.*tx)||(abs(ty)%3E-1.*tx&&abs(ty)%3C-2.*tx)%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=r;g=g;%20b=b;if(abs(ty)%3C2.||ty*ty+tx*tx%3C50.){r=250.;}if((abs(ty)%3E1.*tx&&abs(ty)%3C2.*tx)||(abs(ty)%3E-1.*tx&&abs(ty)%3C-2.*tx)){r=250.;g=250.;};%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:74049,%22history%22:[{%22xCenter%22:-0.5,%22yCenter%22:0,%22scaleRange%22:6}]} 
+ * 
+ * 
+ * 54 ifs http://localhost:3000/painting/ifs#{%22typeFractal%22:%22ifs%22,%22name%22:%22if(areaCond((cos(uTime*0.5)*0.864*(x-1.882)-(y-0.111)*0.281)/0.772,%20(0.824*(y-0.111)+(x-1.882)*0.212)/0.772)){newX=(cos(uTime*0.5)*0.864*(x-1.882)-(y-0.111)*0.281)/0.772;%20newY=(0.824*(y-0.111)+(x-1.882)*0.212)/0.772;%20x=newX;%20y=newY;%20continue;}\nif(areaCond((-0.378*(x+0.785)-(y+8.096)*0.521)/0.208,%20(cos(uTime*0.3)*0.088*(x+8.096)+(y+0.785)*0.464)/0.208)){newX=(-0.378*(x+0.785)-(y+8.096)*0.521)/0.208;%20newY=(cos(uTime*0.3)*0.088*(x+8.096)+(y+0.785)*0.464)/0.208;%20x=newX;%20y=newY;%20continue;}\n%22,%22xCenter%22:-2.95,%22yCenter%22:-2.55,%22scaleRange%22:36.35,%22depthIter%22:42,%22scaleXtoY%22:1.2886247877758914,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22x*x+y*y%3C120.%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:16859,%22history%22:[{%22xCenter%22:0.5,%22yCenter%22:0.5,%22scaleRange%22:3},{%22xCenter%22:-2.95,%22yCenter%22:-2.55,%22scaleRange%22:36.35}]}
+ * 
+ * 55 http://localhost:3000/painting/ifs#{%22typeFractal%22:%22ifs%22,%22name%22:%22if(areaCond((cos(uTime*0.5)*0.864*(x-1.882)-(y-0.111)*0.281)/0.772,%20(0.824*(y-0.111)+(x-1.882)*0.212)/0.772)){newX=(cos(uTime*0.5)*0.864*(x-1.882)-(y-0.111)*0.281)/0.772;%20newY=(0.824*(y-0.111)+(x-1.882)*0.212)/0.772;%20x=newX;%20y=newY;%20continue;}\nif(areaCond((-0.378*(x+0.785)-(y+8.096)*0.521)/0.208,%20(cos(uTime*0.3)*0.088*(x+8.096)+(y+0.785)*0.464)/0.208)){newX=(-0.378*(x+0.785)-(y+8.096)*0.521)/0.208;%20newY=(cos(uTime*0.3)*0.088*(x+8.096)+(y+0.785)*0.464)/0.208;%20x=newX;%20y=newY;%20continue;}\n%22,%22xCenter%22:-2.95,%22yCenter%22:-2.55,%22scaleRange%22:36.35,%22depthIter%22:42,%22scaleXtoY%22:1.8522920203735145,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22x*x+y*y%3C120.%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:16859,%22history%22:[{%22xCenter%22:0.5,%22yCenter%22:0.5,%22scaleRange%22:3},{%22xCenter%22:-2.95,%22yCenter%22:-2.55,%22scaleRange%22:36.35}]}
+ * 
+ * 57 http://localhost:3000/painting/ifs#{%22typeFractal%22:%22ifs%22,%22name%22:%22if(areaCond(3.*x,%203.*y)){newX=3.*x;%20newY=3.*y;%20x=newX;%20y=newY;%20continue;}\nif(areaCond(3.*x-1200.,%203.*y)){newX=3.*x-1200.;%20newY=3.*y;%20x=newX;%20y=newY;%20continue;}\nif(areaCond(1.5*x+2.61*y-300.,%201.5*y-2.61*x+522.)){newX=1.5*x+2.61*y-300.;%20newY=1.5*y-2.61*x+522.;%20x=newX;%20y=newY;%20continue;}\nif(areaCond(cos(PI/3.)*3.*x-sin(PI/3.)*3.*y,%20sin(PI/3.)*3.*x%20+cos(PI/3.)*3.*y-1040.)){newX=cos(PI/3.)*3.*x-sin(PI/3.)*3.*y;%20newY=sin(PI/3.)*3.*x%20+cos(PI/3.)*3.*y-1040.;%20x=newX;%20y=newY;%20continue;}\n%22,%22xCenter%22:380,%22yCenter%22:400,%22scaleRange%22:1250,%22depthIter%22:0,%22scaleXtoY%22:1.8505942275042444,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22y%3E0.&&(520.*x-300.*y)%3E0.&&(520.*x+300.*y-520.*600.)%3C0.%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:3253,%22history%22:[{%22xCenter%22:0.5,%22yCenter%22:0.5,%22scaleRange%22:3},{%22xCenter%22:330.5,%22yCenter%22:348.5,%22scaleRange%22:870},{%22xCenter%22:250.5,%22yCenter%22:28.5,%22scaleRange%22:2200},{%22xCenter%22:325.3,%22yCenter%22:431.1,%22scaleRange%22:754.6},{%22xCenter%22:3341.3,%22yCenter%22:11741.1,%22scaleRange%22:53534},{%22xCenter%22:343.396,%22yCenter%22:498.96,%22scaleRange%22:5728.138},{%22xCenter%22:291.843,%22yCenter%22:561.97,%22scaleRange%22:1036.793},{%22xCenter%22:193.348,%22yCenter%22:553.676,%22scaleRange%22:211.506},{%22xCenter%22:223.805,%22yCenter%22:551.561,%22scaleRange%22:23.9},{%22xCenter%22:293.805,%22yCenter%22:391.561,%22scaleRange%22:4070},{%22xCenter%22:306.015,%22yCenter%22:363.071,%22scaleRange%22:3170.53},{%22xCenter%22:290.162,%22yCenter%22:416.97,%22scaleRange%22:2685.439},{%22xCenter%22:298.218,%22yCenter%22:433.083,%22scaleRange%22:1342.719},{%22xCenter%22:190.852,%22yCenter%22:178.086,%22scaleRange%22:2576.778},{%22xCenter%22:378.957,%22yCenter%22:317.232,%22scaleRange%22:1244.584}]}
+ * 
+ * 58 http://localhost:3000/painting/ifs#{%22typeFractal%22:%22ifs%22,%22name%22:%22if(areaCond(3.*x,%203.*y)){newX=3.*x;%20newY=3.*y;%20x=newX;%20y=newY;%20continue;}\nif(areaCond(3.*x-1200.,%203.*y)){newX=3.*x-1200.;%20newY=3.*y;%20x=newX;%20y=newY;%20continue;}\nif(areaCond(1.5*x+2.61*y-300.,%201.5*y-2.61*x+522.)){newX=1.5*x+2.61*y-300.;%20newY=1.5*y-2.61*x+522.;%20x=newX;%20y=newY;%20continue;}\nif(areaCond(cos(PI/3.)*3.*x-sin(PI/3.)*3.*y,%20sin(PI/3.)*3.*x%20+cos(PI/3.)*3.*y-1040.)){newX=cos(PI/3.)*3.*x-sin(PI/3.)*3.*y;%20newY=sin(PI/3.)*3.*x%20+cos(PI/3.)*3.*y-1040.;%20x=newX;%20y=newY;%20continue;}\n%22,%22xCenter%22:255.271,%22yCenter%22:134.281,%22scaleRange%22:870.951,%22depthIter%22:4,%22scaleXtoY%22:1.8505942275042444,%22scaleMode%22:0,%22scaleMotion%22:0,%22speedScaleMotion%22:1,%22norm%22:%22y%3E0.&&y%3C200.&&x%3E0.&&x%3C600.%22,%22speedNorm%22:1,%22motion%22:%22;%22,%22speedMotion%22:1,%22colorStyle%22:%22r=1.0-mod(float(i),3.0)*127.0/255.0;g=1.0-mod(float(i)/3.0,3.0)*127.0/255.0;b=1.0-mod(float(i)/9.0,3.0)*127.0/255.0;%22,%22speedColorStyle%22:1,%22animated%22:false,%22startTime%22:3253,%22history%22:[{%22xCenter%22:0.5,%22yCenter%22:0.5,%22scaleRange%22:3},{%22xCenter%22:330.5,%22yCenter%22:348.5,%22scaleRange%22:870},{%22xCenter%22:250.5,%22yCenter%22:28.5,%22scaleRange%22:2200},{%22xCenter%22:325.3,%22yCenter%22:431.1,%22scaleRange%22:754.6},{%22xCenter%22:3341.3,%22yCenter%22:11741.1,%22scaleRange%22:53534},{%22xCenter%22:343.396,%22yCenter%22:498.96,%22scaleRange%22:5728.138},{%22xCenter%22:291.843,%22yCenter%22:561.97,%22scaleRange%22:1036.793},{%22xCenter%22:193.348,%22yCenter%22:553.676,%22scaleRange%22:211.506},{%22xCenter%22:223.805,%22yCenter%22:551.561,%22scaleRange%22:23.9},{%22xCenter%22:293.805,%22yCenter%22:391.561,%22scaleRange%22:4070},{%22xCenter%22:306.015,%22yCenter%22:363.071,%22scaleRange%22:3170.53},{%22xCenter%22:290.162,%22yCenter%22:416.97,%22scaleRange%22:2685.439},{%22xCenter%22:298.218,%22yCenter%22:433.083,%22scaleRange%22:1342.719},{%22xCenter%22:190.852,%22yCenter%22:178.086,%22scaleRange%22:2576.778},{%22xCenter%22:255.271,%22yCenter%22:134.281,%22scaleRange%22:870.951}]}
  * 
  */

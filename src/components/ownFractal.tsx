@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { IFractal } from '../utils/types';
-import { vertexShaderSource, fragmentShaderSourceComplex, fragmentShaderSourceIFS, compileShader, createShaderProgram } from '../utils/webgl';
+import { vertexShaderSource, fragmentShaderSourceComplex, fragmentShaderSourceIFS, fragmentShaderSourceIFS3d, compileShader, createShaderProgram } from '../utils/webgl';
 import { A } from 'hookrouter';
 const { Button, Icon } = require('react-materialize');
 
@@ -42,6 +42,7 @@ const OwnFractal: React.FC<IFractal> = (props) => {
          const gl = canvas.getContext('webgl');
          let fragmentShaderSource = fragmentShaderSourceComplex;
          typeFractal === 'ifs' && (fragmentShaderSource = fragmentShaderSourceIFS);
+         typeFractal === 'ifs3d' && (fragmentShaderSource = fragmentShaderSourceIFS3d);
          let isCompile: boolean = true;
          if (gl) {
              const fs = compileShader(gl, fragmentShaderSource(fractal), gl.FRAGMENT_SHADER);
@@ -112,7 +113,7 @@ const OwnFractal: React.FC<IFractal> = (props) => {
                             <i className="material-icons tiny" onClick={handleClearParamXY('y', i)}>clear</i>
                             <label htmlFor="y"> y = {params.y[i]}</label>
                         </div>
-                        {typeFractal === 'ifs' && params.x.length > 1 && 
+                        {typeFractal === 'ifs' || typeFractal === 'ifs3d' && params.x.length > 1 && 
                             <Button 
                                 className="white right"
                                 style={{marginRight: '30px'}}
@@ -131,6 +132,11 @@ const OwnFractal: React.FC<IFractal> = (props) => {
         if(typeFractal === 'ifs') {
             params.x.forEach((item, i) => {
                 ownName += `if(areaCond(${params.x[i]}, ${params.y[i]})){newX=${params.x[i]}; newY=${params.y[i]}; x=newX; y=newY; continue;}\n`;
+            });
+        }
+        if(typeFractal === 'ifs3d') {
+            params.x.forEach((item, i) => {
+                ownName += `if(areaCond(${params.x[i]}, ${params.y[i]}, 0)){newX=${params.x[i]}; newY=${params.y[i]}; x=newX; y=newY; continue;}\n`;
             });
         }
         let ownNorm: string | undefined = params.norm.replace(/\s+/g,'');

@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import { Fractal } from '../utils/classes';
 import { IFractal, ICenterScale, IAction } from '../utils/types';
-import {defaultParams, defaultParamsIFS} from '../utils/consts';
+import {defaultParams, defaultParamsIFS, defaultParamsIFS3D} from '../utils/consts';
 import {
     CHANGE_TYPE_FRACTAL,
     CHANGE_NAME_FRACTAL,
@@ -31,6 +31,7 @@ const reducer = (state = Fractal.getParamsFromUrl(), action: IAction): IFractal 
             switch (action.typeFractal) {
                 case 'complex': newDefaultParams = defaultParams; break;
                 case 'ifs': newDefaultParams = defaultParamsIFS; break;
+                case 'ifs3d': newDefaultParams = defaultParamsIFS3D; break;
                 default: break;
             }
             newState = {...state, ...newDefaultParams}; break;

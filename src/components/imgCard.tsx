@@ -7,7 +7,7 @@ interface IProps {
     link?: string;
 }
 
-const ImgCard: React.FC<IProps> = (props) => {
+const ImgCard: React.FC<IProps> = props => {
     const data = {...props};
     return (
         <div className="card">

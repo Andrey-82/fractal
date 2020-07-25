@@ -4,7 +4,6 @@ import Pictorial from '../pictorial';
 import OwnFractal from '../ownFractal';
 
 const Painting: React.FC<any> = props => {
-    const {typeFractal} = props;
     return (
         <div className="row">
             <Pictorial {...props} />

@@ -30,6 +30,7 @@ const Header: React.FC = () => (
     >
         <A href="/painting/complex">Комплексная динамика</A>
         <A href="/painting/ifs">Система итерируемых функций</A>
+        <A href="/painting/ifs3d">Система итерируемых функций 3D</A>
     </Dropdown>
     <A href="/contacts">Контакты</A>
 </Navbar>
