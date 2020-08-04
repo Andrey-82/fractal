@@ -182,7 +182,7 @@ export const fragmentShaderSourceIFS3d = (fractal: IFractal): string => {
         ty = (${sRY} * (v-0.5) + ${yC});x=tx; y=ty;
         for (int i = 0; i <= 300; i++){
             if(flag == true){
-                gl_FragColor=vec4(1.0-float(i)*0.0025, 1.0-float(i)*0.0025, 1.,.0);
+                gl_FragColor=vec4(1.0-float(i)*0.0035, 1.0-float(i)*0.0035, 1.,.0);
                 flag = false;
                 break;
             }

@@ -7,6 +7,7 @@ const { Button, Icon } = require('react-materialize');
 interface IState {
     x: string[],
     y: string[],
+    z: string[],
     norm: string,
     r: string,
     g: string,
@@ -18,6 +19,7 @@ interface IState {
 const initState: IState = {
     x: [''],
     y: [''],
+    z: [''],
     norm: '',
     r: '',
     g: '',
@@ -59,7 +61,7 @@ const OwnFractal: React.FC<IFractal> = (props) => {
      * e - объект события
      */
     const handleChangeParam = (param: string) => (e: any) => setParams({...params, [param]: e.target.value});
-    const handleChangeParamXY = (param: 'x' | 'y', i: number) => (e: any) => {
+    const handleChangeParamXYZ = (param: 'x' | 'y' | 'z', i: number) => (e: any) => {
         const newParam = [...params[param]];
         newParam[i] = e.target.value;
         setParams({...params, [param]: newParam});
@@ -70,7 +72,7 @@ const OwnFractal: React.FC<IFractal> = (props) => {
      * param - тип параметра
      */
     const handleClearParam = (param: string) => () => setParams({...params, [param]: ''});
-    const handleClearParamXY = (param: 'x' | 'y', i: number) => () => {
+    const handleClearParamXYZ = (param: 'x' | 'y' | 'z', i: number) => () => {
         const newParam = [...params[param]];
         newParam[i] = '';
         setParams({...params, [param]: newParam});
@@ -79,47 +81,56 @@ const OwnFractal: React.FC<IFractal> = (props) => {
     /**
      * Обработчик добавления полей для записи формул фрактала
      */
-    const handleAddParamsXY = () => {
+    const handleAddParamsXYZ = () => {
         const newParamX = [...params.x];
         newParamX.push('');
         const newParamY = [...params.y];
         newParamY.push('');
-        setParams({...params, x: newParamX, y: newParamY});
+        const newParamZ = [...params.z];
+        newParamZ.push('');
+        setParams({...params, x: newParamX, y: newParamY, z: newParamZ});
     }
     
     /**
      * Обработчик удаления полей для записи формул фрактала
      * i - номер элемента в массиве
      */
-    const handleDeleteParamsXY = (i: number) => () => {
+    const handleDeleteParamsXYZ = (i: number) => () => {
         const newParamX = [...params.x];
         const newParamY = [...params.y];
+        const newParamZ = [...params.z];
         newParamX.splice(i, 1);
         newParamY.splice(i, 1);
-        setParams({...params, x: newParamX, y: newParamY});
+        newParamZ.splice(i, 1);
+        setParams({...params, x: newParamX, y: newParamY, z: newParamZ});
     }
     
     /**
      * Рендер полей для записи формул фрактала
      */
-    const renderFieldsXY = params.x.map((item, i) => <div className="row" key={i}>
+    const renderFieldsXYZ = params.x.map((item, i) => <div className="row" key={i}>
                         <div className="input-field col s12">
-                            <textarea id="x" className="materialize-textarea" onChange={handleChangeParamXY('x', i)} value={params.x[i]}></textarea>
-                            <i className="material-icons tiny" onClick={handleClearParamXY('x', i)}>clear</i>
+                            <textarea id="x" className="materialize-textarea" onChange={handleChangeParamXYZ('x', i)} value={params.x[i]}></textarea>
+                            <i className="material-icons tiny" onClick={handleClearParamXYZ('x', i)}>clear</i>
                             <label htmlFor="x"> x = {params.x[i]}</label>
                         </div>
                         <div className="input-field col s12">
-                            <textarea id="y" className="materialize-textarea" onChange={handleChangeParamXY('y', i)} value={params.y[i]}></textarea>
-                            <i className="material-icons tiny" onClick={handleClearParamXY('y', i)}>clear</i>
+                            <textarea id="y" className="materialize-textarea" onChange={handleChangeParamXYZ('y', i)} value={params.y[i]}></textarea>
+                            <i className="material-icons tiny" onClick={handleClearParamXYZ('y', i)}>clear</i>
                             <label htmlFor="y"> y = {params.y[i]}</label>
                         </div>
+                        {typeFractal === 'ifs3d' && <div className="input-field col s12">
+                            <textarea id="z" className="materialize-textarea" onChange={handleChangeParamXYZ('z', i)} value={params.z[i]}></textarea>
+                            <i className="material-icons tiny" onClick={handleClearParamXYZ('z', i)}>clear</i>
+                            <label htmlFor="z"> z = {params.z[i]}</label>
+                        </div>}
                         {typeFractal === 'ifs' || typeFractal === 'ifs3d' && params.x.length > 1 && 
                             <Button 
                                 className="white right"
                                 style={{marginRight: '30px'}}
                                 small icon={<Icon className="teal-text">close</Icon>}
                                 waves="teal"
-                                onClick={handleDeleteParamsXY(i)}
+                                onClick={handleDeleteParamsXYZ(i)}
                             />}
                     </div>
     )
@@ -136,7 +147,7 @@ const OwnFractal: React.FC<IFractal> = (props) => {
         }
         if(typeFractal === 'ifs3d') {
             params.x.forEach((item, i) => {
-                ownName += `if(areaCond(${params.x[i]}, ${params.y[i]}, 0)){newX=${params.x[i]}; newY=${params.y[i]}; x=newX; y=newY; continue;}\n`;
+                ownName += `if(areaCond(${params.x[i]}, ${params.y[i]}, ${params.z[i]})){newX=${params.x[i]}; newY=${params.y[i]}; newZ=${params.z[i]}; x=newX; y=newY; z=newZ; continue;}\n`;
             });
         }
         let ownNorm: string | undefined = params.norm.replace(/\s+/g,'');
@@ -171,8 +182,8 @@ const OwnFractal: React.FC<IFractal> = (props) => {
                 </div>
                 <div className="col s12 m3">
                     <p className="center">Фрактал</p>
-                    {renderFieldsXY}
-                    {typeFractal === 'ifs' && <Button large floating icon={<Icon>add</Icon>} waves="light" onClick={handleAddParamsXY} />}
+                    {renderFieldsXYZ}
+                    {typeFractal === 'ifs' || typeFractal === 'ifs3d' && <Button large floating icon={<Icon>add</Icon>} waves="light" onClick={handleAddParamsXYZ} />}
                 </div>
                 <div className="col s12 m3">
                     <p className="center">Норма</p>
