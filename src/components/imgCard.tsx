@@ -12,7 +12,7 @@ const ImgCard: React.FC<IProps> = props => {
     return (
         <div className="card">
             <div className="card-image">
-                <img src={data.src} />
+                <img src={data.src} alt={data.name}/>
                 <span className="card-title">{data.name}</span>
             </div>
             <div className="card-action">

@@ -3,7 +3,7 @@ import {useRoutes} from 'hookrouter';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../reducers/actions';
-import { store, dispatch } from '../../reducers/reducer';
+import { dispatch } from '../../reducers/reducer';
 import Gallery from './gallery';
 import Contacts from './contacts';
 import HomePage from './homePage';
@@ -26,7 +26,7 @@ const routes = (props: any, changeType: any) => ({
         return <Painting {...props}/>
     },
     '/contacts': () => <Contacts />,
-    '/painting/rules': () => <Rules />,
+    '/rules': () => <Rules />,
 });
 
 const Routes: React.FC<any> = props => {

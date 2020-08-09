@@ -24,7 +24,7 @@ const App: React.FC = () => {
                 <li><A href="/contacts" className="grey-text text-lighten-4">Контакты</A></li>
                 </ul>}
             >
-                    <img src={`${baseURL}img/logo-footer.png`} style={{maxWidth: '300px'}}/>
+                    <img src={`${baseURL}img/logo-footer.png`} alt="Mandelbrot" style={{maxWidth: '300px'}}/>
             </Footer>
         </Provider>
     );

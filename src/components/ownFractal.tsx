@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { IFractal } from '../utils/types';
-import { vertexShaderSource, fragmentShaderSourceComplex, fragmentShaderSourceIFS, fragmentShaderSourceIFS3d, compileShader, createShaderProgram } from '../utils/webgl';
+import { vertexShaderSource,
+    fragmentShaderSourceComplex,
+    fragmentShaderSourceIFS,
+    fragmentShaderSourceIFS3d,
+    compileShader,
+    createShaderProgram } from '../utils/webgl';
 import { A } from 'hookrouter';
 const { Button, Icon } = require('react-materialize');
 
@@ -124,7 +129,7 @@ const OwnFractal: React.FC<IFractal> = (props) => {
                             <i className="material-icons tiny" onClick={handleClearParamXYZ('z', i)}>clear</i>
                             <label htmlFor="z"> z = {params.z[i]}</label>
                         </div>}
-                        {typeFractal === 'ifs' || typeFractal === 'ifs3d' && params.x.length > 1 && 
+                        {(typeFractal === 'ifs' || typeFractal === 'ifs3d') && params.x.length > 1 && 
                             <Button 
                                 className="white right"
                                 style={{marginRight: '30px'}}
@@ -178,12 +183,12 @@ const OwnFractal: React.FC<IFractal> = (props) => {
         <div className="col s12">
             <div className="row ownFractal">
                 <div className="col s12">
-                    <h6 className="center">Задать свои параметры( <A href="/painting/rules">подробнее...</A> )</h6>
+                    <h6 className="center">Задать свои параметры( <A href="/rules">подробнее...</A> )</h6>
                 </div>
                 <div className="col s12 m3">
                     <p className="center">Фрактал</p>
                     {renderFieldsXYZ}
-                    {typeFractal === 'ifs' || typeFractal === 'ifs3d' && <Button large floating icon={<Icon>add</Icon>} waves="light" onClick={handleAddParamsXYZ} />}
+                    {(typeFractal === 'ifs' || typeFractal === 'ifs3d') && <Button large floating icon={<Icon>add</Icon>} waves="light" onClick={handleAddParamsXYZ} />}
                 </div>
                 <div className="col s12 m3">
                     <p className="center">Норма</p>

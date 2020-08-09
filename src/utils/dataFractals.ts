@@ -282,11 +282,10 @@ export const fractals = [
     {
         "type": "ifs3d",
         "name": "Тетраэдр Серпинского",
-        "value": "if(areaCond(2.0*x, 2.0*y, 2.0*z)){newX=2.0*x; newY=2.0*y; newZ=2.0*z; x=newX; y=newY; z=newZ; continue;}\n\
-if(areaCond(2.0*x-1.0, 2.0*y, 2.*z)){newX=2.0*x-1.0; newY=2.0*y; x=newX; y=newY; newZ=2.0*z; z=newZ; continue;}\n\
-if(areaCond(2.0*x, 2.0*y, 2.*z-1.)){newX=2.0*x; newY=2.0*y; x=newX; y=newY; newZ=2.0*z-1.; z=newZ; continue;}\n\
-if(areaCond(2.0*x, 2.0*y-1.0, 2.*z)){newX=2.0*x; newY=2.0*y-1.0; x=newX; y=newY; newZ=2.0*z; z=newZ; continue;}\n\
-"
+        "value": `if(areaCond(2.0*x, 2.0*y, 2.0*z)){newX=2.0*x; newY=2.0*y; newZ=2.0*z; x=newX; y=newY; z=newZ; continue;}
+                if(areaCond(2.0*x-1.0, 2.0*y, 2.*z)){newX=2.0*x-1.0; newY=2.0*y; x=newX; y=newY; newZ=2.0*z; z=newZ; continue;}
+                if(areaCond(2.0*x, 2.0*y, 2.*z-1.)){newX=2.0*x; newY=2.0*y; x=newX; y=newY; newZ=2.0*z-1.; z=newZ; continue;}
+                if(areaCond(2.0*x, 2.0*y-1.0, 2.*z)){newX=2.0*x; newY=2.0*y-1.0; x=newX; y=newY; newZ=2.0*z; z=newZ; continue;}`
     },
     {
         "type": "ifs3d",
@@ -331,11 +330,10 @@ if(areaCond(2.0*x, 2.0*y-1.0, 2.*z)){newX=2.0*x; newY=2.0*y-1.0; x=newX; y=newY;
     {
         "type": "ifs3d",
         "name": "Фр2",
-        "value": "if(areaCond(2.0*x, 2.0*y, 2.0*z)){newX=2.0*x; newY=2.0*y; newZ=2.0*z; x=newX; y=newY; z=newZ; continue;}\n\
-if(areaCond(2.0*x-cos(uTime), 2.0*y, 2.*z)){newX=2.0*x-cos(uTime); newY=2.0*y; x=newX; y=newY; newZ=2.0*z; z=newZ; continue;}\n\
-if(areaCond(2.0*x, 2.0*y, 2.*z-cos(uTime))){newX=2.0*x; newY=2.0*y; x=newX; y=newY; newZ=2.0*z-cos(uTime); z=newZ; continue;}\n\
-if(areaCond(2.0*x, 2.0*y-cos(uTime), 2.*z)){newX=2.0*x; newY=2.0*y-cos(uTime); x=newX; y=newY; newZ=2.0*z; z=newZ; continue;}\n\
-"
+        "value": `if(areaCond(2.0*x, 2.0*y, 2.0*z)){newX=2.0*x; newY=2.0*y; newZ=2.0*z; x=newX; y=newY; z=newZ; continue;}
+                if(areaCond(2.0*x-cos(uTime), 2.0*y, 2.*z)){newX=2.0*x-cos(uTime); newY=2.0*y; x=newX; y=newY; newZ=2.0*z; z=newZ; continue;}
+                if(areaCond(2.0*x, 2.0*y, 2.*z-cos(uTime))){newX=2.0*x; newY=2.0*y; x=newX; y=newY; newZ=2.0*z-cos(uTime); z=newZ; continue;}
+                if(areaCond(2.0*x, 2.0*y-cos(uTime), 2.*z)){newX=2.0*x; newY=2.0*y-cos(uTime); x=newX; y=newY; newZ=2.0*z; z=newZ; continue;}`
     },
     {
         "type": "ifs3d",
@@ -505,20 +503,22 @@ export const colorStyles = [
     },
     {
         "name": "gradBlueMoveRingWave",
-        "value": "float tr = abs(20.0*fract((0.04*uTime*float(0.2*uTime)/(0.2*uTime+1.0))-10.0-(tx*tx+ty*ty)));\
-                    if (tr < 0.6) {r = (float(i))/15.0*(1.0-1.7*tr); g = (float(i))/30.0*(1.0-1.7*tr); b = (float(i))/10.0*(1.0-1.7*tr);}\
-                    else if (float(i) > 180.0){r = 0.95; g = 0.82; b = 0.3;}\
-                    else {r = (float(i))/110.0; g = (float(i))/110.0; b = (float(i))/30.0;}"
+        "value": `float tr = abs(20.0*fract((0.04*uTime*float(0.2*uTime)/(0.2*uTime+1.0))-10.0-(tx*tx+ty*ty)));
+                    if (tr < 0.6) {r = (float(i))/15.0*(1.0-1.7*tr); g = (float(i))/30.0*(1.0-1.7*tr); b = (float(i))/10.0*(1.0-1.7*tr);}
+                    else if (float(i) > 180.0){r = 0.95; g = 0.82; b = 0.3;}
+                    else {r = (float(i))/110.0; g = (float(i))/110.0; b = (float(i))/30.0;}`
     },
     {
         "name": "gradBlueMoveRingWave2",
-        "value": "float tr = abs(30.0*fract((0.02*speedColorStyle*uTime*uTime)/(0.1*uTime+1.0))-15.0-((tx+0.5)*(tx+0.5)+(ty+0.5)*(ty+0.5)));\
-                     float s = abs(30.0*fract((0.02*speedColorStyle*uTime*uTime)/(0.1*uTime+1.0))-15.0-((tx-0.7)*(tx-0.7)+(ty-0.7)*(ty-0.7)));\
-                    if (s < 0.9 && tr > 0.9 ) {r = (float(i))/10.0*(1.0-s); g = (float(i))/20.0*(1.0-s); b = (float(i))/50.0*(1.0-s);}\
-                    else if (tr < 0.9 && s > 0.9) {r = (float(i))/15.0*(1.0-tr); g = (float(i))/30.0*(1.0-tr); b = (float(i))/10.0*(1.0-tr);}\
-                    else if (tr < 0.9 && s < 0.9) {r = (float(i))/((15.0*(1.0-tr)+10.0*(1.0-s))/(2.3-tr-s)); g = (float(i))/((30.0*(1.0-tr)+20.0*(1.0-s))/(2.3-tr-s)); b = (float(i))/((10.0*(1.0-tr)+50.0*(1.0-s))/(2.3-tr-s));}\
-                    else if (float(i) > 180.0){r = sin(tx)*0.95; g = cos(tx)*0.82; b = sin(tx*ty*2.0)*0.3;}\
-                    else {r = (cos(tx)*float(i))/110.0; g = (sin(tx)*float(i))/110.0; b = (sin(tx*2.0)*float(i))/30.0;}"
+        "value": `float tr = abs(30.0*fract((0.02*speedColorStyle*uTime*uTime)/(0.1*uTime+1.0))-15.0-((tx+0.5)*(tx+0.5)+(ty+0.5)*(ty+0.5)));
+                     float s = abs(30.0*fract((0.02*speedColorStyle*uTime*uTime)/(0.1*uTime+1.0))-15.0-((tx-0.7)*(tx-0.7)+(ty-0.7)*(ty-0.7)));
+                    if (s < 0.9 && tr > 0.9 ) {r = (float(i))/10.0*(1.0-s); g = (float(i))/20.0*(1.0-s); b = (float(i))/50.0*(1.0-s);}
+                    else if (tr < 0.9 && s > 0.9) {r = (float(i))/15.0*(1.0-tr); g = (float(i))/30.0*(1.0-tr); b = (float(i))/10.0*(1.0-tr);}
+                    else if (tr < 0.9 && s < 0.9) {r = (float(i))/((15.0*(1.0-tr)+10.0*(1.0-s))/(2.3-tr-s));
+                    g = (float(i))/((30.0*(1.0-tr)+20.0*(1.0-s))/(2.3-tr-s));
+                    b = (float(i))/((10.0*(1.0-tr)+50.0*(1.0-s))/(2.3-tr-s));}
+                    else if (float(i) > 180.0){r = sin(tx)*0.95; g = cos(tx)*0.82; b = sin(tx*ty*2.0)*0.3;}
+                    else {r = (cos(tx)*float(i))/110.0; g = (sin(tx)*float(i))/110.0; b = (sin(tx*2.0)*float(i))/30.0;}`
     },
 ];
 

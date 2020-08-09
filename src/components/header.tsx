@@ -1,6 +1,6 @@
 import React from 'react';
 import { A } from 'hookrouter';
-const { Navbar, Icon, Dropdown, Button } = require('react-materialize');
+const { Navbar, Icon, Dropdown } = require('react-materialize');
 
 const Header: React.FC = () => (
 <Navbar 

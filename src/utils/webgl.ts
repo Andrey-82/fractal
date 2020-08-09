@@ -50,13 +50,13 @@ export const fragmentShaderSourceComplex = (fractal: IFractal): string => {
         speedColorStyle,
         speedMotion,
     } = fractal;
-    const sRX = scaleRange ? scaleRange.toFixed(3) : '1.0';
-    const sRY = scaleRange && scaleXtoY ? (scaleRange / scaleXtoY).toFixed(3) : '1.0';
-    const sM = speedMotion ? speedMotion.toFixed(3) : '1.0';
-    const sN = speedNorm ? speedNorm.toFixed(3) : '1.0';
-    const sC = speedColorStyle ? speedColorStyle.toFixed(3) : '1.0';
-    const xC = xCenter ? xCenter.toFixed(3) : '0.0';
-    const yC = yCenter && scaleXtoY? (yCenter / scaleXtoY).toFixed(3) : '0.0';
+    const sRX = scaleRange ? scaleRange.toFixed(5) : '1.0';
+    const sRY = scaleRange && scaleXtoY ? (scaleRange / scaleXtoY).toFixed(5) : '1.0';
+    const sM = speedMotion ? speedMotion.toFixed(5) : '1.0';
+    const sN = speedNorm ? speedNorm.toFixed(5) : '1.0';
+    const sC = speedColorStyle ? speedColorStyle.toFixed(5) : '1.0';
+    const xC = xCenter ? xCenter : '0.0';
+    const yC = yCenter && scaleXtoY? (yCenter / scaleXtoY) : '0.0';
     const shaderSource = "precision highp float; "+
         "const highp float PI = 3.14159265359; "+
         "uniform highp float uTime; uniform vec2 uResolution;"+
@@ -102,18 +102,17 @@ export const fragmentShaderSourceIFS = (fractal: IFractal): string => {
         scaleRange,
         depthIter,
         scaleXtoY,
-        motion,
         speedNorm,
         speedColorStyle,
         speedMotion,
     } = fractal;
-    const sRX = scaleRange ? scaleRange.toFixed(3) : '1.0';
-    const sRY = scaleRange && scaleXtoY ? (scaleRange / scaleXtoY).toFixed(3) : '1.0';
-    const sM = speedMotion ? speedMotion.toFixed(3) : '1.0';
-    const sN = speedNorm ? speedNorm.toFixed(3) : '1.0';
-    const sC = speedColorStyle ? speedColorStyle.toFixed(3) : '1.0';
-    const xC = xCenter ? xCenter.toFixed(3) : '0.0';
-    const yC = yCenter && scaleXtoY? (yCenter / scaleXtoY).toFixed(3) : '0.0';
+    const sRX = scaleRange ? scaleRange.toFixed(5) : '1.0';
+    const sRY = scaleRange && scaleXtoY ? (scaleRange / scaleXtoY).toFixed(5) : '1.0';
+    const sM = speedMotion ? speedMotion.toFixed(5) : '1.0';
+    const sN = speedNorm ? speedNorm.toFixed(5) : '1.0';
+    const sC = speedColorStyle ? speedColorStyle.toFixed(5) : '1.0';
+    const xC = xCenter ? xCenter.toFixed(5) : '0.0';
+    const yC = yCenter && scaleXtoY? (yCenter / scaleXtoY).toFixed(5) : '0.0';
     const shaderSource = "precision highp float; "+
         "const highp float PI = 3.14159265359; \n"+ 
         "uniform highp float uTime; uniform vec2 uResolution;\n"+
@@ -151,18 +150,17 @@ export const fragmentShaderSourceIFS3d = (fractal: IFractal): string => {
         scaleRange,
         depthIter,
         scaleXtoY,
-        motion,
         speedNorm,
         speedColorStyle,
         speedMotion,
     } = fractal;
-    const sRX = scaleRange ? scaleRange.toFixed(3) : '1.0';
-    const sRY = scaleRange && scaleXtoY ? (scaleRange / scaleXtoY).toFixed(3) : '1.0';
-    const sM = speedMotion ? speedMotion.toFixed(3) : '1.0';
-    const sN = speedNorm ? speedNorm.toFixed(3) : '1.0';
-    const sC = speedColorStyle ? speedColorStyle.toFixed(3) : '1.0';
-    const xC = xCenter ? xCenter.toFixed(3) : '0.0';
-    const yC = yCenter && scaleXtoY? (yCenter / scaleXtoY).toFixed(3) : '0.0';
+    const sRX = scaleRange ? scaleRange.toFixed(5) : '1.0';
+    const sRY = scaleRange && scaleXtoY ? (scaleRange / scaleXtoY).toFixed(5) : '1.0';
+    const sM = speedMotion ? speedMotion.toFixed(5) : '1.0';
+    const sN = speedNorm ? speedNorm.toFixed(5) : '1.0';
+    const sC = speedColorStyle ? speedColorStyle.toFixed(5) : '1.0';
+    const xC = xCenter ? xCenter.toFixed(5) : '0.0';
+    const yC = yCenter && scaleXtoY? (yCenter / scaleXtoY).toFixed(5) : '0.0';
     const shaderSource = `precision highp float;
         const highp float PI = 3.14159265359;
         uniform highp float uTime; uniform vec2 uResolution;
