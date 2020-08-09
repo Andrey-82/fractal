@@ -69,44 +69,62 @@ export class Fractal {
 /**
  * Класс для работы с канвасом
  */
- export abstract class Canvas {
+ export class Canvas {
      /**
       * Статический метод изменений размеров канваса
       */
-    public static resize = (canvas: HTMLCanvasElement, canvas2d: HTMLCanvasElement, fractal: IFractal, gl: any) => {
+    public static resize = (canvas: HTMLCanvasElement, fractal: IFractal, gl: any) => {
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
         gl && gl.viewport(0, 0, canvas.width, canvas.height);
-        canvas2d.width = canvas.offsetWidth;
-        canvas2d.height = canvas.offsetHeight;
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
         const {changeScaleXtoY} = fractal;
         const XtoY = canvas.width / canvas.height;
         changeScaleXtoY && changeScaleXtoY(XtoY);
     };
     
     /**
-     * Статичекий метод выделения прямоугольной области и установки параметров
+     * Статичекий метод паралельного переноса и установки параметров
      */
-    public static zoomSelectedArea = (canvas: HTMLCanvasElement, context2d: any, e: any, isPressed: boolean, x0: number, y0: number) => {
-        let T = [0, 0] , H = 1;
+    public static translateArea = (canvas: HTMLCanvasElement, e: any, isPressed: boolean, x0: number, y0: number) => {
+        let T = [x0/canvas.width, y0/canvas.height];
         if (isPressed) {
             canvas.width = canvas.width;
             const x = e.pageX - canvas.offsetLeft;
             const y = e.pageY - canvas.getBoundingClientRect().top - window.pageYOffset;
-            context2d && (context2d.strokeStyle = '#E90');
-            context2d.strokeRect(x0, y0, x - x0, y - y0);
-            if (Math.abs(x - x0) > 10 && Math.abs(y - y0) > 10) {
                 T = [
-                    (x + x0 - canvas.width) / 2 / canvas.width, 
-                    (-y - y0 + canvas.height) / 2 / canvas.height
+                    (x - x0) / canvas.width, 
+                    (-y + y0) / canvas.height
                 ];
-                H = (x -y + y0 - x0) > 0 ? Math.abs(x - x0) / canvas.width : Math.abs(y - y0) / canvas.height;
-                H = +H.toFixed(3);
-                T[0] = +T[0].toFixed(3);
-                T[1] = +T[1].toFixed(3);
-            };
-            return {T, H};
+                T[0] = +T[0];
+                T[1] = +T[1];
+            return {T};
         } else return false;
+    };
+    /**
+     * Статичекий метод гомотетии и установки параметров
+     */
+    public static scaleArea = (canvas: HTMLCanvasElement, e: any, scale: number) => {
+        const spline = (t: number, x: number) => 0.9*x - 0.89*t;
+        let step = 0.1 * scale;
+        switch (true) {
+//            case scale > 100 : step = 0.01 * scale; break;
+//            case scale <= 100 && scale > 11: step = 1; break;
+//            case scale <= 11 && scale > 10: step = spline(10, scale); break;
+//            case scale <= 10 && scale > 1.1: step = 0.1; break;
+//            case scale <= 1.1 && scale > 1: step = spline(1, scale); break;
+//            case scale <= 1 && scale > 0.11: step = 0.01; break;
+//            case scale <= 0.11 && scale > 0.1: step = spline(0.1, scale); break;
+//            case scale <= 0.1 && scale > 0.011: step = 0.001; break;
+//            case scale <= 0.011 && scale > 0.01: step = spline(0.01, scale); break;
+//            case scale <= 0.01 && scale > 0.0011: step = 0.0001; break;
+//            case scale <= 0.0011 && scale > 0.001: step = spline(0.001, scale); break;
+            case scale <= 0.001 : step = 0.00001; break;
+        }
+        e.deltaY < 0 && (step = -step);
+        const newScale = scale + step < 0.00001 ? 0.00001 : scale + step;
+        return newScale;
     };
      
  }

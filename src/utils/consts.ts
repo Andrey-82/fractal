@@ -57,13 +57,13 @@ export const defaultParamsIFS: IFractal = {
 
 export const defaultParamsIFS3D: IFractal = {
     typeFractal: 'ifs3d',
-    name: "if(areaCond(2.0*x, 2.0*y, 2.0*z)){newX=2.0*x; newY=2.0*y; newZ=2.0*z; x=newX; y=newY; z=newZ; continue;}\n\
-if(areaCond(2.0*x-1.0, 2.0*y, 2.0*z)){newX=2.0*x-1.0; newY=2.0*y; newZ=2.0*z; x=newX; y=newY; z=newZ; continue;}\n\
-if(areaCond(2.0*x, 2.0*y-1.0, 2.0*z)){newX=2.0*x; newY=2.0*y-1.0; newZ=2.0*z; x=newX; y=newY; z=newZ; continue;}\n\
-if(areaCond(2.0*x, 2.0*y, 2.0*z-1.0)){newX=2.0*x; newY=2.0*y; newZ=2.0*z-1.0; x=newX; y=newY; z=newZ; continue;}",
-    xCenter: 0.5,
-    yCenter: 0.5,
-    scaleRange: 3,
+    name: `if(areaCond(2.0*x, 2.0*y, 2.0*z)){newX=2.0*x; newY=2.0*y; newZ=2.0*z; x=newX; y=newY; z=newZ; continue;}
+            if(areaCond(2.0*x-1.0, 2.0*y, 2.0*z)){newX=2.0*x-1.0; newY=2.0*y; newZ=2.0*z; x=newX; y=newY; z=newZ; continue;}
+            if(areaCond(2.0*x, 2.0*y-1.0, 2.0*z)){newX=2.0*x; newY=2.0*y-1.0; newZ=2.0*z; x=newX; y=newY; z=newZ; continue;}
+            if(areaCond(2.0*x, 2.0*y, 2.0*z-1.0)){newX=2.0*x; newY=2.0*y; newZ=2.0*z-1.0; x=newX; y=newY; z=newZ; continue;}`,
+    xCenter: 0.0,
+    yCenter: 0.0,
+    scaleRange: 5,
     depthIter: 4,
     scaleXtoY: 1.0,
     scaleMode: 0.0,

@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 import { Fractal } from '../utils/classes';
-import { IFractal, ICenterScale, IAction } from '../utils/types';
+import { IFractal, IAction } from '../utils/types';
 import {defaultParams, defaultParamsIFS, defaultParamsIFS3D} from '../utils/consts';
 import {
     CHANGE_TYPE_FRACTAL,

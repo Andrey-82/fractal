@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Navigator from '../navigator';
 import Pictorial from '../pictorial';
 import OwnFractal from '../ownFractal';
