@@ -1,9 +1,11 @@
 import React from 'react';
 import { Fractal, Canvas } from '../utils/classes';
 import { IFractal } from '../utils/types';
-import { overflow } from '../utils/functions';
+import { overflow, scrollTopToValue } from '../utils/functions';
+import { useQueryParams } from 'hookrouter';
 
 const Pictorial: React.FC<IFractal> = props => {
+    const [params, setParams] = useQueryParams();
     const fractal = {...props};
     const canvasRef = React.useRef<HTMLCanvasElement>(null);
     let canvas = canvasRef.current;
@@ -20,6 +22,11 @@ const Pictorial: React.FC<IFractal> = props => {
             Canvas.resize(canvas, fractal, gl);
         });
         Fractal.draw(canvas, fractal);
+        if (params.hash) {
+            const jsonParams = JSON.parse(decodeURI(params.hash));
+            fractal && fractal.setFractalFromHash && fractal.setFractalFromHash(jsonParams);
+        }
+        scrollTopToValue('html', 0);
     }, []);
     React.useEffect(() => {
         Fractal.setParamsToUrl(fractal);

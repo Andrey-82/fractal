@@ -41,7 +41,7 @@ export class Fractal {
 
     /** Статический метод получения параметров из урла */
     public static getParamsFromUrl() {
-        const jsonParams = decodeURI(window.location.hash.substring(1));
+        const jsonParams = decodeURI(window.location.search.substring(5));
         let params: IFractal = defaultParams;
         let parseParams = {};
         try {parseParams = JSON.parse(jsonParams);} catch {};
@@ -53,7 +53,7 @@ export class Fractal {
     public static setParamsToUrl(params: IFractal) {
         cancelAnimationFrame(Fractal.rId);
         const json = JSON.stringify(params);
-        window.history.pushState("", "", '#' + json);
+        window.history.pushState("", "", '?hash=' + json);
     }
     
     /**

@@ -3,11 +3,12 @@ import {cards} from '../../utils/dataFractals';
 import ImgCard from '../imgCard';
 
 const Contacts: React.FC = () => {
-    const imageCards = cards.map( data => (<div className="col s12 m4" key={data.link}>
+    const imageCards = cards.map( data => (<div className="col s12 m4" key={data.hash}>
                 <ImgCard 
                     name={data.name}
                     src={data.src}
                     link={data.link}
+                    hash={data.hash}
                 />
             </div>))
     return (

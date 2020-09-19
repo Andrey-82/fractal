@@ -4,6 +4,7 @@ import { IFractal, IAction } from '../utils/types';
 import {defaultParams, defaultParamsIFS, defaultParamsIFS3D} from '../utils/consts';
 import {
     CHANGE_TYPE_FRACTAL,
+    SET_FRACTAL_FROM_HASH,
     CHANGE_NAME_FRACTAL,
     CHANGE_NORM_FRACTAL,
     CHANGE_COLOR_FRACTAL,
@@ -35,6 +36,8 @@ const reducer = (state = Fractal.getParamsFromUrl(), action: IAction): IFractal 
                 default: break;
             }
             newState = {...state, ...newDefaultParams}; break;
+        case SET_FRACTAL_FROM_HASH:
+            newState = {...state, ...action.hash}; break;
         case CHANGE_NAME_FRACTAL:
             newState = {...state, name: action.name}; break;
         case CHANGE_NORM_FRACTAL:

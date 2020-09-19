@@ -1,5 +1,6 @@
 import { ChangeEvent } from 'react';
 import {
+    SET_FRACTAL_FROM_HASH,
     CHANGE_TYPE_FRACTAL,
     CHANGE_NAME_FRACTAL,
     CHANGE_NORM_FRACTAL,
@@ -25,6 +26,11 @@ import {
  export const changeType = (typeFractal: string) => ({
      type: CHANGE_TYPE_FRACTAL,
      typeFractal,
+ })
+ 
+ export const setFractalFromHash = (hash: any) => ({
+     type: SET_FRACTAL_FROM_HASH,
+     hash,
  })
  
  export const changeName = (event: ChangeEvent<HTMLSelectElement>) => ({

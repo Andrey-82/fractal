@@ -32,6 +32,7 @@
      startTime?: number; // временная точка начала анимации
      history: ICenterScale[]; // массив последовательных приближений фрактала, при выделении левой кнопкой мыши области на холсте
      changeType?(): void;
+     setFractalFromHash?(hash: IFractal): void;
      changeName?(): void;
      changeNorm?(): void;
      changeColor?(): void;
@@ -55,23 +56,24 @@
   * Тип экшена
   */
   export interface IAction {
-    type: string,
-    typeFractal?: string,
-    name?: string,
-    norm?: string,
-    scaleRange?: number,
-    depthIter?: number,
-    scaleXtoY?: number,
-    colorStyle?: string,
-    motion?: string,
-    speedMotion?: number,
-    speedNorm?: number,
-    speedColorStyle?: number,
-    xCenter?: number,
-    yCenter?: number,
-    animated?: boolean,
-    startTime?: number,
-    step?: ICenterScale,
+    type: string;
+    typeFractal?: string;
+    name?: string;
+    norm?: string;
+    scaleRange?: number;
+    depthIter?: number;
+    scaleXtoY?: number;
+    colorStyle?: string;
+    motion?: string;
+    speedMotion?: number;
+    speedNorm?: number;
+    speedColorStyle?: number;
+    xCenter?: number;
+    yCenter?: number;
+    animated?: boolean;
+    startTime?: number;
+    step?: ICenterScale;
+    hash?: IFractal;
 }
  
  /**
