@@ -2,6 +2,9 @@
  * Константы в экшенах
  */
  
+/** Установка фрактала.*/
+export const SET_FRACTAL_FROM_HASH = 'SET_FRACTAL_FROM_HASH';
+
 /** Изменить тип фрактала.*/
 export const CHANGE_TYPE_FRACTAL = 'CHANGE_TYPE_FRACTAL';
 

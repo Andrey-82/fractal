@@ -10,3 +10,11 @@ export const overflow = (selector: string, value: string) => {
         }
     }
 }
+
+/** Функция скролла для элемента.*/
+export const scrollTopToValue = (selector: string, value: number) => {
+    const el = document.querySelector<HTMLElement>(selector);
+    if (el) {
+        el.scrollTop = value;
+    }
+}
